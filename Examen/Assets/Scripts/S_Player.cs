@@ -18,8 +18,6 @@ public class S_Player : MonoBehaviour
     }
 
     public void TakeDamage(float dmg) {
-
-
         if (armor > 0) {
             armor -= dmg;
             if (armor < 0) {
@@ -54,7 +52,4 @@ public class S_Player : MonoBehaviour
 
         }
     }
-
-
-
 }
