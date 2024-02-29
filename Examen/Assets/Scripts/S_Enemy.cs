@@ -26,11 +26,6 @@ public class S_Enemy : MonoBehaviour
 
     void Update()
     {
-        RaycastHit hit;
-        if (Physics.Raycast(transform.position,transform.forward,out hit, waitRange))
-        {
-            Debug.DrawRay(transform.position, transform.forward, Color.yellow,waitRange);
-        }
         ChasePlayer();
     }
 
@@ -53,10 +48,10 @@ public class S_Enemy : MonoBehaviour
         enemyAgent.destination = target.position;
     }
 
-    public void OnTakeDamage(float damage)
+    public void TakeDamage(float dmg)
     {
-        health -= damage;
-        if(health <= 0)
+        health -= dmg;
+        if (health <= 0)
         {
             OnDeath();
         }
@@ -65,8 +60,9 @@ public class S_Enemy : MonoBehaviour
     public void Attack()
     {
         Debug.Log("attack");
-        //GameObject bullet = Instantiate(bulletPrefab, transform.position, transform.rotation);
-        //bullet.GetComponent<Rigidbody>().AddForce(bullet.transform.forward * bulletSpeed);
+        GameObject bullet = Instantiate(bulletPrefab, transform.position, transform.rotation);
+        bullet.GetComponent<Rigidbody>().AddForce(bullet.transform.forward * bulletSpeed);
+
     }
 
     public void OnDeath()
