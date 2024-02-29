@@ -6,12 +6,13 @@ using UnityEngine.AI;
 public class S_Enemy : MonoBehaviour
 {
     private float moveSpeed;
-    [SerializeField]
     public float health;
     [SerializeField]
     private float damage;
     [SerializeField]
-    private float range;
+    private float meleeRange;
+    [SerializeField]
+    private float stopRange;
     [SerializeField]
     NavMeshAgent enemyAgent;
     public Transform target;
@@ -19,12 +20,17 @@ public class S_Enemy : MonoBehaviour
     private GameObject bulletPrefab;
     [SerializeField]
     private float fireCountDown;
+    [SerializeField]
+    private bool melee;
 
     void Start()
     {
         enemyAgent = GetComponent<NavMeshAgent>();
         enemyAgent.destination = target.position;
-        range = Random.Range(4, 8);
+        if (!melee)
+        {
+            stopRange = Random.Range(4, 9);
+        }
     }
 
     void Update()
@@ -34,32 +40,31 @@ public class S_Enemy : MonoBehaviour
 
     public void ChasePlayer()
     {
+        //enemy Rotation
         transform.LookAt(target.transform);
         Vector3 eulerAngles = transform.eulerAngles;
         transform.eulerAngles = new Vector3(0f, eulerAngles.y, eulerAngles.z);
+
         RaycastHit hit;
-        if (Physics.Raycast(transform.position, transform.forward, out hit, 100f))
+        if (Physics.Raycast(transform.position, transform.forward, out hit, meleeRange))
         {
-            /*if(hit.collider.name == "EnemyTest")
-            {
-                
-            }*/
             if (hit.collider.name == "Player")
             {
                 Debug.DrawRay(transform.position, transform.forward * hit.distance, Color.yellow);
-                float fireRate = 1f;
+
+                float fireRate = 1;
                 enemyAgent.isStopped = true;
                 if (fireCountDown <= 0f)
                 {
                     Attack();
-                    fireCountDown = 2f / fireRate;
+                    fireCountDown = 2 / fireRate;
                 }
                 fireCountDown -= Time.deltaTime;
             }
         }
 
         float rangeFromPlayer = Vector3.Distance(transform.position, target.position);
-        if (rangeFromPlayer <= range)
+        if (rangeFromPlayer <= stopRange)
         {
             RaycastHit hit1;
             if (Physics.Raycast(transform.position, transform.forward, out hit1, 100f))
@@ -68,8 +73,8 @@ public class S_Enemy : MonoBehaviour
                 {
                     //range = 3f;
                     enemyAgent.isStopped = false;
-                    Debug.DrawRay(transform.position, transform.forward * hit1.distance, Color.yellow);
-                    Debug.Log("Did not see player");
+                    Debug.DrawRay(transform.position, transform.forward * hit1.distance, Color.red);
+                    //Debug.Log("Can not see player");
                 }
             }
         }
@@ -91,10 +96,24 @@ public class S_Enemy : MonoBehaviour
 
     public void Attack()
     {
-        Debug.Log("attack");
-        GameObject bullet = Instantiate(bulletPrefab, transform.GetChild(2).position, transform.rotation);
-        bullet.GetComponent<Rigidbody>().AddForce(bullet.transform.forward * 700f);
-        Destroy(bullet, 3f);
+        if (!melee)
+        {
+            GameObject bullet = Instantiate(bulletPrefab, transform.GetChild(2).position, transform.rotation);
+            bullet.GetComponent<Rigidbody>().AddForce(bullet.transform.forward * 700f);
+            Destroy(bullet, 3f);
+        }
+        else
+        {
+            Collider[] hitColliders = Physics.OverlapSphere(transform.GetChild(2).position,1f);
+            foreach (var hitCollider in hitColliders)
+            {
+                if (hitCollider.name == "Player")
+                {
+                    Debug.Log(hitCollider.name);
+                    //hitCollider.GetComponent<Player>().OntakeDamage(damage);
+                }
+            }
+        }
     }
 
     public void OnDeath()
