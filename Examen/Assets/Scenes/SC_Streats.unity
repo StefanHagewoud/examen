@@ -336,40 +336,30 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4176686595389950768, guid: 7d09bd0b35c5a8f4ba675f48691f6bf4,
+    - target: {fileID: 2795737491495140451, guid: 7d09bd0b35c5a8f4ba675f48691f6bf4,
         type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
-      value: 1
+      propertyPath: m_AnchorMax.x
+      value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4176686595389950768, guid: 7d09bd0b35c5a8f4ba675f48691f6bf4,
+    - target: {fileID: 2795737491495140451, guid: 7d09bd0b35c5a8f4ba675f48691f6bf4,
         type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
-      value: 1
+      propertyPath: m_AnchorMax.y
+      value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4176686595389950768, guid: 7d09bd0b35c5a8f4ba675f48691f6bf4,
+    - target: {fileID: 4340162322663777294, guid: 7d09bd0b35c5a8f4ba675f48691f6bf4,
         type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 1524007227}
-    - target: {fileID: 4176686595389950768, guid: 7d09bd0b35c5a8f4ba675f48691f6bf4,
-        type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
-      value: 2
+      propertyPath: m_AnchorMax.x
+      value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4176686595389950768, guid: 7d09bd0b35c5a8f4ba675f48691f6bf4,
+    - target: {fileID: 4340162322663777294, guid: 7d09bd0b35c5a8f4ba675f48691f6bf4,
         type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: GameStart
+      propertyPath: m_AnchorMax.y
+      value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4176686595389950768, guid: 7d09bd0b35c5a8f4ba675f48691f6bf4,
+    - target: {fileID: 4340162322663777294, guid: 7d09bd0b35c5a8f4ba675f48691f6bf4,
         type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: S_Game_Start, Assembly-CSharp
-      objectReference: {fileID: 0}
-    - target: {fileID: 4176686595389950768, guid: 7d09bd0b35c5a8f4ba675f48691f6bf4,
-        type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: UnityEngine.Object, UnityEngine
+      propertyPath: m_AnchorMin.x
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4656693210089680838, guid: 7d09bd0b35c5a8f4ba675f48691f6bf4,
         type: 3}
@@ -379,11 +369,7 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 739656266448964213, guid: 7d09bd0b35c5a8f4ba675f48691f6bf4,
-        type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1524007227}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7d09bd0b35c5a8f4ba675f48691f6bf4, type: 3}
 --- !u!1 &552472006
 GameObject:
@@ -1272,31 +1258,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1267126555}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!1 &1524007224 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 739656266448964213, guid: 7d09bd0b35c5a8f4ba675f48691f6bf4,
-    type: 3}
-  m_PrefabInstance: {fileID: 521651998}
-  m_PrefabAsset: {fileID: 0}
---- !u!95 &1524007225 stripped
-Animator:
-  m_CorrespondingSourceObject: {fileID: 3247730571530739771, guid: 7d09bd0b35c5a8f4ba675f48691f6bf4,
-    type: 3}
-  m_PrefabInstance: {fileID: 521651998}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1524007227
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1524007224}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: be729cb9c12b47c4d9ae3106a79a09c0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  mainMenu: {fileID: 1524007225}
 --- !u!1 &1921126950
 GameObject:
   m_ObjectHideFlags: 0
