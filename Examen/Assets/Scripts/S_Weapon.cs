@@ -15,7 +15,6 @@ public class S_Weapon : MonoBehaviour
     void Start()
     {
         magAmmo = maxMagAmmo; // Initialize ammo in magazine
-        
     }
 
     // Update is called once per frame
@@ -35,7 +34,7 @@ public class S_Weapon : MonoBehaviour
         if (magAmmo > 0) {
             RaycastHit hitInfo;
             if (Physics.Raycast(transform.parent.parent.position, transform.forward, out hitInfo, range)) {
-                hitInfo.transform.GetComponent<S_Enemy>().OnTakeDamage();
+                hitInfo.transform.GetComponent<S_Enemy>().TakeDamage(dmg);
             }
             magAmmo--;
         } else {
