@@ -61,7 +61,22 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 870442f196c93b343987e57b0d9ff92e,
         type: 3}
       propertyPath: m_Name
-      value: SM_Politie
+      value: PR_Politie
+      objectReference: {fileID: 0}
+    - target: {fileID: 1921848501837227077, guid: 870442f196c93b343987e57b0d9ff92e,
+        type: 3}
+      propertyPath: m_Name
+      value: SM_Character
+      objectReference: {fileID: 0}
+    - target: {fileID: 2551401325962117053, guid: 870442f196c93b343987e57b0d9ff92e,
+        type: 3}
+      propertyPath: m_Name
+      value: SM_Tas
+      objectReference: {fileID: 0}
+    - target: {fileID: 7210137677158313874, guid: 870442f196c93b343987e57b0d9ff92e,
+        type: 3}
+      propertyPath: m_Name
+      value: SM_Hoed
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
