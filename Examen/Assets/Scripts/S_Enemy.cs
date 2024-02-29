@@ -48,9 +48,10 @@ public class S_Enemy : MonoBehaviour
         enemyAgent.destination = target.position;
     }
 
-    public void OnTakeDamage(float damage)
+    public void TakeDamage(float dmg)
     {
-        if(health <= 0)
+        health -= dmg;
+        if (health <= 0)
         {
             OnDeath();
         }
