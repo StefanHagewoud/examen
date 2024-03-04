@@ -116,13 +116,22 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""ToDelete"",
+                    ""type"": ""Button"",
+                    ""id"": ""4d980284-4a3e-49ab-9f7e-879a2dbfe192"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
                 {
-                    ""name"": ""2D Vector"",
-                    ""id"": ""8341ef88-36c7-4cec-a7dd-72061af982e3"",
-                    ""path"": ""2DVector"",
+                    ""name"": ""2D Controller D-Pad"",
+                    ""id"": ""c4d239d3-d418-4296-a150-3a8b51bb805d"",
+                    ""path"": ""2DVector(mode=2)"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
@@ -132,8 +141,8 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
                 },
                 {
                     ""name"": ""up"",
-                    ""id"": ""8f0fe47f-5a2f-439e-9f2a-e3a6ca5f39fa"",
-                    ""path"": ""<Keyboard>/w"",
+                    ""id"": ""27ac3775-47bb-4067-9ac6-f799d075d17b"",
+                    ""path"": ""<Gamepad>/dpad/up"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
@@ -143,8 +152,8 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
                 },
                 {
                     ""name"": ""down"",
-                    ""id"": ""31dec3c7-2adf-4acb-bbc1-771725778869"",
-                    ""path"": ""<Keyboard>/s"",
+                    ""id"": ""bcec9746-fb22-41f2-b148-fa83905182cb"",
+                    ""path"": ""<Gamepad>/dpad/down"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
@@ -154,8 +163,8 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
                 },
                 {
                     ""name"": ""left"",
-                    ""id"": ""1bc4fce2-8a3b-402c-b30c-2b60ee89f355"",
-                    ""path"": ""<Keyboard>/a"",
+                    ""id"": ""1a8f4b3f-0ae2-4af3-98f9-99794b071f9f"",
+                    ""path"": ""<Gamepad>/dpad/left"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
@@ -165,8 +174,8 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
                 },
                 {
                     ""name"": ""right"",
-                    ""id"": ""c39de1d0-da29-4757-8e35-d7618c9f23c1"",
-                    ""path"": ""<Keyboard>/d"",
+                    ""id"": ""25ea17f4-b378-4932-9759-7daee633dc83"",
+                    ""path"": ""<Gamepad>/dpad/right"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
@@ -195,171 +204,6 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
                     ""action"": ""Roll"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": ""2D Controller Joystick"",
-                    ""id"": ""9ce44d13-d2bb-4fcb-915d-b9a0049c0892"",
-                    ""path"": ""2DVector"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""Aim"",
-                    ""isComposite"": true,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": ""2D Controller D-Pad"",
-                    ""id"": ""c4d239d3-d418-4296-a150-3a8b51bb805d"",
-                    ""path"": ""2DVector"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""Aim"",
-                    ""isComposite"": true,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": ""up"",
-                    ""id"": ""27ac3775-47bb-4067-9ac6-f799d075d17b"",
-                    ""path"": ""<Gamepad>/dpad/up"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""Aim"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": true
-                },
-                {
-                    ""name"": ""down"",
-                    ""id"": ""bcec9746-fb22-41f2-b148-fa83905182cb"",
-                    ""path"": ""<Gamepad>/dpad/down"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""Aim"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": true
-                },
-                {
-                    ""name"": ""left"",
-                    ""id"": ""1a8f4b3f-0ae2-4af3-98f9-99794b071f9f"",
-                    ""path"": ""<Gamepad>/dpad/left"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""Aim"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": true
-                },
-                {
-                    ""name"": ""right"",
-                    ""id"": ""25ea17f4-b378-4932-9759-7daee633dc83"",
-                    ""path"": ""<Gamepad>/dpad/right"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""Aim"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": true
-                },
-                {
-                    ""name"": ""Up"",
-                    ""id"": ""d08caca6-5860-41f2-b75b-3fe3da502189"",
-                    ""path"": ""<Gamepad>/rightStick/up"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""Aim"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": true
-                },
-                {
-                    ""name"": ""Down"",
-                    ""id"": ""2ab9a1f6-a83d-49a1-9032-cb8cdbb8f443"",
-                    ""path"": ""<Gamepad>/rightStick/down"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""Aim"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": true
-                },
-                {
-                    ""name"": ""Left"",
-                    ""id"": ""3ae88316-839b-4733-8295-8b5b6dc1ac5b"",
-                    ""path"": ""<Gamepad>/rightStick/left"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""Aim"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": true
-                },
-                {
-                    ""name"": ""Right"",
-                    ""id"": ""fe4dabf8-9613-4b22-bdaf-fa18ee5e97b9"",
-                    ""path"": ""<Gamepad>/rightStick/right"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""Aim"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": true
-                },
-                {
-                    ""name"": ""2D PC"",
-                    ""id"": ""12a80e69-b6ab-4e79-a912-812ec8702fe9"",
-                    ""path"": ""2DVector"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""Aim"",
-                    ""isComposite"": true,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": ""Up"",
-                    ""id"": ""659b7ad0-2629-4969-895e-4db98d9a95b3"",
-                    ""path"": ""<Pointer>/delta/up"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""Aim"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": true
-                },
-                {
-                    ""name"": ""Down"",
-                    ""id"": ""ea753a71-3fd1-43dc-97f6-f12cc75c98f1"",
-                    ""path"": ""<Pointer>/delta/down"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""Aim"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": true
-                },
-                {
-                    ""name"": ""Left"",
-                    ""id"": ""7828afb5-08c3-43ac-9ebc-4978b9f2fe0d"",
-                    ""path"": ""<Pointer>/delta/left"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""Aim"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": true
-                },
-                {
-                    ""name"": ""Right"",
-                    ""id"": ""aea52bc7-69ad-4936-b0f6-6a776f239199"",
-                    ""path"": ""<Pointer>/delta/right"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""Aim"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": true
                 },
                 {
                     ""name"": """",
@@ -441,7 +285,7 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
                 {
                     ""name"": ""2D Controller"",
                     ""id"": ""fb928d16-cdf3-43f6-9f6c-516f8bf1dcfb"",
-                    ""path"": ""2DVector"",
+                    ""path"": ""2DVector(mode=2)"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
@@ -492,6 +336,127 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
                     ""action"": ""Move"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""2D PC"",
+                    ""id"": ""12a80e69-b6ab-4e79-a912-812ec8702fe9"",
+                    ""path"": ""2DVector"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""ToDelete"",
+                    ""isComposite"": true,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""Up"",
+                    ""id"": ""659b7ad0-2629-4969-895e-4db98d9a95b3"",
+                    ""path"": ""<Pointer>/delta/up"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""ToDelete"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""Down"",
+                    ""id"": ""ea753a71-3fd1-43dc-97f6-f12cc75c98f1"",
+                    ""path"": ""<Pointer>/delta/down"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""ToDelete"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""Left"",
+                    ""id"": ""7828afb5-08c3-43ac-9ebc-4978b9f2fe0d"",
+                    ""path"": ""<Pointer>/delta/left"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""ToDelete"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""Right"",
+                    ""id"": ""aea52bc7-69ad-4936-b0f6-6a776f239199"",
+                    ""path"": ""<Pointer>/delta/right"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""ToDelete"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""2D Controller Joystick"",
+                    ""id"": ""de20ccb5-b38e-4818-8a3e-faceed66a5ee"",
+                    ""path"": ""2DVector(mode=2)"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""ToDelete"",
+                    ""isComposite"": true,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""Up"",
+                    ""id"": ""05da2f27-0750-4ca2-8665-9dcd18d58309"",
+                    ""path"": ""<Gamepad>/rightStick/up"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""ToDelete"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""Down"",
+                    ""id"": ""306a5154-fb78-4161-8881-5d5a99c4b190"",
+                    ""path"": ""<Gamepad>/rightStick/down"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""ToDelete"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""Left"",
+                    ""id"": ""2d78e82b-f0b4-4458-aa1c-d6bc50c6b06f"",
+                    ""path"": ""<Gamepad>/rightStick/left"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""ToDelete"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""Right"",
+                    ""id"": ""af7ac43a-fcb4-40a7-9be1-06da74556d67"",
+                    ""path"": ""<Gamepad>/rightStick/right"",
+                    ""interactions"": """",
+                    ""processors"": ""AxisDeadzone"",
+                    ""groups"": """",
+                    ""action"": ""ToDelete"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""8f5b2113-8a84-41ea-ae80-6cccc95a05a8"",
+                    ""path"": ""<Gamepad>/rightStick"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Aim"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -510,6 +475,7 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
         m_Player_LeftWeapon = m_Player.FindAction("LeftWeapon", throwIfNotFound: true);
         m_Player_SettingsMenu = m_Player.FindAction("SettingsMenu", throwIfNotFound: true);
         m_Player_Fire = m_Player.FindAction("Fire", throwIfNotFound: true);
+        m_Player_ToDelete = m_Player.FindAction("ToDelete", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -581,6 +547,7 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
     private readonly InputAction m_Player_LeftWeapon;
     private readonly InputAction m_Player_SettingsMenu;
     private readonly InputAction m_Player_Fire;
+    private readonly InputAction m_Player_ToDelete;
     public struct PlayerActions
     {
         private @PlayerInput m_Wrapper;
@@ -595,6 +562,7 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
         public InputAction @LeftWeapon => m_Wrapper.m_Player_LeftWeapon;
         public InputAction @SettingsMenu => m_Wrapper.m_Player_SettingsMenu;
         public InputAction @Fire => m_Wrapper.m_Player_Fire;
+        public InputAction @ToDelete => m_Wrapper.m_Player_ToDelete;
         public InputActionMap Get() { return m_Wrapper.m_Player; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -634,6 +602,9 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
             @Fire.started += instance.OnFire;
             @Fire.performed += instance.OnFire;
             @Fire.canceled += instance.OnFire;
+            @ToDelete.started += instance.OnToDelete;
+            @ToDelete.performed += instance.OnToDelete;
+            @ToDelete.canceled += instance.OnToDelete;
         }
 
         private void UnregisterCallbacks(IPlayerActions instance)
@@ -668,6 +639,9 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
             @Fire.started -= instance.OnFire;
             @Fire.performed -= instance.OnFire;
             @Fire.canceled -= instance.OnFire;
+            @ToDelete.started -= instance.OnToDelete;
+            @ToDelete.performed -= instance.OnToDelete;
+            @ToDelete.canceled -= instance.OnToDelete;
         }
 
         public void RemoveCallbacks(IPlayerActions instance)
@@ -697,5 +671,6 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
         void OnLeftWeapon(InputAction.CallbackContext context);
         void OnSettingsMenu(InputAction.CallbackContext context);
         void OnFire(InputAction.CallbackContext context);
+        void OnToDelete(InputAction.CallbackContext context);
     }
 }

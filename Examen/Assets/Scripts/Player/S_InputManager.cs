@@ -23,9 +23,13 @@ public class S_InputManager : MonoBehaviour
     [Header("Debug")]
     public bool allowDebug;
 
+    [Header("Scripts")]
+    public S_PlayerMovement playerMovementScript;
+
     public void OnMove(InputAction.CallbackContext value)
     {
-        moveVector = value.ReadValue<Vector2>();
+        playerMovementScript.movementInput = value.ReadValue<Vector2>();
+
         if (value.performed)
         {
             if (allowDebug)
@@ -46,6 +50,7 @@ public class S_InputManager : MonoBehaviour
         rollInput = (int)value.ReadValue<float>();
         if (value.performed)
         {
+            StartCoroutine(playerMovementScript.ActivateRollCountdown());
             if (allowDebug)
             {
                 print(value.ReadValue<float>() + "Performed, rollInput");
@@ -62,6 +67,7 @@ public class S_InputManager : MonoBehaviour
     public void OnAim(InputAction.CallbackContext value)
     {
         aimVector = value.ReadValue<Vector2>();
+        playerMovementScript.aimDirection = aimVector;
         if (value.performed)
         {
             if (allowDebug)
@@ -204,14 +210,4 @@ public class S_InputManager : MonoBehaviour
         }
     }
 
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }
