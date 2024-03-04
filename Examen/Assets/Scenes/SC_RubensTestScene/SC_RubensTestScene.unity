@@ -683,6 +683,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bafb33deb3ef979429c13474919283fb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  timesCanActivate: -1
+  disableWhenMaxActivated: 1
   tagToLookFor: 
   OnTriggered:
     m_PersistentCalls:
