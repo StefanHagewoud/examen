@@ -7,6 +7,7 @@ public class S_DialogeManager : MonoBehaviour
 {
     public List<GameObject> dialoges;
     public UnityEvent onDialogeCompleted;
+    public Animator animationCutscene;//Add Diagram
 
     [Header("Debug")]
     public bool dialogeEnabled;
@@ -21,6 +22,8 @@ public class S_DialogeManager : MonoBehaviour
             return;
         }
         dialogeEnabled = true;
+        animationCutscene.SetBool("CutScene", false);
+
         SkipNextDialoge();
     }
     public void SkipNextDialoge()
@@ -60,6 +63,7 @@ public class S_DialogeManager : MonoBehaviour
     public void EndDialoge()
     {
         dialogeEnabled = false;
+        animationCutscene.SetBool("CutScene",true);
         dialoges[dialoges.Count -1].SetActive(false);
         crDialoge = 0;
 
