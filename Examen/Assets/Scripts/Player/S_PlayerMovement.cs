@@ -9,6 +9,7 @@ public class S_PlayerMovement : MonoBehaviour
     public Transform playerTransform;
     public Transform cameraTransformRotation;
     public float walkMovementMultiplier = 1;
+    public bool allowAnyMovement;
 
     [Header("Roll")]
     public float rollMovementMultiplier = 1;
@@ -28,6 +29,11 @@ public class S_PlayerMovement : MonoBehaviour
 
     private void FixedUpdate()
     {
+        if (!allowAnyMovement)
+        {
+            return;
+        }
+
         if (!isRolling)// While player is not rolling he can rotate
         {
             playerTransform.Translate(new Vector3(movementInput.x, 0, movementInput.y) * walkMovementMultiplier * Time.fixedDeltaTime, cameraTransformRotation);
@@ -52,7 +58,7 @@ public class S_PlayerMovement : MonoBehaviour
 
     public IEnumerator ActivateRollCountdown()
     {
-        if (isRolling || !allowUsingRoll)
+        if (isRolling || !allowUsingRoll || !allowAnyMovement)
         {
             print("Already activated roll!");
         }
