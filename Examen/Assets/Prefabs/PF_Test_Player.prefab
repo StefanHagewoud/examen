@@ -249,7 +249,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   allowDebug: 1
-  dialogeManager: {fileID: 5193168404696023241}
+  dialogeManager: {fileID: 0}
   playerMovementScript: {fileID: 6085631219541782373}
 --- !u!114 &6085631219541782373
 MonoBehaviour:
@@ -575,7 +575,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2548906170510331201}
-  - component: {fileID: 5193168404696023241}
   m_Layer: 0
   m_Name: DialogeManager
   m_TagString: Untagged
@@ -598,27 +597,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 2511343718522993390}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &5193168404696023241
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4199387390998467406}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 85a5b69f2a7c72542a1d9e0f5164bd7e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  dialoges:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  onDialogeCompleted:
-    m_PersistentCalls:
-      m_Calls: []
-  dialogeEnabled: 1
-  allowDebug: 0
 --- !u!1 &7413165616649751560
 GameObject:
   m_ObjectHideFlags: 0
