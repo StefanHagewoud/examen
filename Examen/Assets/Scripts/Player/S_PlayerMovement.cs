@@ -28,7 +28,7 @@ public class S_PlayerMovement : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if (!isRolling)
+        if (!isRolling)// While player is not rolling he can rotate
         {
             playerTransform.Translate(new Vector3(movementInput.x, 0, movementInput.y) * walkMovementMultiplier * Time.fixedDeltaTime, cameraTransformRotation);
             
@@ -43,7 +43,7 @@ public class S_PlayerMovement : MonoBehaviour
                 }
             }
         }
-        else
+        else// player is rolling
         {
             playerTransform.Translate(new Vector3(rollDirection.x, 0, rollDirection.y) * rollMovementMultiplier * Time.fixedDeltaTime, cameraTransformRotation);
         } 
@@ -69,8 +69,6 @@ public class S_PlayerMovement : MonoBehaviour
             yield return new WaitForSeconds(rechargeRollTime - rollTime);
             allowUsingRoll = true;
         }
-        
-
         yield return null;
     }
 }
