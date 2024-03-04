@@ -109,7 +109,8 @@ public class S_Enemy : MonoBehaviour
         else
         {
             GameObject bullet = Instantiate(bulletPrefab, transform.GetChild(2).position, transform.rotation);
-            bullet.GetComponent<Rigidbody>().AddForce(bullet.transform.forward * 700f);
+            bullet.GetComponent<S_Bullet>().damage = damage;
+            bullet.GetComponent<Rigidbody>().AddForce(bullet.transform.forward * 600f);
             Destroy(bullet, 3f);
         }
     }
