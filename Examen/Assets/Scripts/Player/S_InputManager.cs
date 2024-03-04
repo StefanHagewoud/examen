@@ -24,6 +24,7 @@ public class S_InputManager : MonoBehaviour
     public bool allowDebug;
 
     [Header("Scripts")]
+    public S_DialogeManager dialogeManager;
     public S_PlayerMovement playerMovementScript;
 
     public void OnMove(InputAction.CallbackContext value)
@@ -88,6 +89,7 @@ public class S_InputManager : MonoBehaviour
         interactInput = (int)value.ReadValue<float>();
         if (value.performed)
         {
+            dialogeManager.SkipNextDialoge();
             if (allowDebug)
             {
                 print(value.ReadValue<float>() + "Performed, interactInput");
