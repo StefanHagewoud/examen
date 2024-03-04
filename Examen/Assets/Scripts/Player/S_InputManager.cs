@@ -9,6 +9,7 @@ using UnityEngine.UI;
 
 public class S_InputManager : MonoBehaviour
 {
+    public S_PickupManager pickupManager;
     private Vector2 moveVector;
     private Vector2 aimVector;
     private int meleeInput;
@@ -18,7 +19,8 @@ public class S_InputManager : MonoBehaviour
     private int leftWeaponInput;
     private int settingsMenuInput;
     private int weaponDropInput;//Staat niet in de code diagram
-    private int shootInput;
+    private bool shootInput;
+    private float nextFireTime;
 
     [Header("Debug")]
     public bool allowDebug;
@@ -195,9 +197,9 @@ public class S_InputManager : MonoBehaviour
     }
     public void OnFire(InputAction.CallbackContext value)
     {
-        shootInput = (int)value.ReadValue<float>();
         if (value.performed)// hoger dan 0.5 indrukken
         {
+            shootInput = true;
             if (allowDebug)
             {
                 print(value.ReadValue<float>() + "Performed, shootInput");
@@ -205,6 +207,7 @@ public class S_InputManager : MonoBehaviour
         }
         if (value.canceled)
         {
+            shootInput = false;
             if (allowDebug)
             {
                 print(value.ReadValue<float>() + "Canceled, shootInput");
@@ -212,4 +215,18 @@ public class S_InputManager : MonoBehaviour
         }
     }
 
+    void Start()
+    {
+        
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        if (shootInput == true && Time.time >= nextFireTime) {
+            S_Weapon currentGunInfo = pickupManager.gunHolderPrimary.GetComponentInChildren<S_Weapon>();
+            nextFireTime = Time.time + 1f / currentGunInfo.fireRate;
+            currentGunInfo.Shoot();
+        }
+    }
 }

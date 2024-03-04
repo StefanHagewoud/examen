@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class S_PickupManager : MonoBehaviour
 {
+    public GameObject gunHolderPrimary;
+    public GameObject gunHolderSecondary;
     public S_Player playerScript;
     public bool enableCollision = true;
     public bool enableTrigger;
