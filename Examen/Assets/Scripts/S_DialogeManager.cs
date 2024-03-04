@@ -13,8 +13,12 @@ public class S_DialogeManager : MonoBehaviour
     [Header("Debug")]
     public bool dialogeEnabled;
     public bool allowDebug;//Add Diagram
+    public bool disablePlayerMovement;//Add Diagram
     private int crDialoge;
     private int crDialogeFrame;
+
+    [Header("Scripts")]
+    public S_PlayerMovement playerMovementScript;//Add Diagram
 
     [Serializable]
     public class Dialoge 
@@ -28,8 +32,6 @@ public class S_DialogeManager : MonoBehaviour
         }
     }
 
-    
-
     public void StartDialoge(int dialogeNumber)
     {
         if (dialogeEnabled)
@@ -37,12 +39,14 @@ public class S_DialogeManager : MonoBehaviour
             Debug.LogWarning("Dialoge has already started!", this);
             return;
         }
-        crDialoge = dialogeNumber;
-        dialogeEnabled = true;
         if (!animationCutscene)
         {
             Debug.LogWarning("Variable animationCutscene is not attached to the script!", this);
         }
+
+        crDialoge = dialogeNumber;
+        dialogeEnabled = true;
+        playerMovementScript.allowAnyMovement = false;
         animationCutscene.SetBool("Cutscene", true);//Elke dialoge begint met een animatie.
 
         SkipNextDialoge();
@@ -102,7 +106,7 @@ public class S_DialogeManager : MonoBehaviour
             print("DialogeFrames done on: " + crDialogeFrame);
         }
         crDialogeFrame = 0;
-
+        playerMovementScript.allowAnyMovement = true;
         onDialogeCompleted.Invoke();
     }
         
