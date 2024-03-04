@@ -5,7 +5,6 @@ using UnityEngine.AI;
 
 public class S_Enemy : MonoBehaviour
 {
-    [SerializeField]
     private float moveSpeed;
     public float health;
     [SerializeField]
@@ -26,12 +25,12 @@ public class S_Enemy : MonoBehaviour
 
     void Start()
     {
-        target = GameObject.Find("Player").transform;
+        target = GameObject.FindGameObjectWithTag("Player").transform;
         enemyAgent = GetComponent<NavMeshAgent>();
         enemyAgent.destination = target.position;
         if (!melee)
         {
-            stopRange = Random.Range(4, 9);
+            stopRange = Random.Range(4, 10);
         }
     }
 
@@ -45,14 +44,14 @@ public class S_Enemy : MonoBehaviour
         if(target != null)
         {
             //enemy Rotation
-
+            transform.LookAt(target.transform);
             Vector3 eulerAngles = transform.eulerAngles;
             transform.eulerAngles = new Vector3(0f, eulerAngles.y, eulerAngles.z);
 
             RaycastHit hit;
             if (Physics.Raycast(transform.position, transform.forward, out hit, meleeRange))
             {
-                if (hit.collider.name == "Player")
+                if (hit.collider.transform.root.tag == "Player")
                 {
                     Debug.DrawRay(transform.position, transform.forward * hit.distance, Color.yellow);
 
@@ -72,7 +71,7 @@ public class S_Enemy : MonoBehaviour
                 RaycastHit hit1;
                 if (Physics.Raycast(transform.position, transform.forward, out hit1, 100f))
                 {
-                    if (hit.collider.name != "Player")
+                    if (hit.collider.transform.root.tag != "Player")
                     {
                         enemyAgent.isStopped = false;
                         Debug.DrawRay(transform.position, transform.forward * hit1.distance, Color.red);
@@ -85,7 +84,6 @@ public class S_Enemy : MonoBehaviour
                 enemyAgent.isStopped = false;
             }
             enemyAgent.destination = target.position;
-
         }
         else
         {
@@ -117,10 +115,10 @@ public class S_Enemy : MonoBehaviour
     }
     public void Melee(float damage)
     {
-        Collider[] hitColliders = Physics.OverlapSphere(transform.GetChild(2).position, 5f);
+        Collider[] hitColliders = Physics.OverlapSphere(transform.GetChild(2).position, 3f);
         foreach (var hitCollider in hitColliders)
         {
-            if (hitCollider.name == "Player")
+            if (hitCollider.transform.tag == "Player")
             {
                 Debug.Log("MeleeAttack");
                 //hitCollider.GetComponent<Player>().OntakeDamage(damage);

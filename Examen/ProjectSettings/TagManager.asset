@@ -8,6 +8,7 @@ TagManager:
   - Med-Kit
   - Armor
   - Weapon
+  - Enemy
   layers:
   - Default
   - TransparentFX
