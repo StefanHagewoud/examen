@@ -199,22 +199,27 @@ PrefabInstance:
     - target: {fileID: 3329670228900992809, guid: 484406fb3207f4e4f8289672d1d48914,
         type: 3}
       propertyPath: stopRange
-      value: 1
+      value: 1.4
       objectReference: {fileID: 0}
     - target: {fileID: 3329670228900992809, guid: 484406fb3207f4e4f8289672d1d48914,
         type: 3}
       propertyPath: meleeRange
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3329670228900992809, guid: 484406fb3207f4e4f8289672d1d48914,
+        type: 3}
+      propertyPath: attackdelay
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3329670228900992809, guid: 484406fb3207f4e4f8289672d1d48914,
         type: 3}
       propertyPath: fireCountDown
-      value: 0.5
+      value: 0.1
       objectReference: {fileID: 0}
     - target: {fileID: 6183118907095724612, guid: 484406fb3207f4e4f8289672d1d48914,
         type: 3}
       propertyPath: m_Name
-      value: Enemy (4)
+      value: MeleeEnemy
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -619,6 +624,11 @@ PrefabInstance:
       propertyPath: meleeRange
       value: 100
       objectReference: {fileID: 0}
+    - target: {fileID: 3329670228900992809, guid: 484406fb3207f4e4f8289672d1d48914,
+        type: 3}
+      propertyPath: attackdelay
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 6183118907095724612, guid: 484406fb3207f4e4f8289672d1d48914,
         type: 3}
       propertyPath: m_Name
@@ -834,6 +844,11 @@ PrefabInstance:
       propertyPath: meleeRange
       value: 100
       objectReference: {fileID: 0}
+    - target: {fileID: 3329670228900992809, guid: 484406fb3207f4e4f8289672d1d48914,
+        type: 3}
+      propertyPath: attackdelay
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 6183118907095724612, guid: 484406fb3207f4e4f8289672d1d48914,
         type: 3}
       propertyPath: m_Name
@@ -842,7 +857,7 @@ PrefabInstance:
     - target: {fileID: 6183118907095724612, guid: 484406fb3207f4e4f8289672d1d48914,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -917,6 +932,11 @@ PrefabInstance:
       propertyPath: meleeRange
       value: 100
       objectReference: {fileID: 0}
+    - target: {fileID: 3329670228900992809, guid: 484406fb3207f4e4f8289672d1d48914,
+        type: 3}
+      propertyPath: attackdelay
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 6183118907095724612, guid: 484406fb3207f4e4f8289672d1d48914,
         type: 3}
       propertyPath: m_Name
@@ -925,7 +945,7 @@ PrefabInstance:
     - target: {fileID: 6183118907095724612, guid: 484406fb3207f4e4f8289672d1d48914,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
