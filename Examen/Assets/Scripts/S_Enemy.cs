@@ -71,11 +71,14 @@ public class S_Enemy : MonoBehaviour
                 RaycastHit hit1;
                 if (Physics.Raycast(transform.position, transform.forward, out hit1, 100f))
                 {
-                    if (hit.collider.transform.root.tag != "Player")
+                    if(hit.collider != null)
                     {
-                        enemyAgent.isStopped = false;
-                        Debug.DrawRay(transform.position, transform.forward * hit1.distance, Color.red);
-                        //Debug.Log("Can not see player");
+                        if (hit.collider.transform.root.tag != "Player")
+                        {
+                            enemyAgent.isStopped = false;
+                            Debug.DrawRay(transform.position, transform.forward * hit1.distance, Color.red);
+                            //Debug.Log("Can not see player");
+                        }
                     }
                 }
             }
@@ -122,7 +125,7 @@ public class S_Enemy : MonoBehaviour
             if (hitCollider.transform.tag == "Player")
             {
                 Debug.Log("MeleeAttack");
-                //hitCollider.GetComponent<Player>().OntakeDamage(damage);
+                hitCollider.GetComponent<S_Player>().TakeDamage(damage);
             }
         }
     }
