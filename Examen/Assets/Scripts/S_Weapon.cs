@@ -4,15 +4,16 @@ using UnityEngine;
 
 public class S_Weapon : MonoBehaviour
 {
-    [SerializeField] private int maxMagAmmo;
-    [SerializeField] private int magAmmo;
+    public S_UiManager uiManager;
+    [SerializeField] public int maxMagAmmo;
+    [SerializeField] public int magAmmo;
     [SerializeField] private bool infAmmo;
-    public int fireRate;
-    [SerializeField] private int reloadTime;
+    public float fireRate;
+    [SerializeField] private float reloadTime;
     private float nextFireTime;
     [SerializeField] private float range;
     public float dmg;
-    public GameObject rocket;
+    private GameObject rocket;
     public GameObject rocketPrefab;
     private bool firedRocket;
     private bool rocketExploding;
@@ -55,7 +56,7 @@ public class S_Weapon : MonoBehaviour
                     foreach (Collider hit in hits) {
                         Debug.Log(hit.name + " hit by explosion");
                         if (hit.TryGetComponent<Rigidbody>(out Rigidbody hitRB)) {
-                            hitRB.AddExplosionForce(100, rocket.transform.position, 10);
+                            hitRB.AddExplosionForce(1000, rocket.transform.position, 10);
                             // force, position, radius
                         }
                         if (hit.GetComponent<S_Enemy>()) {
@@ -77,22 +78,26 @@ public class S_Weapon : MonoBehaviour
         }
     }
     public void Shoot() {
-        if (magAmmo > 0) {
+        if (magAmmo > 0 || infAmmo) {
             magAmmo--;
             RaycastHit hitInfo;
             if (transform.tag == "RPG") {
                 rocket = Instantiate(rocketPrefab, transform.position, transform.rotation);
                 firedRocket = true;
             } else if (Physics.Raycast(transform.parent.parent.position, transform.forward, out hitInfo, range)) {
-                hitInfo.transform.GetComponent<S_Enemy>().TakeDamage(dmg);
+                if (hitInfo.transform.GetComponent<S_Enemy>()) {
+                    hitInfo.transform.GetComponent<S_Enemy>().TakeDamage(dmg);
+                }
             }
         } else {
             Reload();
         }
+        uiManager.UpdateWeaponUI();
     }
     public void Reload() {
         if (!infAmmo && magAmmo < maxMagAmmo) {
             StartCoroutine(ReloadDelay(reloadTime));
+            uiManager.UpdateWeaponUI();
         }
     }
 
