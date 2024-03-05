@@ -8,58 +8,61 @@ public class S_WaveSpawner : MonoBehaviour
     private List<Transform> spawnPoints;
     [SerializeField]
     private List<GameObject> enemyType;
-    [SerializeField]
-    private int enemiesPerWave;
-    [SerializeField]
-    private int waves;
-    [SerializeField]
-    private float timeBetweenSpawns;
+    public Wave[] waves;
+    private int waveCount = 0;
     [SerializeField]
     private float waveInterval;
-    [SerializeField]
-    private int enemies;
-    public int maxWaves;
+    private float countdown = 0f;
+    public int enemiesAlive;
 
     void Update()
     {
-        if(waves == maxWaves)
+        if(enemiesAlive > 0)
         {
             return;
         }
 
-        if(enemies != enemiesPerWave)
+        if (countdown <= 0)
         {
-            if (timeBetweenSpawns <= 0f)
+            if (waveCount >= waves.Length)
             {
-                StartCoroutine(SpawnWave());
-                timeBetweenSpawns = 1;
+                Debug.Log("Completed all waves");
+                gameObject.SetActive(false);
+                return;
             }
-            timeBetweenSpawns -= Time.deltaTime;
+            StartCoroutine(SpawnWave());
+            countdown = waveInterval;
+            return;
         }
-        else
-        {
-            waveInterval -= Time.deltaTime;
-            if(waveInterval < 0)
-            {
-                waveInterval = 10f;
-                enemies = 0;
-                waves++;
-            }
-        }
+
+        countdown -= Time.deltaTime;
     }
 
     IEnumerator SpawnWave()
     {
-        SpawnEnemy();
-        yield return new WaitForSeconds(timeBetweenSpawns);
-        //waves++;
+        Wave wave = waves[waveCount];
+
+        for (int i = 0; i < wave.enemiesPerWave; i++)
+        {
+            SpawnEnemy();
+            yield return new WaitForSeconds(wave.delay);
+        }
+
+        waveCount++;
     }
 
     public void SpawnEnemy()
     {
-        enemies++;
         int spawnNummer = Random.Range(0, spawnPoints.Count);
         int enemyNummer = Random.Range(0, enemyType.Count);
         GameObject spawnedEnemy = Instantiate(enemyType[enemyNummer], spawnPoints[spawnNummer].position, spawnPoints[spawnNummer].rotation);
+        enemiesAlive++;
+    }
+
+    [System.Serializable]
+    public class Wave
+    {
+        public float delay;
+        public int enemiesPerWave;
     }
 }

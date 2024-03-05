@@ -431,7 +431,7 @@ PrefabInstance:
     - target: {fileID: 2511343718522993390, guid: 5e7a49de92b224740a82a8ad92d592cc,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 7.87
+      value: 9.59
       objectReference: {fileID: 0}
     - target: {fileID: 2511343718522993390, guid: 5e7a49de92b224740a82a8ad92d592cc,
         type: 3}
@@ -971,12 +971,13 @@ MonoBehaviour:
   enemyType:
   - {fileID: 6183118907095724612, guid: 484406fb3207f4e4f8289672d1d48914, type: 3}
   - {fileID: 2112254027201023844, guid: 1d9e7809d8febcc4f88e7f7d538d7105, type: 3}
-  enemiesPerWave: 5
-  waves: 1
-  timeBetweenSpawns: 2
-  waveInterval: 10
-  enemies: 0
-  maxWaves: 3
+  waves:
+  - delay: 1
+    enemiesPerWave: 3
+  - delay: 0.5
+    enemiesPerWave: 6
+  waveInterval: 5
+  enemiesAlive: 0
 --- !u!4 &1811135008
 Transform:
   m_ObjectHideFlags: 0

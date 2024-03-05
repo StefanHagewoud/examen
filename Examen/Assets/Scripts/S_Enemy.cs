@@ -136,6 +136,7 @@ public class S_Enemy : MonoBehaviour
     {
         //death animation 
         //death particles
+        GameObject.Find("WaveSpawner").GetComponent<S_WaveSpawner>().enemiesAlive--;
         Destroy(gameObject);
     }
 }
