@@ -8,6 +8,7 @@ TagManager:
   - Med-Kit
   - Armor
   - Weapon
+  - Crate
   layers:
   - Default
   - TransparentFX
