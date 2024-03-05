@@ -46,14 +46,7 @@ public class S_PickupManager : MonoBehaviour
         {
             if (allowDestroyGameObjects)
             {
-                if (other.transform.parent)
-                {
-                    Destroy(other.transform.parent.gameObject);
-                }
-                else
-                {
-                    Destroy(other.gameObject);
-                }
+                DestroyCrateOrObject(other);
             }
             PickupItem("Armor");
         }
@@ -61,14 +54,7 @@ public class S_PickupManager : MonoBehaviour
         {
             if (allowDestroyGameObjects)
             {
-                if (other.transform.parent)
-                {
-                    Destroy(other.transform.parent.gameObject);
-                }
-                else
-                {
-                    Destroy(other.gameObject);
-                }
+                DestroyCrateOrObject(other);
             }
             PickupItem("Med-Kit");
         }
@@ -76,14 +62,7 @@ public class S_PickupManager : MonoBehaviour
         {
             if (allowDestroyGameObjects)
             {
-                if (other.transform.parent)
-                {
-                    Destroy(other.transform.parent.gameObject);
-                }
-                else
-                {
-                    Destroy(other.gameObject);
-                }
+                DestroyCrateOrObject(other);
             }
             PickupItem("RPG");
         }
@@ -119,5 +98,9 @@ public class S_PickupManager : MonoBehaviour
         {
 
         }
+    }
+    private void DestroyCrateOrObject(Collider other)//Add Diagram.
+    {
+        Destroy(other.gameObject);
     }
 }
