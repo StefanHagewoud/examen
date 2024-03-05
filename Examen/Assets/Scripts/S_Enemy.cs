@@ -10,13 +10,12 @@ public class S_Enemy : MonoBehaviour
     [SerializeField]
     private float damage;
     [SerializeField]
-    private float meleeRange;
-    [SerializeField]
+    private float range = 100f;
     private float stopRange;
     private NavMeshAgent enemyAgent;
     private Transform target;
     [SerializeField]
-    private float attackdelay;
+    private float attackdelay = 2f;
     private float attackRate;
     [SerializeField]
     private GameObject bulletPrefab;
@@ -49,19 +48,22 @@ public class S_Enemy : MonoBehaviour
             transform.eulerAngles = new Vector3(0f, eulerAngles.y, eulerAngles.z);
 
             RaycastHit hit;
-            if (Physics.Raycast(transform.position, transform.forward, out hit, meleeRange))
+            if (Physics.Raycast(transform.position, transform.forward, out hit, range))
             {
-                if (hit.collider.transform.root.tag == "Player")
+                if(hit.collider!= null)
                 {
-                    Debug.DrawRay(transform.position, transform.forward * hit.distance, Color.yellow);
-
-                    enemyAgent.isStopped = true;
-                    if (attackRate <= 0f)
+                    if (hit.collider.transform.root.tag == "Player")
                     {
-                        Attack(damage);
-                        attackRate = attackdelay;
+                        Debug.DrawRay(transform.position, transform.forward * hit.distance, Color.yellow);
+
+                        enemyAgent.isStopped = true;
+                        if (attackRate <= 0f)
+                        {
+                            Attack(damage);
+                            attackRate = attackdelay;
+                        }
+                        attackRate -= Time.deltaTime;
                     }
-                    attackRate -= Time.deltaTime;
                 }
             }
 
