@@ -18,9 +18,15 @@ public class S_WaveSpawner : MonoBehaviour
     private float waveInterval;
     [SerializeField]
     private int enemies;
+    public int maxWaves;
 
     void Update()
     {
+        if(waves == maxWaves)
+        {
+            return;
+        }
+
         if(enemies != enemiesPerWave)
         {
             if (timeBetweenSpawns <= 0f)
@@ -35,9 +41,9 @@ public class S_WaveSpawner : MonoBehaviour
             waveInterval -= Time.deltaTime;
             if(waveInterval < 0)
             {
-                waveInterval = 0;
-                waves++;
+                waveInterval = 10f;
                 enemies = 0;
+                waves++;
             }
         }
     }
