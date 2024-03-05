@@ -9,6 +9,7 @@ TagManager:
   - Armor
   - Weapon
   - Enemy
+  - Crate
   layers:
   - Default
   - TransparentFX
