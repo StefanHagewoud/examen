@@ -17,7 +17,8 @@ public class S_PickupManager : MonoBehaviour
         {
             return;
         }
-        if (col.transform.CompareTag("Shield"))
+
+        else if (col.transform.CompareTag("Shield"))
         {
             PickupItem("Shield");
         }
@@ -41,11 +42,18 @@ public class S_PickupManager : MonoBehaviour
             return;
         }
 
-        if (other.transform.CompareTag("Armor"))
+        else if (other.transform.CompareTag("Armor"))
         {
             if (allowDestroyGameObjects)
             {
-                Destroy(other.gameObject);
+                if (other.transform.parent)
+                {
+                    Destroy(other.transform.parent.gameObject);
+                }
+                else
+                {
+                    Destroy(other.gameObject);
+                }
             }
             PickupItem("Armor");
         }
@@ -53,7 +61,14 @@ public class S_PickupManager : MonoBehaviour
         {
             if (allowDestroyGameObjects)
             {
-                Destroy(other.gameObject);
+                if (other.transform.parent)
+                {
+                    Destroy(other.transform.parent.gameObject);
+                }
+                else
+                {
+                    Destroy(other.gameObject);
+                }
             }
             PickupItem("Med-Kit");
         }
@@ -61,7 +76,14 @@ public class S_PickupManager : MonoBehaviour
         {
             if (allowDestroyGameObjects)
             {
-                Destroy(other.gameObject);
+                if (other.transform.parent)
+                {
+                    Destroy(other.transform.parent.gameObject);
+                }
+                else
+                {
+                    Destroy(other.gameObject);
+                }
             }
             PickupItem("RPG");
         }
