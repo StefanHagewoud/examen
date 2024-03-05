@@ -5,23 +5,33 @@ using UnityEngine.AI;
 
 public class S_Enemy : MonoBehaviour
 {
+    private float moveSpeed;
     public float health;
     [SerializeField]
-    private float moveSpeed;
+    private float damage;
     [SerializeField]
-    private float waitRange;
-    public Transform target;
+    private float meleeRange;
     [SerializeField]
-    NavMeshAgent enemyAgent;
+    private float stopRange;
+    private NavMeshAgent enemyAgent;
+    private Transform target;
+    [SerializeField]
+    private float attackdelay;
+    private float attackRate;
     [SerializeField]
     private GameObject bulletPrefab;
     [SerializeField]
-    private float bulletSpeed;
+    private bool melee;
 
     void Start()
     {
+        target = GameObject.FindGameObjectWithTag("Player").transform;
         enemyAgent = GetComponent<NavMeshAgent>();
         enemyAgent.destination = target.position;
+        if (!melee)
+        {
+            stopRange = Random.Range(4, 10);
+        }
     }
 
     void Update()
@@ -31,21 +41,54 @@ public class S_Enemy : MonoBehaviour
 
     public void ChasePlayer()
     {
-        transform.LookAt(target.transform);
-        Vector3 eulerAngles = transform.eulerAngles;
-        transform.eulerAngles = new Vector3(0f, eulerAngles.y, eulerAngles.z);
-
-        float rangeFromPlayer = Vector3.Distance(transform.position, target.position);
-        if (rangeFromPlayer <= waitRange)
+        if(target != null)
         {
-            enemyAgent.isStopped = true;
-            Attack();
+            //enemy Rotation
+            transform.LookAt(target.transform);
+            Vector3 eulerAngles = transform.eulerAngles;
+            transform.eulerAngles = new Vector3(0f, eulerAngles.y, eulerAngles.z);
+
+            RaycastHit hit;
+            if (Physics.Raycast(transform.position, transform.forward, out hit, meleeRange))
+            {
+                if (hit.collider.transform.root.tag == "Player")
+                {
+                    Debug.DrawRay(transform.position, transform.forward * hit.distance, Color.yellow);
+
+                    enemyAgent.isStopped = true;
+                    if (attackRate <= 0f)
+                    {
+                        Attack(damage);
+                        attackRate = attackdelay;
+                    }
+                    attackRate -= Time.deltaTime;
+                }
+            }
+
+            float rangeFromPlayer = Vector3.Distance(transform.position, target.position);
+            if (rangeFromPlayer <= stopRange)
+            {
+                RaycastHit hit1;
+                if (Physics.Raycast(transform.position, transform.forward, out hit1, 100f))
+                {
+                    if (hit.collider.transform.root.tag != "Player")
+                    {
+                        enemyAgent.isStopped = false;
+                        Debug.DrawRay(transform.position, transform.forward * hit1.distance, Color.red);
+                        //Debug.Log("Can not see player");
+                    }
+                }
+            }
+            else
+            {
+                enemyAgent.isStopped = false;
+            }
+            enemyAgent.destination = target.position;
         }
         else
         {
-            enemyAgent.isStopped = false;
+            enemyAgent.isStopped = true;
         }
-        enemyAgent.destination = target.position;
     }
 
     public void TakeDamage(float dmg)
@@ -57,12 +100,31 @@ public class S_Enemy : MonoBehaviour
         }
     }
 
-    public void Attack()
+    public void Attack(float damage)
     {
-        Debug.Log("attack");
-        GameObject bullet = Instantiate(bulletPrefab, transform.position, transform.rotation);
-        bullet.GetComponent<Rigidbody>().AddForce(bullet.transform.forward * bulletSpeed);
-
+        if (melee)
+        {
+            Melee(damage);
+        }
+        else
+        {
+            GameObject bullet = Instantiate(bulletPrefab, transform.GetChild(2).position, transform.rotation);
+            bullet.GetComponent<S_Bullet>().damage = damage;
+            bullet.GetComponent<Rigidbody>().AddForce(bullet.transform.forward * 600f);
+            Destroy(bullet, 3f);
+        }
+    }
+    public void Melee(float damage)
+    {
+        Collider[] hitColliders = Physics.OverlapSphere(transform.GetChild(2).position, 3f);
+        foreach (var hitCollider in hitColliders)
+        {
+            if (hitCollider.transform.tag == "Player")
+            {
+                Debug.Log("MeleeAttack");
+                //hitCollider.GetComponent<Player>().OntakeDamage(damage);
+            }
+        }
     }
 
     public void OnDeath()
