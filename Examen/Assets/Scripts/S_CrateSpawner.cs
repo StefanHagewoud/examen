@@ -20,7 +20,7 @@ public class S_CrateSpawner : MonoBehaviour
     public void SpawnCrate()
     {
         int randomPowerupInt = Random.Range(0, 4);
-        GameObject prefabToInstantiate = new();
+        GameObject prefabToInstantiate = null;
         switch (randomPowerupInt)
         {
             case 0:
@@ -41,7 +41,7 @@ public class S_CrateSpawner : MonoBehaviour
                 break;
         }
 
-        Instantiate(prefabToInstantiate, transform.position, Quaternion.identity);
+        Instantiate(prefabToInstantiate, transform.position, Quaternion.identity, transform);
 
         OnCrateSpawned.Invoke();
         if (allowDebug)

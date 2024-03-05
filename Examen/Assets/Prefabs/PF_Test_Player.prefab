@@ -1,5 +1,82 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &1830572194337980540
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6821061034791218581}
+  - component: {fileID: 271760598347593271}
+  - component: {fileID: 1988051722416715402}
+  m_Layer: 0
+  m_Name: PlayerMovement
+  m_TagString: Rolling
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6821061034791218581
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1830572194337980540}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2511343718522993390}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &271760598347593271
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1830572194337980540}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2a8c906e546af3e4aa69d7c61f76cff7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  movementInput: {x: 0, y: 0}
+  playerTransform: {fileID: 2511343718522993390}
+  cameraTransformRotation: {fileID: 0}
+  walkMovementMultiplier: 2
+  allowAnyMovement: 1
+  rollMovementMultiplier: 3
+  rollTime: 0.6
+  rechargeRollTime: 3
+  aimMovementMultiplier: 500
+  aimDirection: {x: 0, y: 0}
+  allowDebug: 1
+--- !u!65 &1988051722416715402
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1830572194337980540}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &3081724780807716376
 GameObject:
   m_ObjectHideFlags: 0
@@ -150,6 +227,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4674200592a281b41870d72c2adfe6e0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gunHolderPrimary: {fileID: 0}
+  gunHolderSecondary: {fileID: 0}
   playerScript: {fileID: 4421545009744314841}
   enableCollision: 0
   enableTrigger: 1
@@ -173,7 +252,7 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1.2, y: 1, z: 1.2}
+  m_Size: {x: 1.1, y: 1, z: 1.1}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &4185574638849654317
 GameObject:
@@ -186,7 +265,6 @@ GameObject:
   - component: {fileID: 2511343718522993390}
   - component: {fileID: 4421545009744314841}
   - component: {fileID: 1641453153601055189}
-  - component: {fileID: 6085631219541782373}
   - component: {fileID: 622466673099802132}
   - component: {fileID: 6938362545948683467}
   - component: {fileID: 5249683967479209038}
@@ -213,9 +291,9 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 8325054695263435698}
-  - {fileID: 2548906170510331201}
   - {fileID: 192920367149511822}
   - {fileID: 3123156684021940945}
+  - {fileID: 6821061034791218581}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &4421545009744314841
@@ -234,7 +312,7 @@ MonoBehaviour:
   armor: 0
   score: 0
   health: 3
-  maxhealth: 0
+  maxhealth: 3
   meleeDmg: 0
 --- !u!114 &1641453153601055189
 MonoBehaviour:
@@ -248,31 +326,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e005dc9a85d8acd4f9fd3e1a21e3f1e6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  pickupManager: {fileID: 6932566090766557591}
   allowDebug: 1
   dialogeManager: {fileID: 0}
-  playerMovementScript: {fileID: 6085631219541782373}
---- !u!114 &6085631219541782373
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4185574638849654317}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2a8c906e546af3e4aa69d7c61f76cff7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  movementInput: {x: 0, y: 0}
-  playerTransform: {fileID: 2511343718522993390}
-  cameraTransformRotation: {fileID: 0}
-  walkMovementMultiplier: 2
-  rollMovementMultiplier: 3
-  rollTime: 0.6
-  rechargeRollTime: 3
-  aimMovementMultiplier: 500
-  aimDirection: {x: 0, y: 0}
-  allowDebug: 1
+  playerMovementScript: {fileID: 271760598347593271}
 --- !u!114 &622466673099802132
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -566,37 +623,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!1 &4199387390998467406
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 2548906170510331201}
-  m_Layer: 0
-  m_Name: DialogeManager
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &2548906170510331201
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4199387390998467406}
-  serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: -0.48, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 2511343718522993390}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &7413165616649751560
 GameObject:
   m_ObjectHideFlags: 0

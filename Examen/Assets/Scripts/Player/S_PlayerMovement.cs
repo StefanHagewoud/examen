@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+[RequireComponent(typeof(BoxCollider))]
 public class S_PlayerMovement : MonoBehaviour
 {
     [Header("Movement")]
@@ -20,6 +21,8 @@ public class S_PlayerMovement : MonoBehaviour
     public float rollTime = 0.6f;
     public float rechargeRollTime = 3;
 
+    private BoxCollider rollTrigger;
+
     [Header("Aim")]
     public float aimMovementMultiplier = 1;
     public Vector2 aimDirection;
@@ -27,6 +30,12 @@ public class S_PlayerMovement : MonoBehaviour
     [Header("Debug")]
     public bool allowDebug;
 
+    private void Awake()
+    {
+        rollTrigger = GetComponent<BoxCollider>();
+        rollTrigger.isTrigger = true;
+        rollTrigger.enabled = false;
+    }
     private void FixedUpdate()
     {
         if (!allowAnyMovement)
@@ -67,9 +76,11 @@ public class S_PlayerMovement : MonoBehaviour
             allowUsingRoll = false;
             rollDirection = movementInput;
             isRolling = true;
+            rollTrigger.enabled = true;
 
             yield return new WaitForSeconds(rollTime);
             isRolling = false;
+            rollTrigger.enabled = false;
             rollDirection = Vector3.zero;
 
             yield return new WaitForSeconds(rechargeRollTime - rollTime);
