@@ -2,27 +2,31 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.TextCore.LowLevel;
 
 public class S_FunctionActivatorTrigger : MonoBehaviour
 {
     //Dit script heeft Ruben gemaakt, omdat de artists het nodig hadden.
     public int timesCanActivate = -1;
     public bool disableWhenMaxActivated = true;
-    public string tagToLookFor;
+    public List<string> tagsToLookFor = new(1);
     public UnityEvent OnTriggered;
 
     private void OnTriggerEnter(Collider other)
     {
-        if(tagToLookFor != "")
+        for (int i = 0; i < tagsToLookFor.Count; i++)
         {
-            if (other.transform.CompareTag(tagToLookFor))
+            if (tagsToLookFor[i] != "")
+            {
+                if (other.transform.CompareTag(tagsToLookFor[i]))
+                {
+                    ActivateTrigger();
+                }
+            }
+            else
             {
                 ActivateTrigger();
             }
-        }
-        else
-        {
-            ActivateTrigger();
         }
     }
     private void ActivateTrigger()

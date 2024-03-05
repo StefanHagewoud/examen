@@ -1425,6 +1425,16 @@ PrefabInstance:
       propertyPath: weaponsPrefab.Array.data[0]
       value: 
       objectReference: {fileID: 880073461}
+    - target: {fileID: 5747985416293180255, guid: 4fb392e55e1027147b2e717cf9ac1db4,
+        type: 3}
+      propertyPath: tagsToLookFor.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5747985416293180255, guid: 4fb392e55e1027147b2e717cf9ac1db4,
+        type: 3}
+      propertyPath: tagsToLookFor.Array.data[0]
+      value: Rolling
+      objectReference: {fileID: 0}
     - target: {fileID: 6725023300104724468, guid: 4fb392e55e1027147b2e717cf9ac1db4,
         type: 3}
       propertyPath: m_Name
