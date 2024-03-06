@@ -9,7 +9,7 @@ public class S_FunctionActivatorTrigger : MonoBehaviour
     //Dit script heeft Ruben gemaakt, omdat de artists het nodig hadden.
     public int timesCanActivate = -1;
     public bool disableWhenMaxActivated = true;
-    public List<string> tagsToLookFor = new(1);
+    public List<string> tagsToLookFor = new List<string>(new string[1]);
     public UnityEvent OnTriggered;
 
     private void OnTriggerEnter(Collider other)
