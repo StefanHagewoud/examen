@@ -7,7 +7,7 @@ public class S_WaveSpawner : MonoBehaviour
     [SerializeField]
     private List<Transform> spawnPoints;
     public Wave[] waves;
-    private int wavesCount = 0;
+    public int wavesCount = 0;
     [SerializeField]
     private float waveInterval;
     private float countdown = 0f;
