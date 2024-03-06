@@ -13,6 +13,9 @@ public class S_Player : MonoBehaviour
     private float meleeRange;
     //private S_DifficultyManager difficultyManager
 
+    private void Start() {
+        TakeDamage(0);
+    }
     public void OnDeath() {
         Destroy(gameObject);
     }
