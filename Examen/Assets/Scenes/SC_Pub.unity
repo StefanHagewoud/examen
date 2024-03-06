@@ -822,21 +822,11 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 739656266448964213, guid: 7d09bd0b35c5a8f4ba675f48691f6bf4,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 1869259571045177328, guid: 7d09bd0b35c5a8f4ba675f48691f6bf4,
         type: 3}
       propertyPath: pickupManager
       value: 
       objectReference: {fileID: 842576136}
-    - target: {fileID: 2082378898849622292, guid: 7d09bd0b35c5a8f4ba675f48691f6bf4,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 2786739843530671013, guid: 7d09bd0b35c5a8f4ba675f48691f6bf4,
         type: 3}
       propertyPath: m_Pivot.x
@@ -937,20 +927,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 3672298049571853075, guid: 7d09bd0b35c5a8f4ba675f48691f6bf4,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 4656693210089680838, guid: 7d09bd0b35c5a8f4ba675f48691f6bf4,
         type: 3}
       propertyPath: m_Name
       value: PF_Game_Canvas
-      objectReference: {fileID: 0}
-    - target: {fileID: 4656693210089680838, guid: 7d09bd0b35c5a8f4ba675f48691f6bf4,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
