@@ -79,7 +79,7 @@ public class S_Weapon : MonoBehaviour
         }
     }
     public void Shoot() {
-        if (magAmmo > 0 || infAmmo) {
+        if (magAmmo > 0) {
             magAmmo--;
             RaycastHit hitInfo;
             if (transform.tag == "RPG") {

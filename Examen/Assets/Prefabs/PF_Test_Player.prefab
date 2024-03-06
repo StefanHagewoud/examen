@@ -171,7 +171,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &2511343718522993390
 Transform:
   m_ObjectHideFlags: 0
@@ -621,7 +621,17 @@ PrefabInstance:
     - target: {fileID: 9122884137095064058, guid: d0986d27456936048abf4ad229b9b3a4,
         type: 3}
       propertyPath: infAmmo
-      value: 0
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9122884137095064058, guid: d0986d27456936048abf4ad229b9b3a4,
+        type: 3}
+      propertyPath: fireRate
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9122884137095064058, guid: d0986d27456936048abf4ad229b9b3a4,
+        type: 3}
+      propertyPath: reloadTime
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
