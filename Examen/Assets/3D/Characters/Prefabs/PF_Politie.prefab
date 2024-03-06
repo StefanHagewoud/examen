@@ -61,7 +61,7 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 870442f196c93b343987e57b0d9ff92e,
         type: 3}
       propertyPath: m_Name
-      value: PR_Politie
+      value: PF_Politie
       objectReference: {fileID: 0}
     - target: {fileID: 1921848501837227077, guid: 870442f196c93b343987e57b0d9ff92e,
         type: 3}
@@ -73,13 +73,50 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_Tas
       objectReference: {fileID: 0}
+    - target: {fileID: 5866666021909216657, guid: 870442f196c93b343987e57b0d9ff92e,
+        type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: f20b694bbe8b5a241b39808d444013eb, type: 2}
     - target: {fileID: 7210137677158313874, guid: 870442f196c93b343987e57b0d9ff92e,
         type: 3}
       propertyPath: m_Name
       value: SM_Hoed
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 5866666021909216657, guid: 870442f196c93b343987e57b0d9ff92e, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 7036213049465896255, guid: 870442f196c93b343987e57b0d9ff92e,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 8359499104300117489}
   m_SourcePrefab: {fileID: 100100000, guid: 870442f196c93b343987e57b0d9ff92e, type: 3}
+--- !u!1 &6820780341944598988 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7036213049465896255, guid: 870442f196c93b343987e57b0d9ff92e,
+    type: 3}
+  m_PrefabInstance: {fileID: 4543535985869372659}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &8359499104300117489
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6820780341944598988}
+  m_Enabled: 1
+  m_Avatar: {fileID: 9000000, guid: 870442f196c93b343987e57b0d9ff92e, type: 3}
+  m_Controller: {fileID: 9100000, guid: f20b694bbe8b5a241b39808d444013eb, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
