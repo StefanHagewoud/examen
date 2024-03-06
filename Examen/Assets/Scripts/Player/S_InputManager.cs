@@ -222,11 +222,14 @@ public class S_InputManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        S_Weapon currentGunInfo = pickupManager.gunHolderPrimary.GetComponentInChildren<S_Weapon>();
         if (shootInput == true && Time.time >= nextFireTime) {
-            S_Weapon currentGunInfo = pickupManager.gunHolderPrimary.GetComponentInChildren<S_Weapon>();
             nextFireTime = Time.time + 1f / currentGunInfo.fireRate;
             Debug.Log("shoting");
             currentGunInfo.Shoot();
+            if(!currentGunInfo.automatic) {
+                shootInput = false;
+            }
         }
     }
 }

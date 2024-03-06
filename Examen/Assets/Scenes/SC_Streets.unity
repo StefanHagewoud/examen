@@ -2025,6 +2025,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6459011630091376968, guid: 5e7a49de92b224740a82a8ad92d592cc,
         type: 3}
+      propertyPath: fireRate
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6459011630091376968, guid: 5e7a49de92b224740a82a8ad92d592cc,
+        type: 3}
       propertyPath: uiManager
       value: 
       objectReference: {fileID: 521652001}

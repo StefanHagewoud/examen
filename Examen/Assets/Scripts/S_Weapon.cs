@@ -9,6 +9,7 @@ public class S_Weapon : MonoBehaviour
     [SerializeField] public int magAmmo;
     [SerializeField] private bool infAmmo;
     public float fireRate;
+    public bool automatic;
     [SerializeField] private float reloadTime;
     private float nextFireTime;
     [SerializeField] private float range;
