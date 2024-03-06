@@ -225,6 +225,7 @@ public class S_InputManager : MonoBehaviour
         if (shootInput == true && Time.time >= nextFireTime) {
             S_Weapon currentGunInfo = pickupManager.gunHolderPrimary.GetComponentInChildren<S_Weapon>();
             nextFireTime = Time.time + 1f / currentGunInfo.fireRate;
+            Debug.Log("shoting");
             currentGunInfo.Shoot();
         }
     }

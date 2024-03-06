@@ -30,6 +30,7 @@ public class S_Weapon : MonoBehaviour
         if (Input.GetButton("Fire1") && Time.time >= nextFireTime || Input.GetButton("Fire1") && fireRate == 0) {
             nextFireTime = Time.time + 1f / fireRate;
             Shoot();
+            Debug.Log("shot");
         }
 
         if (Input.GetKeyDown(KeyCode.R)) {
@@ -85,7 +86,8 @@ public class S_Weapon : MonoBehaviour
                 rocket = Instantiate(rocketPrefab, transform.position, transform.rotation);
                 firedRocket = true;
             } else if (Physics.Raycast(transform.parent.parent.position, transform.forward, out hitInfo, range)) {
-                if (hitInfo.transform.GetComponent<S_Enemy>()) {
+                Debug.DrawLine(transform.position, hitInfo.point, Color.cyan, 1);
+                if (hitInfo.transform.tag == "Enemy") {
                     hitInfo.transform.GetComponent<S_Enemy>().TakeDamage(dmg);
                 }
             }

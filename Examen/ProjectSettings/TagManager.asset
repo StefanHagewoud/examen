@@ -11,6 +11,7 @@ TagManager:
   - Enemy
   - Crate
   - Rolling
+  - Shield
   layers:
   - Default
   - TransparentFX

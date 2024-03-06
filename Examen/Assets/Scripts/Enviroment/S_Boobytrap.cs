@@ -29,9 +29,11 @@ public class S_Boobytrap : MonoBehaviour
                     hitRB.AddExplosionForce(1000, transform.position, 10);
                     // force, position, radius
                 }
-                if (hit.GetComponent<S_Enemy>()) {
-                    Debug.Log(hit.name + "has been hit");
+                if (hit.tag == "Enemy") {
                     hit.GetComponent<S_Enemy>().TakeDamage(dmg);
+                }
+                if (hit.tag == "Player") {
+                    hit.GetComponent<S_Player>().TakeDamage(dmg);
                 }
             }
             Destroy(gameObject);
