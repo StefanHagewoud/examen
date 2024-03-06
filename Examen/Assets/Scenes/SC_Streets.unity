@@ -1283,6 +1283,11 @@ PrefabInstance:
       objectReference: {fileID: 741051837}
     - target: {fileID: 7775009650695148249, guid: 7d09bd0b35c5a8f4ba675f48691f6bf4,
         type: 3}
+      propertyPath: playerInteface
+      value: 
+      objectReference: {fileID: 521652000}
+    - target: {fileID: 7775009650695148249, guid: 7d09bd0b35c5a8f4ba675f48691f6bf4,
+        type: 3}
       propertyPath: autoPolitieCutscene
       value: 
       objectReference: {fileID: 2119531228}
@@ -1294,6 +1299,12 @@ PrefabInstance:
 --- !u!95 &521651999 stripped
 Animator:
   m_CorrespondingSourceObject: {fileID: 1033285765354869676, guid: 7d09bd0b35c5a8f4ba675f48691f6bf4,
+    type: 3}
+  m_PrefabInstance: {fileID: 521651998}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &521652000 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3672298049571853075, guid: 7d09bd0b35c5a8f4ba675f48691f6bf4,
     type: 3}
   m_PrefabInstance: {fileID: 521651998}
   m_PrefabAsset: {fileID: 0}

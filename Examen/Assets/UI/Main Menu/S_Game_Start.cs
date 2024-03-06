@@ -11,6 +11,7 @@ public class S_Game_Start : MonoBehaviour
     public Animator autoPolitieCutscene;
     public float animationTime;
     public GameObject player;
+    public GameObject playerInteface;
 
 
     public void GameStart()
@@ -25,6 +26,7 @@ public class S_Game_Start : MonoBehaviour
     {
         yield return new WaitForSeconds(animationTime);
         player.SetActive(true);
+        playerInteface.SetActive(true);
 
 
         yield return null;
