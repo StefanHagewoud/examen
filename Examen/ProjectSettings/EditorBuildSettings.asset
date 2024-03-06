@@ -12,7 +12,7 @@ EditorBuildSettings:
     path: Assets/Scenes/SC_Pub.unity
     guid: 254cc5fa06689054f81b2f32bd34a7cb
   - enabled: 1
-    path: Assets/Scenes/SC_StreetsFIght.unity
+    path: Assets/Scenes/SC_StreetsFight.unity
     guid: ec56f3775d282284d93c5270bd2f962a
   - enabled: 1
     path: Assets/Scenes/SC_WarehouseLevel1.unity

@@ -1244,10 +1244,25 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3598033083866929522, guid: 7d09bd0b35c5a8f4ba675f48691f6bf4,
+        type: 3}
+      propertyPath: waitingTime
+      value: 1.5
+      objectReference: {fileID: 0}
     - target: {fileID: 4656693210089680838, guid: 7d09bd0b35c5a8f4ba675f48691f6bf4,
         type: 3}
       propertyPath: m_Name
       value: PF_Game_Canvas
+      objectReference: {fileID: 0}
+    - target: {fileID: 7775009650695148249, guid: 7d09bd0b35c5a8f4ba675f48691f6bf4,
+        type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 842576138}
+    - target: {fileID: 7775009650695148249, guid: 7d09bd0b35c5a8f4ba675f48691f6bf4,
+        type: 3}
+      propertyPath: animationTime
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 7775009650695148249, guid: 7d09bd0b35c5a8f4ba675f48691f6bf4,
         type: 3}
@@ -1888,7 +1903,7 @@ PrefabInstance:
     - target: {fileID: 2511343718522993390, guid: 5e7a49de92b224740a82a8ad92d592cc,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -7.703
+      value: -7.78
       objectReference: {fileID: 0}
     - target: {fileID: 2511343718522993390, guid: 5e7a49de92b224740a82a8ad92d592cc,
         type: 3}
@@ -1898,7 +1913,7 @@ PrefabInstance:
     - target: {fileID: 2511343718522993390, guid: 5e7a49de92b224740a82a8ad92d592cc,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 1.26
+      value: 4.22
       objectReference: {fileID: 0}
     - target: {fileID: 2511343718522993390, guid: 5e7a49de92b224740a82a8ad92d592cc,
         type: 3}
@@ -1948,7 +1963,7 @@ PrefabInstance:
     - target: {fileID: 4185574638849654317, guid: 5e7a49de92b224740a82a8ad92d592cc,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6085631219541782373, guid: 5e7a49de92b224740a82a8ad92d592cc,
         type: 3}
@@ -1982,6 +1997,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2a8c906e546af3e4aa69d7c61f76cff7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &842576138 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4185574638849654317, guid: 5e7a49de92b224740a82a8ad92d592cc,
+    type: 3}
+  m_PrefabInstance: {fileID: 842576135}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &873110057 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6481406381447177773, guid: 7d09bd0b35c5a8f4ba675f48691f6bf4,
@@ -3597,8 +3618,9 @@ GameObject:
   - component: {fileID: 1782112422}
   - component: {fileID: 1782112421}
   - component: {fileID: 1782112420}
+  - component: {fileID: 1782112425}
   m_Layer: 0
-  m_Name: Cube
+  m_Name: Scene loader
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3618,10 +3640,23 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   timesCanActivate: 1
   disableWhenMaxActivated: 1
-  tagsToLookFor: []
+  tagsToLookFor:
+  - 
   OnTriggered:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1782112425}
+        m_TargetAssemblyTypeName: S_ChangeScene, Assembly-CSharp
+        m_MethodName: ChangeSceneInt
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 1
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!65 &1782112421
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -3708,6 +3743,18 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1782112425
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1782112419}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3b7ca95f7072c0e4b9f1f15abf2a8176, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1845266180
 GameObject:
   m_ObjectHideFlags: 0
