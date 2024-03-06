@@ -10,13 +10,12 @@ public class S_Enemy : MonoBehaviour
     [SerializeField]
     private float damage;
     [SerializeField]
-    private float meleeRange;
-    [SerializeField]
+    private float range = 100f;
     private float stopRange;
     private NavMeshAgent enemyAgent;
     private Transform target;
     [SerializeField]
-    private float attackdelay;
+    private float attackdelay = 2f;
     private float attackRate;
     [SerializeField]
     private GameObject bulletPrefab;
@@ -49,19 +48,22 @@ public class S_Enemy : MonoBehaviour
             transform.eulerAngles = new Vector3(0f, eulerAngles.y, eulerAngles.z);
 
             RaycastHit hit;
-            if (Physics.Raycast(transform.position, transform.forward, out hit, meleeRange))
+            if (Physics.Raycast(transform.position, transform.forward, out hit, range))
             {
-                if (hit.collider.transform.root.tag == "Player")
+                if(hit.collider!= null)
                 {
-                    Debug.DrawRay(transform.position, transform.forward * hit.distance, Color.yellow);
-
-                    enemyAgent.isStopped = true;
-                    if (attackRate <= 0f)
+                    if (hit.collider.transform.root.tag == "Player")
                     {
-                        Attack(damage);
-                        attackRate = attackdelay;
+                        Debug.DrawRay(transform.position, transform.forward * hit.distance, Color.yellow);
+
+                        enemyAgent.isStopped = true;
+                        if (attackRate <= 0f)
+                        {
+                            Attack(damage);
+                            attackRate = attackdelay;
+                        }
+                        attackRate -= Time.deltaTime;
                     }
-                    attackRate -= Time.deltaTime;
                 }
             }
 
@@ -71,11 +73,14 @@ public class S_Enemy : MonoBehaviour
                 RaycastHit hit1;
                 if (Physics.Raycast(transform.position, transform.forward, out hit1, 100f))
                 {
-                    if (hit.collider.transform.root.tag != "Player")
+                    if(hit.collider != null)
                     {
-                        enemyAgent.isStopped = false;
-                        Debug.DrawRay(transform.position, transform.forward * hit1.distance, Color.red);
-                        //Debug.Log("Can not see player");
+                        if (hit.collider.transform.root.tag != "Player")
+                        {
+                            enemyAgent.isStopped = false;
+                            Debug.DrawRay(transform.position, transform.forward * hit1.distance, Color.red);
+                            //Debug.Log("Can not see player");
+                        }
                     }
                 }
             }
@@ -94,6 +99,8 @@ public class S_Enemy : MonoBehaviour
     public void TakeDamage(float dmg)
     {
         health -= dmg;
+        //hitParticles
+        //hitanimation
         if (health <= 0)
         {
             OnDeath();
@@ -122,7 +129,7 @@ public class S_Enemy : MonoBehaviour
             if (hitCollider.transform.tag == "Player")
             {
                 Debug.Log("MeleeAttack");
-                //hitCollider.GetComponent<Player>().OntakeDamage(damage);
+                hitCollider.GetComponent<S_Player>().TakeDamage(damage);
             }
         }
     }
@@ -131,6 +138,7 @@ public class S_Enemy : MonoBehaviour
     {
         //death animation 
         //death particles
+        GameObject.Find("WaveSpawner").GetComponent<S_WaveSpawner>().enemiesAlive--;
         Destroy(gameObject);
     }
 }

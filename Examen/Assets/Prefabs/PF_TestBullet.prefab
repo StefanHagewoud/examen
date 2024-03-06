@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 315454575205026660}
   - component: {fileID: 757370181930378086}
   m_Layer: 0
-  m_Name: TestBullet
+  m_Name: PF_TestBullet
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -125,6 +125,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d3957e8abd1b56b4992448d860880c58, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  damage: 0
 --- !u!135 &757370181930378086
 SphereCollider:
   m_ObjectHideFlags: 0
