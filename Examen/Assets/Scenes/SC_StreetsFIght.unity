@@ -979,6 +979,11 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1869259571045177328, guid: 7d09bd0b35c5a8f4ba675f48691f6bf4,
+        type: 3}
+      propertyPath: pickupManager
+      value: 
+      objectReference: {fileID: 842576136}
     - target: {fileID: 2786739843530671013, guid: 7d09bd0b35c5a8f4ba675f48691f6bf4,
         type: 3}
       propertyPath: m_Pivot.x
@@ -1100,6 +1105,18 @@ Animator:
     type: 3}
   m_PrefabInstance: {fileID: 521651998}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &521652000 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1869259571045177328, guid: 7d09bd0b35c5a8f4ba675f48691f6bf4,
+    type: 3}
+  m_PrefabInstance: {fileID: 521651998}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 35300ea670d228b4bacff6f2fe8e2f03, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &540766791 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2399468015698095077, guid: 7d09bd0b35c5a8f4ba675f48691f6bf4,
@@ -1920,11 +1937,28 @@ PrefabInstance:
       propertyPath: cameraTransformRotation
       value: 
       objectReference: {fileID: 552472009}
+    - target: {fileID: 6459011630091376968, guid: 5e7a49de92b224740a82a8ad92d592cc,
+        type: 3}
+      propertyPath: uiManager
+      value: 
+      objectReference: {fileID: 521652000}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5e7a49de92b224740a82a8ad92d592cc, type: 3}
+--- !u!114 &842576136 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6932566090766557591, guid: 5e7a49de92b224740a82a8ad92d592cc,
+    type: 3}
+  m_PrefabInstance: {fileID: 842576135}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4674200592a281b41870d72c2adfe6e0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &842576137 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 271760598347593271, guid: 5e7a49de92b224740a82a8ad92d592cc,

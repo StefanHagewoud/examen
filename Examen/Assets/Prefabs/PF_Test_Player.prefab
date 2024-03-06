@@ -122,7 +122,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4674200592a281b41870d72c2adfe6e0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gunHolderPrimary: {fileID: 0}
+  gunHolderPrimary: {fileID: 7413165616649751560}
   gunHolderSecondary: {fileID: 0}
   playerScript: {fileID: 4421545009744314841}
   enableCollision: 0
@@ -171,7 +171,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &2511343718522993390
 Transform:
   m_ObjectHideFlags: 0
@@ -222,7 +222,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pickupManager: {fileID: 6932566090766557591}
-  allowDebug: 1
+  allowDebug: 0
   dialogeManager: {fileID: 0}
   playerMovementScript: {fileID: 271760598347593271}
 --- !u!114 &622466673099802132
@@ -617,6 +617,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9122884137095064058, guid: d0986d27456936048abf4ad229b9b3a4,
+        type: 3}
+      propertyPath: infAmmo
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

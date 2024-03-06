@@ -1156,6 +1156,11 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[3].m_Target
       value: 
       objectReference: {fileID: 1011470558}
+    - target: {fileID: 1869259571045177328, guid: 7d09bd0b35c5a8f4ba675f48691f6bf4,
+        type: 3}
+      propertyPath: pickupManager
+      value: 
+      objectReference: {fileID: 1225964854}
     - target: {fileID: 2786739843530671013, guid: 7d09bd0b35c5a8f4ba675f48691f6bf4,
         type: 3}
       propertyPath: m_Pivot.x
@@ -1283,11 +1288,6 @@ PrefabInstance:
       objectReference: {fileID: 741051837}
     - target: {fileID: 7775009650695148249, guid: 7d09bd0b35c5a8f4ba675f48691f6bf4,
         type: 3}
-      propertyPath: playerInteface
-      value: 
-      objectReference: {fileID: 521652000}
-    - target: {fileID: 7775009650695148249, guid: 7d09bd0b35c5a8f4ba675f48691f6bf4,
-        type: 3}
       propertyPath: autoPolitieCutscene
       value: 
       objectReference: {fileID: 2119531228}
@@ -1302,12 +1302,18 @@ Animator:
     type: 3}
   m_PrefabInstance: {fileID: 521651998}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &521652000 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 3672298049571853075, guid: 7d09bd0b35c5a8f4ba675f48691f6bf4,
+--- !u!114 &521652001 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1869259571045177328, guid: 7d09bd0b35c5a8f4ba675f48691f6bf4,
     type: 3}
   m_PrefabInstance: {fileID: 521651998}
   m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 35300ea670d228b4bacff6f2fe8e2f03, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &521652005 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 7665915728122340282, guid: 7d09bd0b35c5a8f4ba675f48691f6bf4,
@@ -1944,11 +1950,6 @@ PrefabInstance:
       objectReference: {fileID: 552472009}
     - target: {fileID: 1641453153601055189, guid: 5e7a49de92b224740a82a8ad92d592cc,
         type: 3}
-      propertyPath: allowDebug
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1641453153601055189, guid: 5e7a49de92b224740a82a8ad92d592cc,
-        type: 3}
       propertyPath: dialogeManager
       value: 
       objectReference: {fileID: 1674866609}
@@ -2002,26 +2003,16 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 3122116070495919630, guid: 5e7a49de92b224740a82a8ad92d592cc,
-        type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 4185574638849654317, guid: 5e7a49de92b224740a82a8ad92d592cc,
         type: 3}
       propertyPath: m_Name
       value: PF_Test_Player
       objectReference: {fileID: 0}
-    - target: {fileID: 4185574638849654317, guid: 5e7a49de92b224740a82a8ad92d592cc,
+    - target: {fileID: 6459011630091376968, guid: 5e7a49de92b224740a82a8ad92d592cc,
         type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6085631219541782373, guid: 5e7a49de92b224740a82a8ad92d592cc,
-        type: 3}
-      propertyPath: cameraTransformRotation
+      propertyPath: uiManager
       value: 
-      objectReference: {fileID: 552472009}
+      objectReference: {fileID: 521652001}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -3146,6 +3137,18 @@ Light:
   m_UseViewFrustumForShadowCasterCull: 1
   m_ShadowRadius: 0
   m_ShadowAngle: 0
+--- !u!114 &1225964854 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6932566090766557591, guid: 5e7a49de92b224740a82a8ad92d592cc,
+    type: 3}
+  m_PrefabInstance: {fileID: 842576135}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4674200592a281b41870d72c2adfe6e0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1235699564
 GameObject:
   m_ObjectHideFlags: 0

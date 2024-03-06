@@ -1107,7 +1107,7 @@ MonoBehaviour:
   autoPolitieCutscene: {fileID: 0}
   animationTime: 2
   player: {fileID: 0}
-  playerInteface: {fileID: 0}
+  playerInteface: {fileID: 3672298049571853075}
 --- !u!114 &3598033083866929522
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5259,7 +5259,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &4432188374389930542
 RectTransform:
   m_ObjectHideFlags: 0
@@ -6687,6 +6687,7 @@ GameObject:
   - component: {fileID: 5196293084000327581}
   - component: {fileID: 1849112007824358121}
   - component: {fileID: 6340215259666614578}
+  - component: {fileID: 1869259571045177328}
   m_Layer: 5
   m_Name: PF_Game_Canvas
   m_TagString: Untagged
@@ -6783,6 +6784,23 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
+--- !u!114 &1869259571045177328
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4656693210089680838}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 35300ea670d228b4bacff6f2fe8e2f03, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pickupManager: {fileID: 0}
+  hearts: {fileID: 6896741313478653461}
+  armor: {fileID: 4246856174513205319}
+  currentAmmoText: {fileID: 9044392356109682546}
+  currentMaxAmmoText: {fileID: 6386998633485939311}
 --- !u!1 &4740940895343405084
 GameObject:
   m_ObjectHideFlags: 0
