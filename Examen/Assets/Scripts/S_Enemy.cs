@@ -99,6 +99,8 @@ public class S_Enemy : MonoBehaviour
     public void TakeDamage(float dmg)
     {
         health -= dmg;
+        //hitParticles
+        //hitanimation
         if (health <= 0)
         {
             OnDeath();

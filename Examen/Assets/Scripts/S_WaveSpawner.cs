@@ -6,10 +6,8 @@ public class S_WaveSpawner : MonoBehaviour
 {
     [SerializeField]
     private List<Transform> spawnPoints;
-    [SerializeField]
-    private List<GameObject> enemyType;
     public Wave[] waves;
-    private int waveCount = 0;
+    private int wavesCount = 0;
     [SerializeField]
     private float waveInterval;
     private float countdown = 0f;
@@ -24,7 +22,7 @@ public class S_WaveSpawner : MonoBehaviour
 
         if (countdown <= 0)
         {
-            if (waveCount >= waves.Length)
+            if (wavesCount >= waves.Length)
             {
                 Debug.Log("Completed all waves");
                 gameObject.SetActive(false);
@@ -40,29 +38,30 @@ public class S_WaveSpawner : MonoBehaviour
 
     IEnumerator SpawnWave()
     {
-        Wave wave = waves[waveCount];
+        Wave wave = waves[wavesCount];
 
         for (int i = 0; i < wave.enemiesPerWave; i++)
         {
             SpawnEnemy();
-            yield return new WaitForSeconds(wave.delay);
+            yield return new WaitForSeconds(wave.timeBetweenSpawns);
         }
 
-        waveCount++;
+        wavesCount++;
     }
 
     public void SpawnEnemy()
     {
         int spawnNummer = Random.Range(0, spawnPoints.Count);
-        int enemyNummer = Random.Range(0, enemyType.Count);
-        GameObject spawnedEnemy = Instantiate(enemyType[enemyNummer], spawnPoints[spawnNummer].position, spawnPoints[spawnNummer].rotation);
+        int enemyNummer = Random.Range(0, waves[wavesCount].enemyType.Count);
+        GameObject spawnedEnemy = Instantiate(waves[wavesCount].enemyType[enemyNummer], spawnPoints[spawnNummer].position, spawnPoints[spawnNummer].rotation);
         enemiesAlive++;
     }
 
     [System.Serializable]
     public class Wave
     {
-        public float delay;
+        public float timeBetweenSpawns;
+        public List<GameObject> enemyType;
         public int enemiesPerWave;
     }
 }

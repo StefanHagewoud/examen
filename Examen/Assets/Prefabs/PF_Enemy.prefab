@@ -235,7 +235,7 @@ GameObject:
   - component: {fileID: 3329670228900992809}
   - component: {fileID: 157605554157465946}
   m_Layer: 0
-  m_Name: Enemy
+  m_Name: PF_Enemy
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -367,7 +367,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 100
-  damage: 0
+  damage: 1
   range: 100
   attackdelay: 2
   bulletPrefab: {fileID: 6071567608932826647, guid: 880d73ba6e80c9a40a37c67b79418d43,

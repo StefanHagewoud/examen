@@ -968,13 +968,15 @@ MonoBehaviour:
   - {fileID: 978143532}
   - {fileID: 1285040621}
   - {fileID: 1687419615}
-  enemyType:
-  - {fileID: 6183118907095724612, guid: 484406fb3207f4e4f8289672d1d48914, type: 3}
-  - {fileID: 2112254027201023844, guid: 1d9e7809d8febcc4f88e7f7d538d7105, type: 3}
   waves:
-  - delay: 1
+  - timeBetweenSpawns: 0
+    enemyType:
+    - {fileID: 6183118907095724612, guid: 484406fb3207f4e4f8289672d1d48914, type: 3}
     enemiesPerWave: 3
-  - delay: 0.5
+  - timeBetweenSpawns: 0
+    enemyType:
+    - {fileID: 6183118907095724612, guid: 484406fb3207f4e4f8289672d1d48914, type: 3}
+    - {fileID: 2112254027201023844, guid: 1d9e7809d8febcc4f88e7f7d538d7105, type: 3}
     enemiesPerWave: 6
   waveInterval: 5
   enemiesAlive: 0
