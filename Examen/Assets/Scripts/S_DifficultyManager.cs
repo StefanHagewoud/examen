@@ -8,7 +8,7 @@ public class S_DifficultyManager : MonoBehaviour
 {
     public enum Difficulties { Easy, Medium, Hard };//Add Diagram.
     public S_ScriptableObjectDifficulty scriptableObjectDifficulty;//Add Diagram.
-    public List<Difficulty> difficultiesSettings;//Add Diagram.
+    public List<Difficulty> difficultiesSettings = new List<Difficulty>(new Difficulty[3]);//Add Diagram.
 
     [Header("Buttons to change")]
     public Button easyDifficultyButton;
