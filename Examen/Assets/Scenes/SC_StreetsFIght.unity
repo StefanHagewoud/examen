@@ -1840,6 +1840,11 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 271760598347593271, guid: 5e7a49de92b224740a82a8ad92d592cc,
+        type: 3}
+      propertyPath: cameraTransformRotation
+      value: 
+      objectReference: {fileID: 552472009}
     - target: {fileID: 1641453153601055189, guid: 5e7a49de92b224740a82a8ad92d592cc,
         type: 3}
       propertyPath: dialogeManager
