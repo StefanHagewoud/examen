@@ -92,12 +92,13 @@ public class S_Weapon : MonoBehaviour
                 }
             }
         } else {
+            Debug.Log("reloading");
             Reload();
         }
         uiManager.UpdateWeaponUI();
     }
     public void Reload() {
-        if (!infAmmo && magAmmo < maxMagAmmo) {
+        if (magAmmo < maxMagAmmo) {
             StartCoroutine(ReloadDelay(reloadTime));
             uiManager.UpdateWeaponUI();
         }
