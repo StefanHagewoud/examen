@@ -25,6 +25,8 @@ public class S_Enemy : MonoBehaviour
     public bool passive;
     [SerializeField]
     private GameObject bloodParticle;
+    [SerializeField]
+    private GameObject muzzleFlashParticle;
 
     void Start()
     {
@@ -130,6 +132,8 @@ public class S_Enemy : MonoBehaviour
         }
         else
         {
+            GameObject muzzleFlash = Instantiate(muzzleFlashParticle, transform.GetChild(2).position, transform.rotation);
+            Destroy(muzzleFlash, 2f);
             GameObject bullet = Instantiate(bulletPrefab, transform.GetChild(2).position, transform.rotation);
             bullet.GetComponent<S_Bullet>().damage = damage;
             bullet.GetComponent<Rigidbody>().AddForce(bullet.transform.forward * 500f);

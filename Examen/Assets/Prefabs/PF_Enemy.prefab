@@ -335,6 +335,8 @@ MonoBehaviour:
   passive: 0
   bloodParticle: {fileID: 8607263268592773437, guid: 41ae90b7dcaaa954794982422cf623e9,
     type: 3}
+  muzzleFlashParticle: {fileID: 2706541682179882216, guid: 89b9be988f679824c8e86104f0153bb1,
+    type: 3}
 --- !u!54 &157605554157465946
 Rigidbody:
   m_ObjectHideFlags: 0

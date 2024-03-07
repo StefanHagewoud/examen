@@ -9,7 +9,8 @@ public class S_ScoreManager : MonoBehaviour
     [SerializeField]
     private int highscore;
     public TMP_Text scoreText;
-    public TMP_Text highscoreText;
+    [SerializeField]
+    private TMP_Text highscoreText;
     public static S_ScoreManager instance;
     private void Awake()
     {
