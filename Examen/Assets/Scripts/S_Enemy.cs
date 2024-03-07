@@ -21,6 +21,7 @@ public class S_Enemy : MonoBehaviour
     private GameObject bulletPrefab;
     [SerializeField]
     private bool melee;
+    public bool passive;
 
     void Start()
     {
@@ -42,10 +43,19 @@ public class S_Enemy : MonoBehaviour
     {
         if(target != null)
         {
-            //enemy Rotation
-            transform.LookAt(target.transform);
-            Vector3 eulerAngles = transform.eulerAngles;
-            transform.eulerAngles = new Vector3(0f, eulerAngles.y, eulerAngles.z);
+            if (passive)
+            {
+                enemyAgent.enabled = false;
+                return;
+            }
+            else
+            {
+                enemyAgent.enabled = true;
+                //enemy Rotation
+                transform.LookAt(target.transform);
+                Vector3 eulerAngles = transform.eulerAngles;
+                transform.eulerAngles = new Vector3(0f, eulerAngles.y, eulerAngles.z);
+            }
 
             RaycastHit hit;
             if (Physics.Raycast(transform.position, transform.forward, out hit, range))
