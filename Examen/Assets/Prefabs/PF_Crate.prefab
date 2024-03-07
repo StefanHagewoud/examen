@@ -178,12 +178,14 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  medkitPowerupPrefab: {fileID: 0}
+  medkitPowerupPrefab: {fileID: 2980198727364197934, guid: 777e005de4f978c45ac419360fafb26c,
+    type: 3}
   armorPowerupPrefab: {fileID: 788807785609222132, guid: 6c5523a058de27f47bdda131750e9b25,
     type: 3}
-  rpgPowerupPrefab: {fileID: 0}
+  rpgPowerupPrefab: {fileID: 666129767450184481, guid: fc36ba96c711a0b4281054a58d035dc9,
+    type: 3}
   weaponsPrefab:
-  - {fileID: 0}
+  - {fileID: 2273899818004042560, guid: 8d018877522a7b349bbc1af680c59e35, type: 3}
   allowDebug: 1
 --- !u!65 &3017440551986819632
 BoxCollider:
