@@ -1,0 +1,21 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class S_X_Ray_Circle_Follow : MonoBehaviour
+{
+    private static int positionCircle = Shader.PropertyToID("_Position");
+
+    public Material wallMaterial;
+    public Camera camera;
+    public LayerMask mask;
+    public Transform player;
+
+
+    void Update()
+    {
+        Vector3 view = camera.WorldToViewportPoint(transform.position);
+        wallMaterial.SetVector(positionCircle, view);
+        
+    }
+}
