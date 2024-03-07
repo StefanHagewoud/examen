@@ -1061,6 +1061,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: PF_Test_Player
       objectReference: {fileID: 0}
+    - target: {fileID: 4421545009744314841, guid: 5e7a49de92b224740a82a8ad92d592cc,
+        type: 3}
+      propertyPath: uiManager
+      value: 
+      objectReference: {fileID: 521652000}
     - target: {fileID: 6085631219541782373, guid: 5e7a49de92b224740a82a8ad92d592cc,
         type: 3}
       propertyPath: cameraTransformRotation
