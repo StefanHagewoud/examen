@@ -2083,6 +2083,27 @@ PrefabInstance:
       propertyPath: m_Name
       value: PF_WaveSpawner
       objectReference: {fileID: 0}
+    - target: {fileID: 3956762453379439515, guid: 21b7dbeecaaf20f4884470ce5bc26647,
+        type: 3}
+      propertyPath: waves.Array.data[0].timeBetweenSpawns
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3956762453379439515, guid: 21b7dbeecaaf20f4884470ce5bc26647,
+        type: 3}
+      propertyPath: waves.Array.data[1].timeBetweenSpawns
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3956762453379439515, guid: 21b7dbeecaaf20f4884470ce5bc26647,
+        type: 3}
+      propertyPath: waves.Array.data[0].enemyType.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3956762453379439515, guid: 21b7dbeecaaf20f4884470ce5bc26647,
+        type: 3}
+      propertyPath: waves.Array.data[0].enemyType.Array.data[1]
+      value: 
+      objectReference: {fileID: 6183118907095724612, guid: 484406fb3207f4e4f8289672d1d48914,
+        type: 3}
     - target: {fileID: 4849097641142664677, guid: 21b7dbeecaaf20f4884470ce5bc26647,
         type: 3}
       propertyPath: m_LocalPosition.x
