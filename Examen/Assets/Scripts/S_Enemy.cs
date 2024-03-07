@@ -6,6 +6,7 @@ using UnityEngine.AI;
 public class S_Enemy : MonoBehaviour
 {
     private float moveSpeed;
+    public int scorePerEnemy;
     public float health;
     [SerializeField]
     private float damage;
@@ -21,6 +22,9 @@ public class S_Enemy : MonoBehaviour
     private GameObject bulletPrefab;
     [SerializeField]
     private bool melee;
+    public bool passive;
+    [SerializeField]
+    private GameObject bloodParticle;
 
     void Start()
     {
@@ -42,10 +46,19 @@ public class S_Enemy : MonoBehaviour
     {
         if(target != null)
         {
-            //enemy Rotation
-            transform.LookAt(target.transform);
-            Vector3 eulerAngles = transform.eulerAngles;
-            transform.eulerAngles = new Vector3(0f, eulerAngles.y, eulerAngles.z);
+            if (passive)
+            {
+                enemyAgent.enabled = false;
+                return;
+            }
+            else
+            {
+                enemyAgent.enabled = true;
+                //enemy Rotation
+                transform.LookAt(target.transform);
+                Vector3 eulerAngles = transform.eulerAngles;
+                transform.eulerAngles = new Vector3(0f, eulerAngles.y, eulerAngles.z);
+            }
 
             RaycastHit hit;
             if (Physics.Raycast(transform.position, transform.forward, out hit, range))
@@ -100,6 +113,8 @@ public class S_Enemy : MonoBehaviour
     {
         health -= dmg;
         //hitParticles
+        GameObject bloodEffect = Instantiate(bloodParticle, transform.position, Quaternion.identity);
+        Destroy(bloodEffect, 1f);
         //hitanimation
         if (health <= 0)
         {
@@ -138,7 +153,11 @@ public class S_Enemy : MonoBehaviour
     {
         //death animation 
         //death particles
-        GameObject.Find("WaveSpawner").GetComponent<S_WaveSpawner>().enemiesAlive--;
+        if(GameObject.Find("WaveSpawner") != null)
+        {
+            GameObject.Find("WaveSpawner").GetComponent<S_WaveSpawner>().enemiesAlive--;
+        }
+        S_ScoreManager.instance.AddScore(scorePerEnemy);
         Destroy(gameObject);
     }
 }
