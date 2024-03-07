@@ -629,7 +629,8 @@ MonoBehaviour:
   disableWhenMaxActivated: 1
   tagsToLookFor:
   - Player
-  OnTriggered:
+  allowTriggerEnter: 1
+  OnEnterTriggered:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1674866609}
@@ -644,6 +645,10 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  allowExitTrigger: 0
+  OnExitTriggered:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!65 &244644338
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -3910,7 +3915,8 @@ MonoBehaviour:
   disableWhenMaxActivated: 1
   tagsToLookFor:
   - 
-  OnTriggered:
+  allowTriggerEnter: 1
+  OnEnterTriggered:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1782112425}
@@ -3922,9 +3928,13 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 1
           m_FloatArgument: 0
-          m_StringArgument: 
+          m_StringArgument: 1
           m_BoolArgument: 0
         m_CallState: 2
+  allowExitTrigger: 0
+  OnExitTriggered:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!65 &1782112421
 BoxCollider:
   m_ObjectHideFlags: 0

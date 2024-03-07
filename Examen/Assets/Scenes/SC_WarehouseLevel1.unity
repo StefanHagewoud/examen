@@ -2315,7 +2315,8 @@ MonoBehaviour:
   disableWhenMaxActivated: 1
   tagsToLookFor:
   - 
-  OnTriggered:
+  allowTriggerEnter: 1
+  OnEnterTriggered:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1834278281}
@@ -2330,6 +2331,10 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  allowExitTrigger: 0
+  OnExitTriggered:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!65 &1834278283
 BoxCollider:
   m_ObjectHideFlags: 0
