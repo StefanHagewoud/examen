@@ -6,6 +6,7 @@ using UnityEngine.AI;
 public class S_Enemy : MonoBehaviour
 {
     private float moveSpeed;
+    public int scorePerEnemy;
     public float health;
     [SerializeField]
     private float damage;
@@ -22,6 +23,8 @@ public class S_Enemy : MonoBehaviour
     [SerializeField]
     private bool melee;
     public bool passive;
+    [SerializeField]
+    private GameObject bloodParticle;
 
     void Start()
     {
@@ -110,6 +113,8 @@ public class S_Enemy : MonoBehaviour
     {
         health -= dmg;
         //hitParticles
+        GameObject bloodEffect = Instantiate(bloodParticle, transform.position, Quaternion.identity);
+        Destroy(bloodEffect, 1f);
         //hitanimation
         if (health <= 0)
         {
@@ -148,7 +153,11 @@ public class S_Enemy : MonoBehaviour
     {
         //death animation 
         //death particles
-        GameObject.Find("WaveSpawner").GetComponent<S_WaveSpawner>().enemiesAlive--;
+        if(GameObject.Find("WaveSpawner") != null)
+        {
+            GameObject.Find("WaveSpawner").GetComponent<S_WaveSpawner>().enemiesAlive--;
+        }
+        S_ScoreManager.instance.AddScore(scorePerEnemy);
         Destroy(gameObject);
     }
 }

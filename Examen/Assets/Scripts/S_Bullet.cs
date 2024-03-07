@@ -5,6 +5,8 @@ using UnityEngine;
 public class S_Bullet : MonoBehaviour
 {
     public float damage;
+    [SerializeField]
+    private GameObject hitParticle;
     //destroys the bullet on impact & does damage if the player is hit.
     private void OnTriggerEnter(Collider other)
     {
@@ -17,7 +19,12 @@ public class S_Bullet : MonoBehaviour
                     other.GetComponent<S_Player>().TakeDamage(damage);
                 }
             }
-            Destroy(this.gameObject);
+            else
+            {
+                GameObject hitEffect = Instantiate(hitParticle, transform.position, Quaternion.identity);
+                Destroy(hitEffect, 1f);
+            }
+            Destroy(gameObject);
         }
     }
 }
