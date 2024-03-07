@@ -206,18 +206,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 67294368}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!114 &303295207 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 1501714780669238740, guid: 7d09bd0b35c5a8f4ba675f48691f6bf4,
-    type: 3}
-  m_PrefabInstance: {fileID: 1070382660}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &309174669
 GameObject:
   m_ObjectHideFlags: 0
@@ -406,6 +394,18 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &536393771 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1765986874213828718, guid: 7d09bd0b35c5a8f4ba675f48691f6bf4,
+    type: 3}
+  m_PrefabInstance: {fileID: 1070382660}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &553016861
 GameObject:
   m_ObjectHideFlags: 0
@@ -566,7 +566,7 @@ PrefabInstance:
     - target: {fileID: 240538948191514567, guid: 484406fb3207f4e4f8289672d1d48914,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -18.12
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 240538948191514567, guid: 484406fb3207f4e4f8289672d1d48914,
         type: 3}
@@ -1220,6 +1220,11 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1765986874213828718, guid: 7d09bd0b35c5a8f4ba675f48691f6bf4,
+        type: 3}
+      propertyPath: m_text
+      value: 30
+      objectReference: {fileID: 0}
     - target: {fileID: 1869259571045177328, guid: 7d09bd0b35c5a8f4ba675f48691f6bf4,
         type: 3}
       propertyPath: pickupManager
@@ -1229,12 +1234,12 @@ PrefabInstance:
         type: 3}
       propertyPath: currentAmmoText
       value: 
-      objectReference: {fileID: 1205963104}
+      objectReference: {fileID: 536393771}
     - target: {fileID: 1869259571045177328, guid: 7d09bd0b35c5a8f4ba675f48691f6bf4,
         type: 3}
       propertyPath: currentMaxAmmoText
       value: 
-      objectReference: {fileID: 303295207}
+      objectReference: {fileID: 1240509561}
     - target: {fileID: 2786739843530671013, guid: 7d09bd0b35c5a8f4ba675f48691f6bf4,
         type: 3}
       propertyPath: m_Pivot.x
@@ -1736,9 +1741,9 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1205963104 stripped
+--- !u!114 &1240509561 stripped
 MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 2800041853981961660, guid: 7d09bd0b35c5a8f4ba675f48691f6bf4,
+  m_CorrespondingSourceObject: {fileID: 9081864945662701253, guid: 7d09bd0b35c5a8f4ba675f48691f6bf4,
     type: 3}
   m_PrefabInstance: {fileID: 1070382660}
   m_PrefabAsset: {fileID: 0}
