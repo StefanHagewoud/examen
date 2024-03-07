@@ -10,7 +10,7 @@ public class S_CrateSpawner : MonoBehaviour
     public UnityEvent OnCrateSpawned;
 
     public GameObject medkitPowerupPrefab;//Add Diagram
-    public GameObject shieldPowerupPrefab;//Add Diagram
+    public GameObject armorPowerupPrefab;//Add Diagram
     public GameObject rpgPowerupPrefab;//Add Diagram
     public List<GameObject> weaponsPrefab;//Add Diagram
     
@@ -27,7 +27,7 @@ public class S_CrateSpawner : MonoBehaviour
                 prefabToInstantiate = medkitPowerupPrefab;
                 break;
             case 1:
-                prefabToInstantiate = shieldPowerupPrefab;
+                prefabToInstantiate = armorPowerupPrefab;
                 break;
             case 2:
                 prefabToInstantiate = rpgPowerupPrefab;
