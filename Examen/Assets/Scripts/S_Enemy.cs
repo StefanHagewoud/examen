@@ -39,6 +39,11 @@ public class S_Enemy : MonoBehaviour
         }
     }
 
+    public void TogglePassive(bool toggle)
+    {
+        passive = toggle;
+    }
+
     void Update()
     {
         ChasePlayer();
@@ -133,7 +138,7 @@ public class S_Enemy : MonoBehaviour
         else
         {
             GameObject muzzleFlash = Instantiate(muzzleFlashParticle, transform.GetChild(2).position, transform.rotation);
-            Destroy(muzzleFlash, 2f);
+            Destroy(muzzleFlash, 1f);
             GameObject bullet = Instantiate(bulletPrefab, transform.GetChild(2).position, transform.rotation);
             bullet.GetComponent<S_Bullet>().damage = damage;
             bullet.GetComponent<Rigidbody>().AddForce(bullet.transform.forward * 500f);
