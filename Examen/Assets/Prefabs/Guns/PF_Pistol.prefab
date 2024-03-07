@@ -118,12 +118,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bc7a1b90d384cec419ffdda8b15e7d83, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  uiManager: {fileID: 0}
   maxMagAmmo: 10
   magAmmo: 0
   infAmmo: 1
   fireRate: 0
+  automatic: 0
   reloadTime: 0
   range: 1000
   dmg: 2
-  rocket: {fileID: 0}
   rocketPrefab: {fileID: 0}

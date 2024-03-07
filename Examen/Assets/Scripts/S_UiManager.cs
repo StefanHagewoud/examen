@@ -24,6 +24,7 @@ public class S_UiManager : MonoBehaviour
     }
 
     public void UpdateWeaponUI() {
+        Debug.Log("updating gun UI");
         S_Weapon currentWeapon = pickupManager.gunHolderPrimary.transform.GetComponentInChildren<S_Weapon>();
         currentAmmoText.text = currentWeapon.magAmmo.ToString();
         currentMaxAmmoText.text = currentWeapon.maxMagAmmo.ToString();

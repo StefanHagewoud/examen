@@ -103,7 +103,7 @@ BoxCollider:
     m_Bits: 0
   m_LayerOverridePriority: 0
   m_IsTrigger: 1
-  m_ProvidesContacts: 1
+  m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
@@ -154,9 +154,9 @@ MonoBehaviour:
   OnCrateSpawned:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 6725023300104724468}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
+      - m_Target: {fileID: 6034517396647885835}
+        m_TargetAssemblyTypeName: UnityEngine.Renderer, UnityEngine
+        m_MethodName: set_enabled
         m_Mode: 6
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -166,12 +166,27 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  medkitPowerupPrefab: {fileID: 0}
-  shieldPowerupPrefab: {fileID: 0}
-  rpgPowerupPrefab: {fileID: 0}
+      - m_Target: {fileID: 3017440551986819632}
+        m_TargetAssemblyTypeName: UnityEngine.Collider, UnityEngine
+        m_MethodName: set_enabled
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  medkitPowerupPrefab: {fileID: 2980198727364197934, guid: 777e005de4f978c45ac419360fafb26c,
+    type: 3}
+  armorPowerupPrefab: {fileID: 788807785609222132, guid: 6c5523a058de27f47bdda131750e9b25,
+    type: 3}
+  rpgPowerupPrefab: {fileID: 666129767450184481, guid: fc36ba96c711a0b4281054a58d035dc9,
+    type: 3}
   weaponsPrefab:
-  - {fileID: 0}
-  allowDebug: 0
+  - {fileID: 2273899818004042560, guid: 8d018877522a7b349bbc1af680c59e35, type: 3}
+  allowDebug: 1
 --- !u!65 &3017440551986819632
 BoxCollider:
   m_ObjectHideFlags: 0

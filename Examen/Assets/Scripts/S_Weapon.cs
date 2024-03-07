@@ -4,21 +4,31 @@ using UnityEngine;
 
 public class S_Weapon : MonoBehaviour
 {
+    [Header("references")]
     public S_UiManager uiManager;
-    [SerializeField] public int maxMagAmmo;
-    [SerializeField] public int magAmmo;
+    public GameObject gunImpactEffect;
+    public GameObject bulletPrefab;
+
+    [Header("Gun Settings")]
+    public int maxMagAmmo;
+    public int magAmmo;
     [SerializeField] private bool infAmmo;
+    [SerializeField] private float reloadTime;
+    [SerializeField] private float range;
     public float fireRate;
     public bool automatic;
-    [SerializeField] private float reloadTime;
-    private float nextFireTime;
-    [SerializeField] private float range;
     public float dmg;
-    private GameObject rocket;
+
+    //Private variables
+    private float nextFireTime;
+    private float delayTimer;
+    [Header("Rocket Launcher Settings")]
     public GameObject rocketPrefab;
+    private GameObject rocket;
     private bool firedRocket;
     private bool rocketExploding;
-    private float delayTimer;
+
+
 
     // Start is called before the first frame update
     void Start()
@@ -81,6 +91,11 @@ public class S_Weapon : MonoBehaviour
     }
     public void Shoot() {
         if (magAmmo > 0) {
+            GameObject muscleFlash = Instantiate(transform.GetChild(0).gameObject, transform.GetChild(0).position, transform.rotation);
+            Destroy(muscleFlash, 1f);
+            GameObject bullet = Instantiate(bulletPrefab, transform.position, transform.rotation);
+            bullet.GetComponent<Rigidbody>().AddForce(bullet.transform.forward * 500f);
+            Destroy(bullet, 3f);
             magAmmo--;
             RaycastHit hitInfo;
             if (transform.tag == "RPG") {
@@ -90,6 +105,9 @@ public class S_Weapon : MonoBehaviour
                 Debug.DrawLine(transform.position, hitInfo.point, Color.cyan, 1);
                 if (hitInfo.transform.tag == "Enemy") {
                     hitInfo.transform.GetComponent<S_Enemy>().TakeDamage(dmg);
+                } else {
+                    GameObject bulletImpact = Instantiate(gunImpactEffect, hitInfo.point, Quaternion.LookRotation(hitInfo.normal));
+                    Destroy(bulletImpact, 0.2f);
                 }
             }
         } else {

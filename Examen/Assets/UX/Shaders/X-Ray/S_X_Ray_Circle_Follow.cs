@@ -7,14 +7,11 @@ public class S_X_Ray_Circle_Follow : MonoBehaviour
     private static int positionCircle = Shader.PropertyToID("_Position");
 
     public Material wallMaterial;
-    public Camera camera;
-    public LayerMask mask;
-    public Transform player;
-
+    public Camera playerCamera;
 
     void Update()
     {
-        Vector3 view = camera.WorldToViewportPoint(transform.position);
+        Vector3 view = playerCamera.WorldToViewportPoint(transform.position);
         wallMaterial.SetVector(positionCircle, view);
         
     }

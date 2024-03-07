@@ -10,10 +10,22 @@ public class S_FunctionActivatorTrigger : MonoBehaviour
     public int timesCanActivate = -1;
     public bool disableWhenMaxActivated = true;
     public List<string> tagsToLookFor = new List<string>(new string[1]);
-    public UnityEvent OnTriggered;
+
+    [Header("EnterTrigger")]
+    public bool allowTriggerEnter = true;
+    public UnityEvent OnEnterTriggered;
+
+    [Header("ExitTrigger")]
+    public bool allowExitTrigger = false;
+    public UnityEvent OnExitTriggered;
 
     private void OnTriggerEnter(Collider other)
     {
+        if (!allowTriggerEnter)
+        {
+            return;
+        }
+
         for (int i = 0; i < tagsToLookFor.Count; i++)
         {
             if (tagsToLookFor[i] != "")
@@ -21,6 +33,30 @@ public class S_FunctionActivatorTrigger : MonoBehaviour
                 if (other.transform.CompareTag(tagsToLookFor[i]))
                 {
                     ActivateTrigger();
+                    return;
+                }
+            }
+            else
+            {
+                ActivateTrigger();
+            }
+        }
+    }
+    private void OnTriggerExit(Collider other)
+    {
+        if (!allowExitTrigger)
+        {
+            return;
+        }
+
+        for (int i = 0; i < tagsToLookFor.Count; i++)
+        {
+            if (tagsToLookFor[i] != "")
+            {
+                if (other.transform.CompareTag(tagsToLookFor[i]))
+                {
+                    ActivateTrigger();
+                    return;
                 }
             }
             else
@@ -34,14 +70,14 @@ public class S_FunctionActivatorTrigger : MonoBehaviour
         //Checking if player allowed to activate
         if(timesCanActivate < 0)
         {
-            OnTriggered.Invoke();
+            OnEnterTriggered.Invoke();
             return;
         }
 
         if (timesCanActivate > 0)
         {
             timesCanActivate--;
-            OnTriggered.Invoke();
+            OnEnterTriggered.Invoke();
         }
         if (disableWhenMaxActivated && timesCanActivate == 0)
         {

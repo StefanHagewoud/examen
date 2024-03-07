@@ -882,6 +882,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: PF_Test_Player
       objectReference: {fileID: 0}
+    - target: {fileID: 4421545009744314841, guid: 5e7a49de92b224740a82a8ad92d592cc,
+        type: 3}
+      propertyPath: uiManager
+      value: 
+      objectReference: {fileID: 521652000}
     - target: {fileID: 6085631219541782373, guid: 5e7a49de92b224740a82a8ad92d592cc,
         type: 3}
       propertyPath: cameraTransformRotation
@@ -892,6 +897,11 @@ PrefabInstance:
       propertyPath: uiManager
       value: 
       objectReference: {fileID: 521652000}
+    - target: {fileID: 8847558234348450162, guid: 5e7a49de92b224740a82a8ad92d592cc,
+        type: 3}
+      propertyPath: playerCamera
+      value: 
+      objectReference: {fileID: 552472008}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1886,6 +1896,11 @@ PrefabInstance:
       propertyPath: m_StaticEditorFlags
       value: 2147483647
       objectReference: {fileID: 0}
+    - target: {fileID: 1133303317167651928, guid: 893f95df0538575478e58311b75b8c52,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: bf042951a196a644f932d726db0fcbf7, type: 2}
     - target: {fileID: 1286092740539066629, guid: 893f95df0538575478e58311b75b8c52,
         type: 3}
       propertyPath: m_StaticEditorFlags
@@ -1956,11 +1971,21 @@ PrefabInstance:
       propertyPath: m_StaticEditorFlags
       value: 2147483647
       objectReference: {fileID: 0}
+    - target: {fileID: 3816216326478003909, guid: 893f95df0538575478e58311b75b8c52,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: bf042951a196a644f932d726db0fcbf7, type: 2}
     - target: {fileID: 5087558434150305311, guid: 893f95df0538575478e58311b75b8c52,
         type: 3}
       propertyPath: m_StaticEditorFlags
       value: 2147483647
       objectReference: {fileID: 0}
+    - target: {fileID: 5505390263512225640, guid: 893f95df0538575478e58311b75b8c52,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: bf042951a196a644f932d726db0fcbf7, type: 2}
     - target: {fileID: 6616495980377011468, guid: 893f95df0538575478e58311b75b8c52,
         type: 3}
       propertyPath: m_Enabled
@@ -1971,16 +1996,36 @@ PrefabInstance:
       propertyPath: m_StaticEditorFlags
       value: 2147483647
       objectReference: {fileID: 0}
+    - target: {fileID: 7864555561165932910, guid: 893f95df0538575478e58311b75b8c52,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: bf042951a196a644f932d726db0fcbf7, type: 2}
     - target: {fileID: 8071055883303801311, guid: 893f95df0538575478e58311b75b8c52,
         type: 3}
       propertyPath: m_StaticEditorFlags
       value: 2147483647
       objectReference: {fileID: 0}
+    - target: {fileID: 8634554420422309906, guid: 893f95df0538575478e58311b75b8c52,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: bf042951a196a644f932d726db0fcbf7, type: 2}
     - target: {fileID: 8968515924127300893, guid: 893f95df0538575478e58311b75b8c52,
         type: 3}
       propertyPath: m_StaticEditorFlags
       value: 2147483647
       objectReference: {fileID: 0}
+    - target: {fileID: 9026575029714947288, guid: 893f95df0538575478e58311b75b8c52,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: bf042951a196a644f932d726db0fcbf7, type: 2}
+    - target: {fileID: 9130780327833738527, guid: 893f95df0538575478e58311b75b8c52,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: bf042951a196a644f932d726db0fcbf7, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects:
     - {fileID: 5053219099660336501, guid: 893f95df0538575478e58311b75b8c52, type: 3}
@@ -2280,7 +2325,8 @@ MonoBehaviour:
   disableWhenMaxActivated: 1
   tagsToLookFor:
   - 
-  OnTriggered:
+  allowTriggerEnter: 1
+  OnEnterTriggered:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1834278281}
@@ -2295,6 +2341,10 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  allowExitTrigger: 0
+  OnExitTriggered:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!65 &1834278283
 BoxCollider:
   m_ObjectHideFlags: 0
