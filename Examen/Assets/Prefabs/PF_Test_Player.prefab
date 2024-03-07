@@ -48,11 +48,11 @@ MonoBehaviour:
   movementInput: {x: 0, y: 0}
   playerTransform: {fileID: 2511343718522993390}
   cameraTransformRotation: {fileID: 0}
-  walkMovementMultiplier: 2
+  walkMovementMultiplier: 4.5
   allowAnyMovement: 1
-  rollMovementMultiplier: 3
-  rollTime: 0.6
-  rechargeRollTime: 3
+  rollMovementMultiplier: 8
+  rollTime: 0.4
+  rechargeRollTime: 0.5
   aimMovementMultiplier: 500
   aimDirection: {x: 0, y: 0}
   allowDebug: 1
