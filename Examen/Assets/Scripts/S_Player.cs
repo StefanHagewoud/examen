@@ -11,6 +11,8 @@ public class S_Player : MonoBehaviour
     public float maxhealth;
     public float meleeDmg;
     private float meleeRange;
+
+    public GameObject damageParticle;
     //private S_DifficultyManager difficultyManager
 
     private void Start() {
@@ -28,6 +30,8 @@ public class S_Player : MonoBehaviour
                 armor = 0;
             }
         } else {
+            GameObject bloodParticle = Instantiate(damageParticle, transform.position, transform.rotation);
+            Destroy(bloodParticle, 0.5f);
             health -= dmg;
         }
 
@@ -36,23 +40,23 @@ public class S_Player : MonoBehaviour
         }
 
         // Update heart icons based on current health
-        /*for (int i = 0; i < uiManager.hearts.childCount; i++) {
+        for (int i = 0; i < uiManager.hearts.childCount; i++) {
             if (i < health) {
                 uiManager.hearts.GetChild(i).gameObject.SetActive(true);
             } else {
                 uiManager.hearts.GetChild(i).gameObject.SetActive(false);
             }
 
-        }*/
+        }
 
         // Update armor icons based on current armor
-        /*for (int i = 0; i < uiManager.armor.childCount; i++) {
+        for (int i = 0; i < uiManager.armor.childCount; i++) {
             if (i < armor) {
                 uiManager.armor.GetChild(i).gameObject.SetActive(true);
             } else {
                 uiManager.armor.GetChild(i).gameObject.SetActive(false);
             }
 
-        }*/
+        }
     }
 }
