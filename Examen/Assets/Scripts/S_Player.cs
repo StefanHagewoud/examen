@@ -30,7 +30,7 @@ public class S_Player : MonoBehaviour
                 armor = 0;
             }
         } else {
-            GameObject bloodParticle = Instantiate(damageParticle, transform.position, transform.rotation);
+            GameObject bloodParticle = Instantiate(damageParticle, transform.position, Quaternion.identity);
             Destroy(bloodParticle, 0.5f);
             health -= dmg;
         }

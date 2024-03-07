@@ -7,6 +7,7 @@ public class S_Weapon : MonoBehaviour
     [Header("references")]
     public S_UiManager uiManager;
     public GameObject gunImpactEffect;
+    public GameObject bulletPrefab;
 
     [Header("Gun Settings")]
     public int maxMagAmmo;
@@ -26,6 +27,7 @@ public class S_Weapon : MonoBehaviour
     private GameObject rocket;
     private bool firedRocket;
     private bool rocketExploding;
+
 
 
     // Start is called before the first frame update
@@ -89,8 +91,11 @@ public class S_Weapon : MonoBehaviour
     }
     public void Shoot() {
         if (magAmmo > 0) {
-            GameObject muscleFlash = Instantiate(transform.GetChild(0).gameObject, new Vector3(transform.position.x, transform.position.y, transform.position.z + 0.5f), transform.rotation);
+            GameObject muscleFlash = Instantiate(transform.GetChild(0).gameObject, transform.GetChild(0).position, transform.rotation);
             Destroy(muscleFlash, 1f);
+            GameObject bullet = Instantiate(bulletPrefab, transform.position, transform.rotation);
+            bullet.GetComponent<Rigidbody>().AddForce(bullet.transform.forward * 500f);
+            Destroy(bullet, 3f);
             magAmmo--;
             RaycastHit hitInfo;
             if (transform.tag == "RPG") {
