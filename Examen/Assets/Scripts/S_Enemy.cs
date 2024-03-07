@@ -166,7 +166,11 @@ public class S_Enemy : MonoBehaviour
         {
             GameObject.Find("WaveSpawner").GetComponent<S_WaveSpawner>().enemiesAlive--;
         }
-        S_ScoreManager.instance.AddScore(scorePerEnemy);
+        if(GameObject.Find("PF_ScoreManager") != null)
+        {
+            GameObject.Find("PF_ScoreManager").GetComponent<S_ScoreManager>().AddScore(scorePerEnemy);
+        }
+
         Destroy(gameObject);
     }
 }

@@ -513,11 +513,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   wallMaterial: {fileID: 2100000, guid: bf042951a196a644f932d726db0fcbf7, type: 2}
-  camera: {fileID: 0}
-  mask:
-    serializedVersion: 2
-    m_Bits: 0
-  player: {fileID: 2511343718522993390}
+  playerCamera: {fileID: 0}
 --- !u!65 &4778082269857836161
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -738,6 +734,12 @@ PrefabInstance:
       propertyPath: reloadTime
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 9122884137095064058, guid: d0986d27456936048abf4ad229b9b3a4,
+        type: 3}
+      propertyPath: bulletPrefab
+      value: 
+      objectReference: {fileID: 6071567608932826647, guid: 880d73ba6e80c9a40a37c67b79418d43,
+        type: 3}
     - target: {fileID: 9122884137095064058, guid: d0986d27456936048abf4ad229b9b3a4,
         type: 3}
       propertyPath: gunImpactEffect
