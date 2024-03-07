@@ -45,8 +45,26 @@ public class S_PlayerMovement : MonoBehaviour
 
         if (!isRolling)// While player is not rolling he can rotate
         {
-            playerTransform.Translate(new Vector3(movementInput.x, 0, movementInput.y) * walkMovementMultiplier * Time.fixedDeltaTime, cameraTransformRotation);
-            
+            Vector3 newMovementDirection = Vector3.zero;
+            if(Mathf.Abs(movementInput.x) + Mathf.Abs(movementInput.y) > 1)//Calculates so ther input is always 1 or lower.
+            {
+                newMovementDirection.x = Mathf.Abs(movementInput.x) / (Mathf.Abs(movementInput.x) + Mathf.Abs(movementInput.y));
+                newMovementDirection.z = Mathf.Abs(movementInput.y) / (Mathf.Abs(movementInput.x) + Mathf.Abs(movementInput.y));
+                if(movementInput.x < 0)//
+                {
+                    newMovementDirection.x = -newMovementDirection.x;
+                }
+                if(movementInput.y < 0)
+                {
+                    newMovementDirection.z = -newMovementDirection.z;
+                }
+            }
+            else
+            {
+                newMovementDirection = new Vector3(movementInput.x, 0, movementInput.y);
+            }
+            playerTransform.Translate(new Vector3(newMovementDirection.x, 0, newMovementDirection.z) * walkMovementMultiplier * Time.fixedDeltaTime, cameraTransformRotation);
+
             if (Mathf.Abs(aimDirection.x) > 0.1f || Mathf.Abs(aimDirection.y) > 0.1f)
             {
                 Vector3 playerDirection = Vector3.right * aimDirection.x + Vector3.forward * aimDirection.y;
