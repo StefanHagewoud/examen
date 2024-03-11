@@ -1264,7 +1264,7 @@ PrefabInstance:
         type: 3}
       propertyPath: uiManager
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1070159469}
     - target: {fileID: 6085631219541782373, guid: 5e7a49de92b224740a82a8ad92d592cc,
         type: 3}
       propertyPath: cameraTransformRotation
@@ -1274,7 +1274,7 @@ PrefabInstance:
         type: 3}
       propertyPath: uiManager
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1070159469}
     - target: {fileID: 8847558234348450162, guid: 5e7a49de92b224740a82a8ad92d592cc,
         type: 3}
       propertyPath: playerCamera
@@ -2073,6 +2073,18 @@ Light:
   m_UseViewFrustumForShadowCasterCull: 1
   m_ShadowRadius: 0
   m_ShadowAngle: 0
+--- !u!114 &1070159469 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1869259571045177328, guid: 7d09bd0b35c5a8f4ba675f48691f6bf4,
+    type: 3}
+  m_PrefabInstance: {fileID: 521651998}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 35300ea670d228b4bacff6f2fe8e2f03, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1076074040
 GameObject:
   m_ObjectHideFlags: 0
