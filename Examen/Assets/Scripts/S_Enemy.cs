@@ -25,6 +25,8 @@ public class S_Enemy : MonoBehaviour
     public bool passive;
     [SerializeField]
     private GameObject bloodParticle;
+    [SerializeField]
+    private GameObject muzzleFlashParticle;
 
     void Start()
     {
@@ -35,6 +37,11 @@ public class S_Enemy : MonoBehaviour
         {
             stopRange = Random.Range(4, 10);
         }
+    }
+
+    public void TogglePassive(bool toggle)
+    {
+        passive = toggle;
     }
 
     void Update()
@@ -130,6 +137,8 @@ public class S_Enemy : MonoBehaviour
         }
         else
         {
+            GameObject muzzleFlash = Instantiate(muzzleFlashParticle, transform.GetChild(2).position, transform.rotation);
+            Destroy(muzzleFlash, 1f);
             GameObject bullet = Instantiate(bulletPrefab, transform.GetChild(2).position, transform.rotation);
             bullet.GetComponent<S_Bullet>().damage = damage;
             bullet.GetComponent<Rigidbody>().AddForce(bullet.transform.forward * 500f);
@@ -157,7 +166,11 @@ public class S_Enemy : MonoBehaviour
         {
             GameObject.Find("WaveSpawner").GetComponent<S_WaveSpawner>().enemiesAlive--;
         }
-        S_ScoreManager.instance.AddScore(scorePerEnemy);
+        if(GameObject.Find("PF_ScoreManager") != null)
+        {
+            GameObject.Find("PF_ScoreManager").GetComponent<S_ScoreManager>().AddScore(scorePerEnemy);
+        }
+
         Destroy(gameObject);
     }
 }

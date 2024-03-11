@@ -6,21 +6,27 @@ using TMPro;
 public class S_ScoreManager : MonoBehaviour
 {
     public int score;
+    [SerializeField]
+    private int highscore;
     public TMP_Text scoreText;
-    public TMP_Text highscoreText;
-    public static S_ScoreManager instance;
+    [SerializeField]
+    private TMP_Text highscoreText;
     private void Awake()
     {
-        instance = this;
-        DontDestroyOnLoad(this);
-        scoreText.text = score.ToString();
+        score = PlayerPrefs.GetInt("Score", score);
+        scoreText.text = PlayerPrefs.GetInt("Score", score).ToString();
+        PlayerPrefs.GetInt("Score", 0);
+        highscore = PlayerPrefs.GetInt("Highscore", 0);
+        highscoreText.text = PlayerPrefs.GetInt("Highscore", 0).ToString();
+        SaveScore();
     }
 
     public void AddScore(int newScore)
     {
         score += newScore;
-        scoreText.text = newScore.ToString();
-        if (score > PlayerPrefs.GetInt("Highscore", score))
+        scoreText.text = score.ToString();
+        PlayerPrefs.SetInt("Score", score);
+        if (score > PlayerPrefs.GetInt("Highscore", 0))
         {
             PlayerPrefs.SetInt("Highscore", score);
             SaveScore();
@@ -28,7 +34,7 @@ public class S_ScoreManager : MonoBehaviour
     }
     public void SaveScore()
     {
-        PlayerPrefs.GetInt("Highscore", score);
-        highscoreText.text = PlayerPrefs.GetInt("Highscore", score).ToString();
+        highscoreText.text = PlayerPrefs.GetInt("Highscore", 0).ToString();
+        scoreText.text = PlayerPrefs.GetInt("Score", 0).ToString();
     }
 }

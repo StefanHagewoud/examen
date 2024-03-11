@@ -12,6 +12,7 @@ TagManager:
   - Crate
   - Rolling
   - Shield
+  - Interact
   layers:
   - Default
   - TransparentFX
