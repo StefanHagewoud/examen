@@ -1162,7 +1162,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &8794183716261072713
 RectTransform:
   m_ObjectHideFlags: 0
@@ -5834,7 +5834,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &4432188374389930542
 RectTransform:
   m_ObjectHideFlags: 0
@@ -7254,8 +7254,8 @@ MonoBehaviour:
   pickupManager: {fileID: 0}
   hearts: {fileID: 6896741313478653461}
   armor: {fileID: 4246856174513205319}
-  currentAmmoText: {fileID: 0}
-  currentMaxAmmoText: {fileID: 0}
+  currentAmmoText: {fileID: 1765986874213828718}
+  currentMaxAmmoText: {fileID: 9081864945662701253}
 --- !u!1 &4740940895343405084
 GameObject:
   m_ObjectHideFlags: 0

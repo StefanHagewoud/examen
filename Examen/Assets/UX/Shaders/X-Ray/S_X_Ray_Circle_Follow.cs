@@ -8,9 +8,6 @@ public class S_X_Ray_Circle_Follow : MonoBehaviour
 
     public Material wallMaterial;
     public Camera playerCamera;
-    public LayerMask mask;
-    public Transform player;
-
 
     void Update()
     {
