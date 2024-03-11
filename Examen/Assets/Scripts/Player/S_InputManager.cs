@@ -27,6 +27,7 @@ public class S_InputManager : MonoBehaviour
     [Header("Scripts")]
     public S_DialogeManager dialogeManager;
     public S_PlayerMovement playerMovementScript;
+    public S_InteractManager interactManagerScript;
 
     public void OnMove(InputAction.CallbackContext value)
     {
@@ -90,7 +91,25 @@ public class S_InputManager : MonoBehaviour
         interactInput = (int)value.ReadValue<float>();
         if (value.performed)
         {
-            dialogeManager.SkipNextDialoge();
+
+            if (dialogeManager)
+            {
+                dialogeManager.SkipNextDialoge();
+            }
+            else
+            {
+                Debug.LogWarning("dialogeManager variable is not filled in!", this);
+            }
+
+            if (interactManagerScript)
+            {
+                interactManagerScript.ActivateInteract();
+            }
+            else
+            {
+                Debug.LogWarning("interactManager variable is not filled in!", this);
+            }
+
             if (allowDebug)
             {
                 print(value.ReadValue<float>() + "Performed, interactInput");
