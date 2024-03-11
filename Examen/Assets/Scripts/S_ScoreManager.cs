@@ -11,13 +11,13 @@ public class S_ScoreManager : MonoBehaviour
     public TMP_Text scoreText;
     [SerializeField]
     private TMP_Text highscoreText;
-    public static S_ScoreManager instance;
     private void Awake()
     {
-        instance = this;
-        DontDestroyOnLoad(this);
-        scoreText.text = score.ToString();
-        PlayerPrefs.GetInt("Highscore", 0);
+        score = PlayerPrefs.GetInt("Score", score);
+        scoreText.text = PlayerPrefs.GetInt("Score", score).ToString();
+        PlayerPrefs.GetInt("Score", 0);
+        highscore = PlayerPrefs.GetInt("Highscore", 0);
+        highscoreText.text = PlayerPrefs.GetInt("Highscore", 0).ToString();
         SaveScore();
     }
 
@@ -25,6 +25,7 @@ public class S_ScoreManager : MonoBehaviour
     {
         score += newScore;
         scoreText.text = score.ToString();
+        PlayerPrefs.SetInt("Score", score);
         if (score > PlayerPrefs.GetInt("Highscore", 0))
         {
             PlayerPrefs.SetInt("Highscore", score);
@@ -34,5 +35,6 @@ public class S_ScoreManager : MonoBehaviour
     public void SaveScore()
     {
         highscoreText.text = PlayerPrefs.GetInt("Highscore", 0).ToString();
+        scoreText.text = PlayerPrefs.GetInt("Score", 0).ToString();
     }
 }
