@@ -55,6 +55,11 @@ public class S_Enemy : MonoBehaviour
 
     void Update()
     {
+        if (boss && health <= maxHealth / 2)
+        {
+            enemyAgent.isStopped = false;
+            stopRange = 12f;
+        }
         ChasePlayer();
     }
 
@@ -103,19 +108,24 @@ public class S_Enemy : MonoBehaviour
                 {
                     enemyAgent.isStopped = true;
                 }
-                RaycastHit hit1;
-                if (Physics.Raycast(transform.position, transform.forward, out hit1, 100f))
+                
+                else
                 {
-                    if(hit.collider != null)
+                    RaycastHit hit1;
+                    if (Physics.Raycast(transform.position, transform.forward, out hit1, 100f))
                     {
-                        if (hit.collider.transform.root.tag != "Player")
+                        if (hit.collider != null)
                         {
-                            enemyAgent.isStopped = false;
-                            Debug.DrawRay(transform.position, transform.forward * hit1.distance, Color.red);
-                            //Debug.Log("Can not see player");
+                            if (hit.collider.transform.root.tag != "Player")
+                            {
+                                enemyAgent.isStopped = false;
+                                Debug.DrawRay(transform.position, transform.forward * hit1.distance, Color.red);
+                                //Debug.Log("Can not see player");
+                            }
                         }
                     }
                 }
+                
             }
             else
             {
