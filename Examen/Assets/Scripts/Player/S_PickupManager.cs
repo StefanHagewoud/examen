@@ -7,9 +7,12 @@ public class S_PickupManager : MonoBehaviour
     public GameObject gunHolderPrimary;
     public GameObject gunHolderSecondary;
     public S_Player playerScript;
-    public bool enableCollision = true;
-    public bool enableTrigger;
-    public bool allowDestroyGameObjects = true;// Destroys GameObjects when they touch them.
+    public bool enableCollision = true;//Add diagram
+    public bool enableTrigger;//Add diagram
+    public bool allowDestroyGameObjects = true;//Add diagram, Destroys GameObjects when they touch them.
+
+    [Header("Scripts")]
+    public S_WeaponSwitch weaponSwitch;//Add diagram
     
     private void OnCollisionEnter(Collision col)
     {
@@ -20,19 +23,32 @@ public class S_PickupManager : MonoBehaviour
 
         else if (col.transform.CompareTag("Shield"))
         {
+            if (allowDestroyGameObjects)
+            {
+                DestroyCrateOrObject(col.collider);
+            }
             PickupItem("Shield");
         }
         else if (col.transform.CompareTag("Med-Kit"))
         {
+            if (allowDestroyGameObjects)
+            {
+                DestroyCrateOrObject(col.collider);
+            }
             PickupItem("Med-Kit");
         }
         else if (col.transform.CompareTag("RPG"))
         {
+            if (allowDestroyGameObjects)
+            {
+                DestroyCrateOrObject(col.collider);
+            }
             PickupItem("RPG");
         }
         else if (col.transform.CompareTag("Weapon"))
         {
-            PickupItem("Weapon");
+            GameObject weaponGameObject = col.gameObject.GetComponentInChildren<S_Weapon>().gameObject;
+            PickupItem("Weapon", weaponGameObject);
         }
     }
     private void OnTriggerEnter(Collider other)
@@ -68,12 +84,15 @@ public class S_PickupManager : MonoBehaviour
         }
         else if (other.transform.CompareTag("Weapon"))
         {
-
-            PickupItem("Weapon");
+            if (weaponSwitch.CheckWeaponSpace())
+            {
+                GameObject weaponGameObject = other.gameObject.GetComponentInChildren<S_Weapon>().gameObject;
+                PickupItem("Weapon", weaponGameObject);
+            }
         }
     }
 
-    public void PickupItem(string powerupName)
+    public void PickupItem(string powerupName, GameObject weaponGameObject = null)
     {
         if(playerScript == null)
         {
@@ -96,7 +115,7 @@ public class S_PickupManager : MonoBehaviour
         }
         else if(powerupName == "Weapon")// Hier komt later code wanneer de wapen script af is.
         {
-
+            weaponSwitch.PickupGun(weaponGameObject);
         }
     }
     private void DestroyCrateOrObject(Collider other)//Add Diagram.
