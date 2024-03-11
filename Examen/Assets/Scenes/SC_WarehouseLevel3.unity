@@ -440,6 +440,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: PF_ScoreManager
       objectReference: {fileID: 0}
+    - target: {fileID: 2962605087677474332, guid: 9c36f40b7b59a014981252bfc425e749,
+        type: 3}
+      propertyPath: scoreText
+      value: 
+      objectReference: {fileID: 1464709490}
+    - target: {fileID: 2962605087677474332, guid: 9c36f40b7b59a014981252bfc425e749,
+        type: 3}
+      propertyPath: highscoreText
+      value: 
+      objectReference: {fileID: 80338870}
     - target: {fileID: 9133854120419464307, guid: 9c36f40b7b59a014981252bfc425e749,
         type: 3}
       propertyPath: scoreText
