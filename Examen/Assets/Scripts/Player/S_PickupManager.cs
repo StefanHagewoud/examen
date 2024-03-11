@@ -86,7 +86,15 @@ public class S_PickupManager : MonoBehaviour
         {
             if (weaponSwitch.CheckWeaponSpace())
             {
-                GameObject weaponGameObject = other.gameObject.GetComponentInChildren<S_Weapon>().gameObject;
+                GameObject weaponGameObject = null;
+                if (other.gameObject.GetComponentInChildren<S_Weapon>())
+                {
+                    weaponGameObject = other.gameObject.GetComponentInChildren<S_Weapon>().gameObject;
+                }
+                else if (other.gameObject.GetComponent<S_Weapon>())
+                {
+                    weaponGameObject = other.gameObject.GetComponent<S_Weapon>().gameObject;
+                }
                 PickupItem("Weapon", weaponGameObject);
             }
         }

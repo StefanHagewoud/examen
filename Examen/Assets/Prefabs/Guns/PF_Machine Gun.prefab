@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 4391835707787057156}
   m_Layer: 0
   m_Name: PF_Machine Gun
-  m_TagString: Untagged
+  m_TagString: Weapon
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -121,8 +121,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   uiManager: {fileID: 0}
-  gunImpactEffect: {fileID: 0}
-  bulletPrefab: {fileID: 0}
+  gunImpactEffect: {fileID: 2932056339021522435, guid: 2a2652803214f584492c222b50984c36,
+    type: 3}
+  bulletPrefab: {fileID: 6071567608932826647, guid: 880d73ba6e80c9a40a37c67b79418d43,
+    type: 3}
   maxMagAmmo: 30
   magAmmo: 0
   infAmmo: 0

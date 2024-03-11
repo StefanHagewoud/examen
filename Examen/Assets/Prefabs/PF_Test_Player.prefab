@@ -180,7 +180,7 @@ MonoBehaviour:
   enableCollision: 0
   enableTrigger: 1
   allowDestroyGameObjects: 1
-  weaponSwitch: {fileID: 0}
+  weaponSwitch: {fileID: 5375948523509182192}
 --- !u!65 &9217639557661454112
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -242,6 +242,7 @@ Transform:
   - {fileID: 4216505759396856551}
   - {fileID: 192920367149511822}
   - {fileID: 3123156684021940945}
+  - {fileID: 5633911118282077007}
   - {fileID: 6821061034791218581}
   - {fileID: 6475394606305131739}
   m_Father: {fileID: 0}
@@ -283,6 +284,7 @@ MonoBehaviour:
   dialogeManager: {fileID: 0}
   playerMovementScript: {fileID: 271760598347593271}
   interactManagerScript: {fileID: 5371971417580033343}
+  weaponSwitch: {fileID: 5375948523509182192}
 --- !u!114 &622466673099802132
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -621,6 +623,37 @@ Transform:
   m_Children: []
   m_Father: {fileID: 3123156684021940945}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &7308513181060315039
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5633911118282077007}
+  m_Layer: 0
+  m_Name: WeaponDropPos
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5633911118282077007
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7308513181060315039}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 1.5}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2511343718522993390}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &7413165616649751560
 GameObject:
   m_ObjectHideFlags: 0
@@ -670,26 +703,30 @@ MonoBehaviour:
   hasPrimary: 0
   primaryWeaponHolder: {fileID: 7213590132242127671}
   primaryWeapon: {fileID: 0}
-  hasSecondary: 1
-  secondaryWeaponHolder: {fileID: 8332951733001547155}
   secondaryWeapon: {fileID: 5897254463255734798}
   primaryWeaponUIUnselected: {fileID: 0}
   weaponPrefabs:
   - weaponName: Beginner revolver
     prefabWeapon: {fileID: 8569993448971541180, guid: d0986d27456936048abf4ad229b9b3a4,
       type: 3}
+    weaponUI: {fileID: 0}
     weaponUIUnselected: {fileID: 0}
     weaponUISelected: {fileID: 0}
   - weaponName: Machine/Tommy gun
     prefabWeapon: {fileID: 1708047818243286330, guid: 0b72eec833dfd6c42b7702ca28cc85a5,
       type: 3}
+    weaponUI: {fileID: 0}
     weaponUIUnselected: {fileID: 0}
     weaponUISelected: {fileID: 0}
   - weaponName: Rocket launcher
     prefabWeapon: {fileID: 4675995929976414041, guid: a29d9abf8c162f34096ec87cbd483ca4,
       type: 3}
+    weaponUI: {fileID: 0}
     weaponUIUnselected: {fileID: 0}
     weaponUISelected: {fileID: 0}
+  weaponDropPosition: {fileID: 5633911118282077007}
+  uiManagerScript: {fileID: 0}
+  allowDebug: 1
 --- !u!1 &8332951733001547155
 GameObject:
   m_ObjectHideFlags: 0

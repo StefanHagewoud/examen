@@ -28,6 +28,7 @@ public class S_InputManager : MonoBehaviour
     public S_DialogeManager dialogeManager;
     public S_PlayerMovement playerMovementScript;
     public S_InteractManager interactManagerScript;
+    public S_WeaponSwitch weaponSwitch;
 
     public void OnMove(InputAction.CallbackContext value)
     {
@@ -146,6 +147,7 @@ public class S_InputManager : MonoBehaviour
         weaponDropInput = (int)value.ReadValue<float>();
         if (value.performed)
         {
+            weaponSwitch.DropWeapon();
             if (allowDebug)
             {
                 print(value.ReadValue<float>() + "Performed, weaponDropInput");
@@ -164,6 +166,7 @@ public class S_InputManager : MonoBehaviour
         rightWeaponInput = (int)value.ReadValue<float>();
         if (value.performed)
         {
+            weaponSwitch.SelectRightGun();
             if (allowDebug)
             {
                 print(value.ReadValue<float>() + "Performed, rightWeaponInput");
@@ -182,6 +185,7 @@ public class S_InputManager : MonoBehaviour
         leftWeaponInput = (int)value.ReadValue<float>();
         if (value.performed)
         {
+            weaponSwitch.SelectLeftGun();
             if (allowDebug)
             {
                 print(value.ReadValue<float>() + "Performed, leftWeaponInput");
