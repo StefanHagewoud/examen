@@ -779,6 +779,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3387215950068970797, guid: 5e7a49de92b224740a82a8ad92d592cc,
+        type: 3}
+      propertyPath: m_TagString
+      value: PickUpManager
+      objectReference: {fileID: 0}
     - target: {fileID: 4185574638849654317, guid: 5e7a49de92b224740a82a8ad92d592cc,
         type: 3}
       propertyPath: m_Name
@@ -789,36 +794,11 @@ PrefabInstance:
       propertyPath: uiManager
       value: 
       objectReference: {fileID: 1070382664}
-    - target: {fileID: 4778082269857836161, guid: 5e7a49de92b224740a82a8ad92d592cc,
-        type: 3}
-      propertyPath: m_Size.y
-      value: 1.0950446
-      objectReference: {fileID: 0}
-    - target: {fileID: 4778082269857836161, guid: 5e7a49de92b224740a82a8ad92d592cc,
-        type: 3}
-      propertyPath: m_Size.z
-      value: 0.41865802
-      objectReference: {fileID: 0}
-    - target: {fileID: 4778082269857836161, guid: 5e7a49de92b224740a82a8ad92d592cc,
-        type: 3}
-      propertyPath: m_Center.y
-      value: 0.04752203
-      objectReference: {fileID: 0}
-    - target: {fileID: 4778082269857836161, guid: 5e7a49de92b224740a82a8ad92d592cc,
-        type: 3}
-      propertyPath: m_Center.z
-      value: -0.0055381656
-      objectReference: {fileID: 0}
     - target: {fileID: 6459011630091376968, guid: 5e7a49de92b224740a82a8ad92d592cc,
         type: 3}
       propertyPath: uiManager
       value: 
       objectReference: {fileID: 1070382664}
-    - target: {fileID: 7031487829601979032, guid: 5e7a49de92b224740a82a8ad92d592cc,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 8847558234348450162, guid: 5e7a49de92b224740a82a8ad92d592cc,
         type: 3}
       propertyPath: playerCamera

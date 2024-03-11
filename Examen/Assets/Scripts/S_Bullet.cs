@@ -12,7 +12,7 @@ public class S_Bullet : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         Debug.Log(host.tag);
-        if(host.tag != other.transform.root.tag) {
+        if(host.transform.root.tag != other.transform.root.tag) {
             Debug.Log("hit: " + other.tag);
             if (other.GetComponent<S_Player>() != null) {
                 other.GetComponent<S_Player>().TakeDamage(damage);
