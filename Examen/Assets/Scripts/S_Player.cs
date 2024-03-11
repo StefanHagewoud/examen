@@ -16,6 +16,7 @@ public class S_Player : MonoBehaviour
     //private S_DifficultyManager difficultyManager
 
     private void Start() {
+        //DontDestroyOnLoad(transform.gameObject);
         TakeDamage(0);
     }
     public void OnDeath() {
@@ -30,6 +31,7 @@ public class S_Player : MonoBehaviour
                 armor = 0;
             }
         } else {
+            Debug.Log("damage");
             GameObject bloodParticle = Instantiate(damageParticle, transform.position, Quaternion.identity);
             Destroy(bloodParticle, 0.5f);
             health -= dmg;
