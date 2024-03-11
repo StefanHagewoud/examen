@@ -110,6 +110,9 @@ public class S_Weapon : MonoBehaviour
                 Destroy(bullet, 3f);
                 magAmmo--;
             }
+        } else {
+            Debug.Log("reloading");
+            Reload();
         }
         uiManager.UpdateWeaponUI();
     }
