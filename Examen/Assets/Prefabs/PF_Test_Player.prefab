@@ -507,7 +507,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4185574638849654317}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9db7c273a0589914babd778adb5e39d8, type: 3}
   m_Name: 
@@ -629,6 +629,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: PF_Pistol
+      objectReference: {fileID: 0}
+    - target: {fileID: 9122884137095064058, guid: d0986d27456936048abf4ad229b9b3a4,
+        type: 3}
+      propertyPath: magAmmo
+      value: 10
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

@@ -791,30 +791,9 @@ PrefabInstance:
       objectReference: {fileID: 1070382664}
     - target: {fileID: 6459011630091376968, guid: 5e7a49de92b224740a82a8ad92d592cc,
         type: 3}
-      propertyPath: magAmmo
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 6459011630091376968, guid: 5e7a49de92b224740a82a8ad92d592cc,
-        type: 3}
-      propertyPath: shootPos
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 6459011630091376968, guid: 5e7a49de92b224740a82a8ad92d592cc,
-        type: 3}
       propertyPath: uiManager
       value: 
       objectReference: {fileID: 1070382664}
-    - target: {fileID: 6459011630091376968, guid: 5e7a49de92b224740a82a8ad92d592cc,
-        type: 3}
-      propertyPath: bulletPrefab
-      value: 
-      objectReference: {fileID: 6071567608932826647, guid: 880d73ba6e80c9a40a37c67b79418d43,
-        type: 3}
-    - target: {fileID: 8847558234348450162, guid: 5e7a49de92b224740a82a8ad92d592cc,
-        type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 8847558234348450162, guid: 5e7a49de92b224740a82a8ad92d592cc,
         type: 3}
       propertyPath: playerCamera
@@ -1601,20 +1580,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 3329670228900992809, guid: 484406fb3207f4e4f8289672d1d48914,
-        type: 3}
-      propertyPath: health
-      value: 5
-      objectReference: {fileID: 0}
     - target: {fileID: 6183118907095724612, guid: 484406fb3207f4e4f8289672d1d48914,
         type: 3}
       propertyPath: m_Name
       value: Enemy (1)
-      objectReference: {fileID: 0}
-    - target: {fileID: 6183118907095724612, guid: 484406fb3207f4e4f8289672d1d48914,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

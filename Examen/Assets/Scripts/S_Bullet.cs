@@ -23,6 +23,7 @@ public class S_Bullet : MonoBehaviour
             } else {
                 GameObject hitEffect = Instantiate(hitParticle, transform.position, Quaternion.identity);
                 Destroy(hitEffect, 1f);
+                Destroy(gameObject);
             }
         }
     }
