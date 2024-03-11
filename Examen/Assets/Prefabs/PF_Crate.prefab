@@ -76,7 +76,19 @@ MonoBehaviour:
   allowTriggerEnter: 1
   OnEnterTriggered:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 2094527179720071379}
+        m_TargetAssemblyTypeName: S_CrateSpawner, Assembly-CSharp
+        m_MethodName: SpawnCrate
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   allowExitTrigger: 0
   OnExitTriggered:
     m_PersistentCalls:
@@ -96,7 +108,7 @@ MonoBehaviour:
   OnCrateSpawned:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1740174960894385847}
         m_TargetAssemblyTypeName: UnityEngine.Renderer, UnityEngine
         m_MethodName: set_enabled
         m_Mode: 6
@@ -120,14 +132,12 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  medkitPowerupPrefab: {fileID: 2980198727364197934, guid: 777e005de4f978c45ac419360fafb26c,
-    type: 3}
+  medkitPowerupPrefab: {fileID: 0}
   armorPowerupPrefab: {fileID: 788807785609222132, guid: 6c5523a058de27f47bdda131750e9b25,
     type: 3}
-  rpgPowerupPrefab: {fileID: 666129767450184481, guid: fc36ba96c711a0b4281054a58d035dc9,
-    type: 3}
+  rpgPowerupPrefab: {fileID: 0}
   weaponsPrefab:
-  - {fileID: 2273899818004042560, guid: 8d018877522a7b349bbc1af680c59e35, type: 3}
+  - {fileID: 0}
   allowDebug: 1
 --- !u!65 &3017440551986819632
 BoxCollider:
@@ -221,6 +231,12 @@ PrefabInstance:
 --- !u!4 &607276990637827544 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3363515134609093672, guid: 6d3f14e8e8d1ee94a9beb1b54cec4a42,
+    type: 3}
+  m_PrefabInstance: {fileID: 2792478081589842416}
+  m_PrefabAsset: {fileID: 0}
+--- !u!23 &1740174960894385847 stripped
+MeshRenderer:
+  m_CorrespondingSourceObject: {fileID: 4532512303917666119, guid: 6d3f14e8e8d1ee94a9beb1b54cec4a42,
     type: 3}
   m_PrefabInstance: {fileID: 2792478081589842416}
   m_PrefabAsset: {fileID: 0}
