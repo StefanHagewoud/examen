@@ -164,6 +164,7 @@ GameObject:
   - component: {fileID: 5249683967479209038}
   - component: {fileID: 5811736212987922877}
   - component: {fileID: 3122116070495919630}
+  - component: {fileID: 8847558234348450162}
   - component: {fileID: 4778082269857836161}
   m_Layer: 0
   m_Name: PF_Test_Player
@@ -171,7 +172,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &2511343718522993390
 Transform:
   m_ObjectHideFlags: 0
@@ -499,6 +500,20 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &8847558234348450162
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4185574638849654317}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9db7c273a0589914babd778adb5e39d8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  wallMaterial: {fileID: 2100000, guid: bf042951a196a644f932d726db0fcbf7, type: 2}
+  playerCamera: {fileID: 0}
 --- !u!65 &4778082269857836161
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -719,6 +734,12 @@ PrefabInstance:
       propertyPath: reloadTime
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 9122884137095064058, guid: d0986d27456936048abf4ad229b9b3a4,
+        type: 3}
+      propertyPath: bulletPrefab
+      value: 
+      objectReference: {fileID: 6071567608932826647, guid: 880d73ba6e80c9a40a37c67b79418d43,
+        type: 3}
     - target: {fileID: 9122884137095064058, guid: d0986d27456936048abf4ad229b9b3a4,
         type: 3}
       propertyPath: gunImpactEffect

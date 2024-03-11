@@ -147,6 +147,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3014fedccaf08d247829a86ed2a3180c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  scorePerEnemy: 10
   health: 100
   damage: 1
   range: 100
@@ -154,6 +155,8 @@ MonoBehaviour:
   bulletPrefab: {fileID: 6071567608932826647, guid: 880d73ba6e80c9a40a37c67b79418d43,
     type: 3}
   melee: 1
+  passive: 0
+  bloodParticle: {fileID: 0}
 --- !u!54 &9216928466270590989
 Rigidbody:
   m_ObjectHideFlags: 0
