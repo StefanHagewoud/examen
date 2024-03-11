@@ -32,13 +32,13 @@ public class S_FunctionActivatorTrigger : MonoBehaviour
             {
                 if (other.transform.CompareTag(tagsToLookFor[i]))
                 {
-                    ActivateTrigger();
+                    ActivateTrigger("Enter");
                     return;
                 }
             }
             else
             {
-                ActivateTrigger();
+                ActivateTrigger("Enter");
             }
         }
     }
@@ -55,29 +55,43 @@ public class S_FunctionActivatorTrigger : MonoBehaviour
             {
                 if (other.transform.CompareTag(tagsToLookFor[i]))
                 {
-                    ActivateTrigger();
+                    ActivateTrigger("Exit");
                     return;
                 }
             }
             else
             {
-                ActivateTrigger();
+                ActivateTrigger("Exit");
             }
         }
     }
-    private void ActivateTrigger()
+    private void ActivateTrigger(string triggerMethod)
     {
-        //Checking if player allowed to activate
+        //Checking if player is allowed to activate and which method is being used
         if(timesCanActivate < 0)
         {
-            OnEnterTriggered.Invoke();
+            if (triggerMethod == "Enter")
+            {
+                OnEnterTriggered.Invoke();
+            }
+            else if (triggerMethod == "Exit")
+            {
+                OnExitTriggered.Invoke();
+            }
             return;
         }
 
         if (timesCanActivate > 0)
         {
             timesCanActivate--;
-            OnEnterTriggered.Invoke();
+            if (triggerMethod == "Enter")
+            {
+                OnEnterTriggered.Invoke();
+            }
+            else if (triggerMethod == "Exit")
+            {
+                OnExitTriggered.Invoke();
+            }
         }
         if (disableWhenMaxActivated && timesCanActivate == 0)
         {
