@@ -129,6 +129,7 @@ MonoBehaviour:
   damage: 0
   hitParticle: {fileID: 2932056339021522435, guid: 2a2652803214f584492c222b50984c36,
     type: 3}
+  host: {fileID: 0}
 --- !u!135 &757370181930378086
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -162,6 +163,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: PF_BulletPartical
+      objectReference: {fileID: 0}
+    - target: {fileID: 4954127301868708804, guid: b8bb1fb4f733f1b4f8d57b2c2beb8463,
+        type: 3}
+      propertyPath: m_IsKinematic
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5102352890206387682, guid: b8bb1fb4f733f1b4f8d57b2c2beb8463,
         type: 3}
@@ -226,6 +232,11 @@ PrefabInstance:
     - target: {fileID: 5102352890206387682, guid: b8bb1fb4f733f1b4f8d57b2c2beb8463,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5102352890206387682, guid: b8bb1fb4f733f1b4f8d57b2c2beb8463,
+        type: 3}
+      propertyPath: m_ConstrainProportionsScale
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []

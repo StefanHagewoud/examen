@@ -29,7 +29,6 @@ public class S_Weapon : MonoBehaviour
     private bool rocketExploding;
 
 
-
     // Start is called before the first frame update
     void Start()
     {
@@ -91,28 +90,26 @@ public class S_Weapon : MonoBehaviour
     }
     public void Shoot() {
         if (magAmmo > 0) {
-            GameObject muscleFlash = Instantiate(transform.GetChild(0).gameObject, transform.GetChild(0).position, transform.rotation);
-            Destroy(muscleFlash, 1f);
-            GameObject bullet = Instantiate(bulletPrefab, transform.position, transform.rotation);
-            bullet.GetComponent<Rigidbody>().AddForce(bullet.transform.forward * 500f);
-            Destroy(bullet, 3f);
-            magAmmo--;
-            RaycastHit hitInfo;
             if (transform.tag == "RPG") {
                 rocket = Instantiate(rocketPrefab, transform.position, transform.rotation);
                 firedRocket = true;
-            } else if (Physics.Raycast(transform.parent.parent.position, transform.forward, out hitInfo, range)) {
-                Debug.DrawLine(transform.position, hitInfo.point, Color.cyan, 1);
-                if (hitInfo.transform.tag == "Enemy") {
-                    hitInfo.transform.GetComponent<S_Enemy>().TakeDamage(dmg);
-                } else {
-                    GameObject bulletImpact = Instantiate(gunImpactEffect, hitInfo.point, Quaternion.LookRotation(hitInfo.normal));
-                    Destroy(bulletImpact, 0.2f);
+            } else if (transform.tag == "melee") {
+                RaycastHit hitInfo;
+                if (Physics.Raycast(transform.parent.parent.position, transform.forward, out hitInfo, range)) {
+                    if (hitInfo.transform.tag == "Enemy") {
+                        hitInfo.transform.GetComponent<S_Enemy>().TakeDamage(dmg);
+                    }
                 }
+            } else {
+                GameObject muscleFlash = Instantiate(transform.GetChild(0).gameObject, transform.GetChild(0).position, transform.rotation);
+                Destroy(muscleFlash, 1f);
+                GameObject bullet = Instantiate(bulletPrefab, transform.GetChild(1).position, transform.parent.rotation);
+                bullet.GetComponent<S_Bullet>().damage = dmg;
+                bullet.GetComponent<S_Bullet>().host = transform.parent.gameObject;
+                bullet.GetComponent<Rigidbody>().AddForce(transform.forward * 500f);
+                Destroy(bullet, 3f);
+                magAmmo--;
             }
-        } else {
-            Debug.Log("reloading");
-            Reload();
         }
         uiManager.UpdateWeaponUI();
     }
