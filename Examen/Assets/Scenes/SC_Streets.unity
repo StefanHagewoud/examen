@@ -3538,6 +3538,7 @@ MonoBehaviour:
   highscore: 0
   scoreText: {fileID: 1500097139}
   highscoreText: {fileID: 1494862833}
+  clearScore: 1
 --- !u!1001 &1534028590
 PrefabInstance:
   m_ObjectHideFlags: 0

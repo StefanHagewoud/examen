@@ -11,8 +11,14 @@ public class S_ScoreManager : MonoBehaviour
     public TMP_Text scoreText;
     [SerializeField]
     private TMP_Text highscoreText;
+    [SerializeField]
+    private bool clearScore;
     private void Awake()
     {
+        if (clearScore)
+        {
+            PlayerPrefs.DeleteKey("Score");
+        }
         score = PlayerPrefs.GetInt("Score", score);
         scoreText.text = PlayerPrefs.GetInt("Score", score).ToString();
         PlayerPrefs.GetInt("Score", 0);
