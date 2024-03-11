@@ -48,16 +48,89 @@ MonoBehaviour:
   - dialogeFrames:
     - gameObjectsToChange:
       - {fileID: 0}
+      - {fileID: 0}
+      - {fileID: 0}
+    - gameObjectsToChange:
+      - {fileID: 0}
+      - {fileID: 0}
+      - {fileID: 0}
+  - dialogeFrames:
+    - gameObjectsToChange:
+      - {fileID: 0}
+      - {fileID: 0}
+      - {fileID: 0}
+    - gameObjectsToChange:
+      - {fileID: 0}
+      - {fileID: 0}
+      - {fileID: 0}
+    - gameObjectsToChange:
+      - {fileID: 0}
+      - {fileID: 0}
+      - {fileID: 0}
+    - gameObjectsToChange:
+      - {fileID: 0}
+      - {fileID: 0}
+      - {fileID: 0}
+    - gameObjectsToChange:
+      - {fileID: 0}
+      - {fileID: 0}
+      - {fileID: 0}
+    - gameObjectsToChange:
+      - {fileID: 0}
+      - {fileID: 0}
+      - {fileID: 0}
+      - {fileID: 0}
+  - dialogeFrames:
     - gameObjectsToChange:
       - {fileID: 0}
       - {fileID: 0}
     - gameObjectsToChange:
+      - {fileID: 0}
+      - {fileID: 0}
+  - dialogeFrames:
+    - gameObjectsToChange:
+      - {fileID: 0}
+      - {fileID: 0}
+      - {fileID: 0}
+    - gameObjectsToChange:
+      - {fileID: 0}
+      - {fileID: 0}
+      - {fileID: 0}
+    - gameObjectsToChange:
+      - {fileID: 0}
+      - {fileID: 0}
+      - {fileID: 0}
+  - dialogeFrames:
+    - gameObjectsToChange:
+      - {fileID: 0}
+      - {fileID: 0}
+      - {fileID: 0}
+    - gameObjectsToChange:
+      - {fileID: 0}
+      - {fileID: 0}
+      - {fileID: 0}
+    - gameObjectsToChange:
+      - {fileID: 0}
+      - {fileID: 0}
+      - {fileID: 0}
+  - dialogeFrames:
+    - gameObjectsToChange:
+      - {fileID: 0}
+      - {fileID: 0}
+      - {fileID: 0}
+    - gameObjectsToChange:
+      - {fileID: 0}
+      - {fileID: 0}
+      - {fileID: 0}
+    - gameObjectsToChange:
+      - {fileID: 0}
+      - {fileID: 0}
       - {fileID: 0}
   onDialogeCompleted:
     m_PersistentCalls:
       m_Calls: []
   animationCutscene: {fileID: 0}
-  dialogeEnabled: 1
+  dialogeEnabled: 0
   allowDebug: 1
   disablePlayerMovement: 1
   playerMovementScript: {fileID: 0}
