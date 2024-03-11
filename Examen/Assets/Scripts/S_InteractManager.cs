@@ -74,7 +74,7 @@ public class S_InteractManager : MonoBehaviour
 
     private void OnDrawGizmos()
     {
-        if (allowDebug)
+        if (allowDebug && playerTransform)
         {
             Gizmos.color = Color.blue;
             Gizmos.DrawLine(playerTransform.position, playerTransform.position + (playerTransform.forward * raycastRange));
