@@ -9,9 +9,12 @@ public class S_Enemy : MonoBehaviour
     public int scorePerEnemy;
     public float health;
     [SerializeField]
+    private float maxHealth;
+    [SerializeField]
     private float damage;
     [SerializeField]
     private float range = 100f;
+    [SerializeField]
     private float stopRange;
     private NavMeshAgent enemyAgent;
     private Transform target;
@@ -22,6 +25,8 @@ public class S_Enemy : MonoBehaviour
     private GameObject bulletPrefab;
     [SerializeField]
     private bool melee;
+    [SerializeField]
+    private bool boss;
     public bool passive;
     [SerializeField]
     private GameObject bloodParticle;
@@ -30,12 +35,16 @@ public class S_Enemy : MonoBehaviour
 
     void Start()
     {
+        health = maxHealth;
         target = GameObject.FindGameObjectWithTag("Player").transform;
         enemyAgent = GetComponent<NavMeshAgent>();
         enemyAgent.destination = target.position;
-        if (!melee)
+        if (!boss)
         {
-            stopRange = Random.Range(4, 10);
+            if (!melee)
+            {
+                stopRange = Random.Range(4, 10);
+            }
         }
     }
 
@@ -90,6 +99,10 @@ public class S_Enemy : MonoBehaviour
             float rangeFromPlayer = Vector3.Distance(transform.position, target.position);
             if (rangeFromPlayer <= stopRange)
             {
+                if (boss)
+                {
+                    enemyAgent.isStopped = true;
+                }
                 RaycastHit hit1;
                 if (Physics.Raycast(transform.position, transform.forward, out hit1, 100f))
                 {
@@ -123,6 +136,11 @@ public class S_Enemy : MonoBehaviour
         GameObject bloodEffect = Instantiate(bloodParticle, transform.position, Quaternion.identity);
         Destroy(bloodEffect, 1f);
         //hitanimation
+        if(boss && health <= maxHealth / 2)
+        {
+            enemyAgent.isStopped = false;
+            stopRange = 15f;
+        }
         if (health <= 0)
         {
             OnDeath();
