@@ -11,9 +11,8 @@ public class S_Bullet : MonoBehaviour
     //destroys the bullet on impact & does damage if the player is hit.
     private void OnTriggerEnter(Collider other)
     {
-        Debug.Log(host.tag);
-        if(host.transform.root.tag != other.transform.root.tag) {
-            Debug.Log("hit: " + other.tag);
+        if(host.transform.root.tag != other.transform.root.tag && other.tag != "PickupManager") {
+            Debug.Log("hit: " + other.gameObject.name + "by: " + host.tag);
             if (other.GetComponent<S_Player>() != null) {
                 other.GetComponent<S_Player>().TakeDamage(damage);
                 Destroy(gameObject);

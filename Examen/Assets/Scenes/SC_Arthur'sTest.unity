@@ -782,7 +782,7 @@ PrefabInstance:
     - target: {fileID: 3387215950068970797, guid: 5e7a49de92b224740a82a8ad92d592cc,
         type: 3}
       propertyPath: m_TagString
-      value: Untagged
+      value: PickupManager
       objectReference: {fileID: 0}
     - target: {fileID: 4185574638849654317, guid: 5e7a49de92b224740a82a8ad92d592cc,
         type: 3}
