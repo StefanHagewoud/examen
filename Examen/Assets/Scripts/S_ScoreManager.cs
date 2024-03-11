@@ -13,8 +13,10 @@ public class S_ScoreManager : MonoBehaviour
     private TMP_Text highscoreText;
     private void Awake()
     {
+        score = PlayerPrefs.GetInt("Score", score);
         scoreText.text = PlayerPrefs.GetInt("Score", score).ToString();
         PlayerPrefs.GetInt("Score", 0);
+        highscore = PlayerPrefs.GetInt("Highscore", 0);
         highscoreText.text = PlayerPrefs.GetInt("Highscore", 0).ToString();
         SaveScore();
     }
