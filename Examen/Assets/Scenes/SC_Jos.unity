@@ -1850,37 +1850,26 @@ PrefabInstance:
       propertyPath: m_Name
       value: PF_ScoreManager
       objectReference: {fileID: 0}
+    - target: {fileID: 2962605087677474332, guid: 9c36f40b7b59a014981252bfc425e749,
+        type: 3}
+      propertyPath: scoreText
+      value: 
+      objectReference: {fileID: 1489062011}
+    - target: {fileID: 2962605087677474332, guid: 9c36f40b7b59a014981252bfc425e749,
+        type: 3}
+      propertyPath: clearScore
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2962605087677474332, guid: 9c36f40b7b59a014981252bfc425e749,
+        type: 3}
+      propertyPath: highscoreText
+      value: 
+      objectReference: {fileID: 1153278221}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 2030425529325734897, guid: 9c36f40b7b59a014981252bfc425e749,
-        type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1017182197457597967}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9c36f40b7b59a014981252bfc425e749, type: 3}
---- !u!1 &1017182197457597966 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 2030425529325734897, guid: 9c36f40b7b59a014981252bfc425e749,
-    type: 3}
-  m_PrefabInstance: {fileID: 1017182197457597965}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1017182197457597967
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1017182197457597966}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 959942352edbfac47b1bf9b22017030f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  score: 0
-  highscore: 0
-  scoreText: {fileID: 1489062011}
-  highscoreText: {fileID: 1153278221}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
