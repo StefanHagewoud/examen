@@ -3538,6 +3538,7 @@ MonoBehaviour:
   highscore: 0
   scoreText: {fileID: 1500097139}
   highscoreText: {fileID: 1494862833}
+  clearScore: 1
 --- !u!1001 &1534028590
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3603,6 +3604,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 9133854120419464307, guid: 9c36f40b7b59a014981252bfc425e749, type: 3}
+    - {fileID: 2962605087677474332, guid: 9c36f40b7b59a014981252bfc425e749, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:

@@ -163,7 +163,8 @@ public class S_Enemy : MonoBehaviour
     {
         //death animation 
         //death particles
-        if(GameObject.Find("WaveSpawner") != null)
+        
+        if (GameObject.Find("WaveSpawner") != null)
         {
             GameObject.Find("WaveSpawner").GetComponent<S_WaveSpawner>().enemiesAlive--;
         }
