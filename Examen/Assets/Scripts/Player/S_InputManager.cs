@@ -164,9 +164,17 @@ public class S_InputManager : MonoBehaviour
     public void OnRightWeapon(InputAction.CallbackContext value)
     {
         rightWeaponInput = (int)value.ReadValue<float>();
+
         if (value.performed)
-        {
-            weaponSwitch.SelectSecondaryGun();
+        {  
+            if(pickupManager.gunHolderSecondary.transform.GetChild(0).gameObject.activeSelf == true) {
+                pickupManager.gunHolderSecondary.transform.GetChild(0).gameObject.SetActive(false);
+                pickupManager.gunHolderSecondary.transform.GetChild(1).gameObject.SetActive(true);
+            } else {
+                pickupManager.gunHolderSecondary.transform.GetChild(1).gameObject.SetActive(false);
+                pickupManager.gunHolderSecondary.transform.GetChild(0).gameObject.SetActive(true);
+            }
+            //weaponSwitch.SelectSecondaryGun();
             if (allowDebug)
             {
                 print(value.ReadValue<float>() + "Performed, rightWeaponInput");
@@ -245,9 +253,9 @@ public class S_InputManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (pickupManager.gunHolderPrimary)
+        if (pickupManager.gunHolderSecondary)
         {
-            S_Weapon currentGunInfo = pickupManager.gunHolderPrimary.GetComponentInChildren<S_Weapon>();
+            S_Weapon currentGunInfo = pickupManager.gunHolderSecondary.GetComponentInChildren<S_Weapon>();
             if (shootInput == true && Time.time >= nextFireTime)
             {
                 nextFireTime = Time.time + 1f / currentGunInfo.fireRate;
@@ -259,6 +267,8 @@ public class S_InputManager : MonoBehaviour
                 }
             }
         }
+
+
         
     }
 }
