@@ -720,6 +720,11 @@ PrefabInstance:
       propertyPath: uiManager
       value: 
       objectReference: {fileID: 1101566391}
+    - target: {fileID: 5249683967479209038, guid: 5e7a49de92b224740a82a8ad92d592cc,
+        type: 3}
+      propertyPath: m_Constraints
+      value: 80
+      objectReference: {fileID: 0}
     - target: {fileID: 6459011630091376968, guid: 5e7a49de92b224740a82a8ad92d592cc,
         type: 3}
       propertyPath: uiManager
@@ -1935,15 +1940,9 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7765058970842873729, guid: d526839c13e3a2e4e873f4dd24d2cf98,
         type: 3}
-      propertyPath: timer
-      value: 0
+      propertyPath: attackdelay
+      value: 10
       objectReference: {fileID: 0}
-    - target: {fileID: 7765058970842873729, guid: d526839c13e3a2e4e873f4dd24d2cf98,
-        type: 3}
-      propertyPath: rocketPrefab
-      value: 
-      objectReference: {fileID: 4572731676303579254, guid: 24c7832ef23aaef499317b99d4deac79,
-        type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

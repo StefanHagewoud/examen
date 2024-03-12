@@ -325,15 +325,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   scorePerEnemy: 500
-  health: 1000
-  maxHealth: 20
-  damage: 0.1
+  health: 500
+  maxHealth: 500
+  damage: 1
   range: 100
   stopRange: 40
-  attackdelay: 5
+  attackdelay: 10
   bulletPrefab: {fileID: 6071567608932826647, guid: 880d73ba6e80c9a40a37c67b79418d43,
     type: 3}
   melee: 0
+  revolver: 0
   boss: 1
   passive: 0
   rocketLauncher: 1
@@ -342,6 +343,13 @@ MonoBehaviour:
   muzzleFlashParticle: {fileID: 2706541682179882216, guid: 89b9be988f679824c8e86104f0153bb1,
     type: 3}
   explosionEffect: {fileID: 7238585278792121816, guid: 32dfcd56c69e77f4e896c2ba8a9efcee,
+    type: 3}
+  animator: {fileID: 3117190025786111199}
+  rpgModel: {fileID: 7016714742757964812}
+  tommyModel: {fileID: 6705423916839637921}
+  revolverModel: {fileID: 6569847666673702529}
+  knuppelModel: {fileID: 4977263774415709509}
+  rocketPrefab: {fileID: 4572731676303579254, guid: 24c7832ef23aaef499317b99d4deac79,
     type: 3}
 --- !u!54 &4739357102605159032
 Rigidbody:
@@ -456,6 +464,36 @@ PrefabInstance:
 --- !u!4 &2788753955871548384 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2753201258564620891, guid: 88d3ccf100d101c4c9c14c14bc97bc2c,
+    type: 3}
+  m_PrefabInstance: {fileID: 37982662104150459}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &3117190025786111199 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 3153798298075678052, guid: 88d3ccf100d101c4c9c14c14bc97bc2c,
+    type: 3}
+  m_PrefabInstance: {fileID: 37982662104150459}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &4977263774415709509 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5013696123703956734, guid: 88d3ccf100d101c4c9c14c14bc97bc2c,
+    type: 3}
+  m_PrefabInstance: {fileID: 37982662104150459}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &6569847666673702529 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6605154077746964282, guid: 88d3ccf100d101c4c9c14c14bc97bc2c,
+    type: 3}
+  m_PrefabInstance: {fileID: 37982662104150459}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &6705423916839637921 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6739780333693428250, guid: 88d3ccf100d101c4c9c14c14bc97bc2c,
+    type: 3}
+  m_PrefabInstance: {fileID: 37982662104150459}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &7016714742757964812 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7054486284659772855, guid: 88d3ccf100d101c4c9c14c14bc97bc2c,
     type: 3}
   m_PrefabInstance: {fileID: 37982662104150459}
   m_PrefabAsset: {fileID: 0}

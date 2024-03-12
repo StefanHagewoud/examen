@@ -25,7 +25,7 @@ public class S_Enemy : MonoBehaviour
     private GameObject bulletPrefab;
     [SerializeField]
     private bool melee;
-    private bool rocketExplosion;
+    public bool revolver;
     [SerializeField]
     private bool boss;
     public bool passive;
@@ -37,6 +37,17 @@ public class S_Enemy : MonoBehaviour
     [SerializeField]
     private GameObject explosionEffect;
     private float timer;
+    [SerializeField]
+    private Animator animator;
+
+    [SerializeField]
+    private GameObject rpgModel;
+    [SerializeField]
+    private GameObject tommyModel;
+    [SerializeField]
+    private GameObject revolverModel;
+    [SerializeField]
+    private GameObject knuppelModel;
 
     [Header("Rocket Launcher Settings")]
     public GameObject rocketPrefab;
@@ -52,10 +63,35 @@ public class S_Enemy : MonoBehaviour
         enemyAgent.destination = target.position;
         if (!boss)
         {
+            if (revolver)
+            {
+                animator.SetLayerWeight(2, 1);
+                revolverModel.SetActive(true);
+            }
+            else
+            {
+                animator.SetLayerWeight(3, 1);
+                tommyModel.SetActive(true);
+            }
             if (!melee)
             {
                 stopRange = Random.Range(4, 10);
             }
+            else
+            {
+                animator.SetLayerWeight(3, 0);
+                tommyModel.SetActive(false);
+                animator.SetLayerWeight(2, 0);
+                revolverModel.SetActive(false);
+
+                animator.SetLayerWeight(1, 1);
+                knuppelModel.SetActive(true);
+            }
+        }
+        else
+        {
+            animator.SetLayerWeight(4, 1);
+            rpgModel.SetActive(true);
         }
     }
 
@@ -66,11 +102,18 @@ public class S_Enemy : MonoBehaviour
 
     void Update()
     {
-        if (boss && health <= maxHealth / 2)
+        if (enemyAgent.enabled)
         {
-            enemyAgent.isStopped = false;
-            stopRange = 12f;
+            if (!enemyAgent.isStopped)
+            {
+                animator.SetFloat("Running", 1);
+            }
+            else
+            {
+                animator.SetFloat("Running", 0);
+            }
         }
+
         ChasePlayer();
         if (rocketLauncher)
         {
@@ -94,7 +137,6 @@ public class S_Enemy : MonoBehaviour
                     if (!nearbyObject.CompareTag("Enemy"))
                     {
                         rocketExploding = true;
-                        //GameObject.Instantiate(currentGunData.rocketExplodeAnim, rocket.transform.position, rocket.transform.rotation);
                         Collider[] hits = Physics.OverlapSphere(rocket.transform.position, 10);
                         foreach (Collider hit in hits)
                         {
@@ -103,7 +145,8 @@ public class S_Enemy : MonoBehaviour
                             Destroy(explosion, 1f);
                             if (hit.TryGetComponent<Rigidbody>(out Rigidbody hitRB))
                             {
-                                hitRB.AddExplosionForce(1000, rocket.transform.position, 10);
+                                Debug.Log(hitRB + "rigidbodyKanker");
+                                hitRB.AddExplosionForce(150, rocket.transform.position, 10);
                                 // force, position, radius
                             }
                             if (hit.GetComponent<S_Player>())
@@ -134,6 +177,7 @@ public class S_Enemy : MonoBehaviour
         {
             if (passive)
             {
+                animator.SetFloat("Running", 0);
                 enemyAgent.enabled = false;
                 return;
             }
@@ -151,6 +195,17 @@ public class S_Enemy : MonoBehaviour
             {
                 if(hit.collider!= null)
                 {
+                    enemyAgent.isStopped = true;
+                    if (boss)
+                    {
+                        if (attackRate <= 0f)
+                        {
+                            Attack(damage);
+                            attackRate = attackdelay;
+                        }
+                        attackRate -= Time.deltaTime;
+                    }
+                   
                     if (hit.collider.transform.root.tag == "Player")
                     {
                         Debug.DrawRay(transform.position, transform.forward * hit.distance, Color.yellow);
@@ -169,7 +224,7 @@ public class S_Enemy : MonoBehaviour
             float rangeFromPlayer = Vector3.Distance(transform.position, target.position);
             if (rangeFromPlayer <= stopRange)
             {
-                if (boss)
+                if (rocketLauncher && boss)
                 {
                     enemyAgent.isStopped = true;
                 }
@@ -190,7 +245,6 @@ public class S_Enemy : MonoBehaviour
                         }
                     }
                 }
-                
             }
             else
             {
@@ -200,7 +254,10 @@ public class S_Enemy : MonoBehaviour
         }
         else
         {
-            enemyAgent.isStopped = true;
+            if(enemyAgent != null)
+            {
+                enemyAgent.isStopped = true;
+            }
         }
     }
 
@@ -215,6 +272,12 @@ public class S_Enemy : MonoBehaviour
         {
             enemyAgent.isStopped = false;
             stopRange = 12f;
+            rocketLauncher = false;
+            attackRate = 0.5f;
+            tommyModel.SetActive(true);
+            rpgModel.SetActive(false);
+            animator.SetLayerWeight(4, 0);
+            animator.SetLayerWeight(3, 1);
         }
         if (health <= 0)
         {
@@ -226,8 +289,9 @@ public class S_Enemy : MonoBehaviour
     {
         if (rocketLauncher)
         {
-            GameObject rocket = Instantiate(rocketPrefab, transform.GetChild(2).position, transform.rotation);
-            rocket.GetComponent<Rigidbody>().AddForce(rocket.transform.forward * 200f);
+            animator.SetTrigger("RPG_Shoot");
+            firedRocket = true;
+            rocket = Instantiate(rocketPrefab, transform.GetChild(2).position, transform.rotation);
             GameObject muzzleFlash = Instantiate(muzzleFlashParticle, transform.GetChild(2).position, transform.rotation);
             Destroy(muzzleFlash, 1f);
         }
@@ -235,10 +299,20 @@ public class S_Enemy : MonoBehaviour
         {
             if (melee)
             {
+                animator.SetTrigger("Knuppel_Swing");
                 Melee(damage);
             }
             else
             {
+                if (revolver)
+                {
+                    animator.SetTrigger("Revolver_Shoot");
+                }
+                else
+                {
+                    animator.SetTrigger("Tommy_Gun_Shoot");
+                }
+
                 GameObject muzzleFlash = Instantiate(muzzleFlashParticle, transform.GetChild(2).position, transform.rotation);
                 Destroy(muzzleFlash, 1f);
                 GameObject bullet = Instantiate(bulletPrefab, transform.GetChild(2).position, transform.rotation);
@@ -268,7 +342,10 @@ public class S_Enemy : MonoBehaviour
     {
         //death animation 
         //death particles
-        
+        animator.SetTrigger("Die");
+        GameObject cutSceneObj = GameObject.Find("Cutscene 6.0");
+        cutSceneObj.SetActive(true);
+
         if (GameObject.Find("WaveSpawner") != null)
         {
             GameObject.Find("WaveSpawner").GetComponent<S_WaveSpawner>().enemiesAlive--;
@@ -277,7 +354,7 @@ public class S_Enemy : MonoBehaviour
         {
             GameObject.Find("PF_ScoreManager").GetComponent<S_ScoreManager>().AddScore(scorePerEnemy);
         }
-
-        Destroy(gameObject);
+        passive = true;
+        Destroy(gameObject,1f);
     }
 }

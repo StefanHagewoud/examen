@@ -12,6 +12,8 @@ public class S_WaveSpawner : MonoBehaviour
     private float waveInterval;
     private float countdown = 0f;
     public int enemiesAlive;
+    [SerializeField]
+    private GameObject[] cutScenes;
 
     void Update()
     {
@@ -24,7 +26,12 @@ public class S_WaveSpawner : MonoBehaviour
         {
             if (wavesCount >= waves.Length)
             {
+                foreach (GameObject cutscene in cutScenes)
+                {
+                    cutscene.SetActive(true);
+                }
                 Debug.Log("Completed all waves");
+
                 gameObject.SetActive(false);
                 return;
             }
