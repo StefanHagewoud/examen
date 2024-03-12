@@ -354,9 +354,9 @@ public class S_Enemy : MonoBehaviour
             cutSceneObj.SetActive(true);
         }
 
-        if (GameObject.Find("WaveSpawner") != null)
+        if (GameObject.Find("PF_WaveSpawner") != null)
         {
-            GameObject.Find("WaveSpawner").GetComponent<S_WaveSpawner>().enemiesAlive--;
+            GameObject.Find("PF_WaveSpawner").GetComponent<S_WaveSpawner>().enemiesAlive--;
         }
         if(GameObject.Find("PF_ScoreManager") != null)
         {
