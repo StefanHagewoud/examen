@@ -27,7 +27,7 @@ public class S_WaveSpawner : MonoBehaviour
         {
             if (wavesCount >= waves.Length)
             {
-                if(enemiesAlive == 0)
+                if(enemiesAlive <= 0)
                 {
                     foreach (GameObject cutscene in cutScenes)
                     {
