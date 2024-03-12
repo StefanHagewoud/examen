@@ -9,8 +9,14 @@ public class S_X_Ray_Circle_Follow : MonoBehaviour
     public Material wallMaterial;
     public Camera playerCamera;
 
+    private void Start() {
+        playerCamera = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<Camera>();
+    }
     void Update()
     {
+        if(playerCamera == null) {
+            playerCamera = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<Camera>();
+        }
         Vector3 view = playerCamera.WorldToViewportPoint(transform.position);
         wallMaterial.SetVector(positionCircle, view);
         

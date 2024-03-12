@@ -16,7 +16,6 @@ public class S_Player : MonoBehaviour
     //private S_DifficultyManager difficultyManager
 
     private void Start() {
-        //DontDestroyOnLoad(transform.gameObject);
         TakeDamage(0);
     }
     public void OnDeath() {
