@@ -76,11 +76,19 @@ public class S_PickupManager : MonoBehaviour
         }
         else if (other.transform.CompareTag("RPG"))
         {
-            if (allowDestroyGameObjects)
+            if (weaponSwitch.CheckWeaponSpace())
             {
-                DestroyCrateOrObject(other);
+                GameObject weaponGameObject = null;
+                if (other.gameObject.GetComponentInChildren<S_Weapon>())
+                {
+                    weaponGameObject = other.gameObject.GetComponentInChildren<S_Weapon>().gameObject;
+                }
+                else if (other.gameObject.GetComponent<S_Weapon>())
+                {
+                    weaponGameObject = other.gameObject.GetComponent<S_Weapon>().gameObject;
+                }
+                PickupItem("RPG", weaponGameObject);
             }
-            PickupItem("RPG");
         }
         else if (other.transform.CompareTag("Weapon"))
         {
@@ -119,7 +127,7 @@ public class S_PickupManager : MonoBehaviour
         }
         else if(powerupName == "RPG")// Hier komt later code wanneer de wapen script af is.
         {
-
+            weaponSwitch.PickupGun(weaponGameObject);
         }
         else if(powerupName == "Weapon")// Hier komt later code wanneer de wapen script af is.
         {

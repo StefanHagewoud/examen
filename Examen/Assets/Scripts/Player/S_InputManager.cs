@@ -166,7 +166,7 @@ public class S_InputManager : MonoBehaviour
         rightWeaponInput = (int)value.ReadValue<float>();
         if (value.performed)
         {
-            weaponSwitch.SelectRightGun();
+            weaponSwitch.SelectSecondaryGun();
             if (allowDebug)
             {
                 print(value.ReadValue<float>() + "Performed, rightWeaponInput");
@@ -185,7 +185,7 @@ public class S_InputManager : MonoBehaviour
         leftWeaponInput = (int)value.ReadValue<float>();
         if (value.performed)
         {
-            weaponSwitch.SelectLeftGun();
+            weaponSwitch.SelectPrimaryGun();
             if (allowDebug)
             {
                 print(value.ReadValue<float>() + "Performed, leftWeaponInput");
@@ -245,14 +245,20 @@ public class S_InputManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        S_Weapon currentGunInfo = pickupManager.gunHolderPrimary.GetComponentInChildren<S_Weapon>();
-        if (shootInput == true && Time.time >= nextFireTime) {
-            nextFireTime = Time.time + 1f / currentGunInfo.fireRate;
-            Debug.Log("shoting");
-            currentGunInfo.Shoot();
-            if(!currentGunInfo.automatic) {
-                shootInput = false;
+        if (pickupManager.gunHolderPrimary)
+        {
+            S_Weapon currentGunInfo = pickupManager.gunHolderPrimary.GetComponentInChildren<S_Weapon>();
+            if (shootInput == true && Time.time >= nextFireTime)
+            {
+                nextFireTime = Time.time + 1f / currentGunInfo.fireRate;
+                Debug.Log("shoting");
+                currentGunInfo.Shoot();
+                if (!currentGunInfo.automatic)
+                {
+                    shootInput = false;
+                }
             }
         }
+        
     }
 }
