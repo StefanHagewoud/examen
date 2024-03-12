@@ -149,7 +149,6 @@ public class S_Enemy : MonoBehaviour
                             Destroy(explosion, 1f);
                             if (hit.TryGetComponent<Rigidbody>(out Rigidbody hitRB))
                             {
-                                Debug.Log(hitRB + "rigidbodyKanker");
                                 hitRB.AddExplosionForce(150, rocket.transform.position, 10);
                                 // force, position, radius
                             }
