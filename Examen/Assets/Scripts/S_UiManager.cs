@@ -14,7 +14,7 @@ public class S_UiManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        UpdateWeaponUI();
     }
 
     // Update is called once per frame
@@ -25,7 +25,7 @@ public class S_UiManager : MonoBehaviour
 
     public void UpdateWeaponUI() {
         Debug.Log("updating gun UI");
-        S_Weapon currentWeapon = pickupManager.gunHolderPrimary.transform.GetComponentInChildren<S_Weapon>();
+        S_Weapon currentWeapon = pickupManager.gunHolderSecondary.transform.GetComponentInChildren<S_Weapon>();
         currentAmmoText.text = currentWeapon.magAmmo.ToString();
         currentMaxAmmoText.text = currentWeapon.maxMagAmmo.ToString();
     }

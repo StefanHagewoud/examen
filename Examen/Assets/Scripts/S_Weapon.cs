@@ -32,7 +32,6 @@ public class S_Weapon : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        uiManager.UpdateWeaponUI();
         magAmmo = maxMagAmmo;
     }
 
