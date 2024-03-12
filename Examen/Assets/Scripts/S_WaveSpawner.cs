@@ -21,6 +21,13 @@ public class S_WaveSpawner : MonoBehaviour
         {
             return;
         }
+        else
+        {
+            foreach (GameObject cutscene in cutScenes)
+            {
+                cutscene.SetActive(true);
+            }
+        }
 
         if (countdown <= 0)
         {
