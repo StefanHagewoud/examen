@@ -7,7 +7,6 @@ public class S_WeaponSwitch : MonoBehaviour//Add every variable to diagram
 {
     [Header("Weapon Primary")]
     public bool hasPrimary;
-    public GameObject primaryWeaponHolder;
     public GameObject primaryWeapon;
 
     [Header("Weapon Secondary")]//Secondary cannot be dropped
@@ -22,6 +21,7 @@ public class S_WeaponSwitch : MonoBehaviour//Add every variable to diagram
 
     [Header("Scripts")]
     public S_UiManager uiManagerScript;
+    public S_PickupManager pickupManagerScript;
 
     [Header("Debug")]
     public bool allowDebug;
@@ -59,10 +59,11 @@ public class S_WeaponSwitch : MonoBehaviour//Add every variable to diagram
 
         GameObject parentOfWeapon = weaponGameObject.transform.parent.gameObject;
         primaryWeapon = weaponGameObject;
+        
         weaponGameObject.GetComponent<MeshRenderer>().enabled = false;
-        weaponGameObject.transform.position = primaryWeaponHolder.transform.position;
-        weaponGameObject.transform.rotation = primaryWeaponHolder.transform.rotation;
-        weaponGameObject.transform.parent = primaryWeaponHolder.transform;
+        weaponGameObject.transform.position = pickupManagerScript.gunHolderPrimary.transform.position;
+        weaponGameObject.transform.rotation = pickupManagerScript.gunHolderPrimary.transform.rotation;
+        weaponGameObject.transform.parent = pickupManagerScript.gunHolderPrimary.transform;
 
         Destroy(parentOfWeapon);
         weaponGameObject.GetComponent<S_Weapon>().uiManager = uiManagerScript;
@@ -148,7 +149,7 @@ public class S_WeaponSwitch : MonoBehaviour//Add every variable to diagram
             {
                 weaponPrefabs[i].weaponUI.SetActive(false);
                 Instantiate(weaponPrefabs[i].prefabPickupableWeapon, weaponDropPosition.position, Quaternion.identity);
-                Destroy(primaryWeaponHolder.transform.GetChild(0).gameObject);
+                Destroy(pickupManagerScript.gunHolderPrimary.transform.GetChild(0).gameObject);
                 primaryWeapon = null;
                 hasPrimary = false;
                 return;
