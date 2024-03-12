@@ -348,8 +348,11 @@ public class S_Enemy : MonoBehaviour
         Destroy(gameObject, 2f);
         passive = true;
         animator.SetTrigger("Die");
-        GameObject cutSceneObj = GameObject.Find("Cutscene 6.0");
-        cutSceneObj.SetActive(true);
+        if (boss)
+        {
+            GameObject cutSceneObj = GameObject.Find("Cutscene 6.0");
+            cutSceneObj.SetActive(true);
+        }
 
         if (GameObject.Find("WaveSpawner") != null)
         {
