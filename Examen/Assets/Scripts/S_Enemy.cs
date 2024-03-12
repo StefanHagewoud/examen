@@ -60,7 +60,11 @@ public class S_Enemy : MonoBehaviour
         health = maxHealth;
         target = GameObject.FindGameObjectWithTag("Player").transform;
         enemyAgent = GetComponent<NavMeshAgent>();
-        enemyAgent.destination = target.position;
+        if (enemyAgent.enabled)
+        {
+            enemyAgent.destination = target.position;
+        }
+        
         if (!boss)
         {
             if (revolver)
