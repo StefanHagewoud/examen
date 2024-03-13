@@ -346,19 +346,22 @@ public class S_Enemy : MonoBehaviour
     {
         //death animation 
         //death particles
+        Destroy(gameObject, 2f);
+        passive = true;
         animator.SetTrigger("Die");
-        GameObject cutSceneObj = GameObject.Find("Cutscene 6.0");
-        cutSceneObj.SetActive(true);
-
-        if (GameObject.Find("WaveSpawner") != null)
+        if (boss)
         {
-            GameObject.Find("WaveSpawner").GetComponent<S_WaveSpawner>().enemiesAlive--;
+            GameObject cutSceneObj = GameObject.Find("Cutscene 6.0");
+            cutSceneObj.SetActive(true);
+        }
+
+        if (GameObject.Find("PF_WaveSpawner") != null)
+        {
+            GameObject.Find("PF_WaveSpawner").GetComponent<S_WaveSpawner>().enemiesAlive--;
         }
         if(GameObject.Find("PF_ScoreManager") != null)
         {
             GameObject.Find("PF_ScoreManager").GetComponent<S_ScoreManager>().AddScore(scorePerEnemy);
-        }
-        passive = true;
-        Destroy(gameObject,1f);
+        }       
     }
 }

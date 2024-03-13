@@ -18,7 +18,7 @@ public class S_DialogeManager : MonoBehaviour
     private int dialogeFrame;//Add Diagram
 
     [Header("Scripts")]
-    public S_PlayerMovement playerMovementScript;//Add Diagram
+    private S_PlayerMovement playerMovementScript;//Add Diagram
 
     [Serializable]
     public class Dialoge 
@@ -30,6 +30,9 @@ public class S_DialogeManager : MonoBehaviour
         {
             public List<GameObject> gameObjectsToChange = new List<GameObject>(new GameObject[1]);
         }
+    }
+    private void Start() {
+        playerMovementScript = GameObject.FindGameObjectWithTag("Rolling").GetComponent<S_PlayerMovement>();
     }
 
     public void StartDialoge(int dialogeNumber)

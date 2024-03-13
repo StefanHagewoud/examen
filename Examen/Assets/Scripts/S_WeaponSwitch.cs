@@ -6,11 +6,11 @@ using UnityEngine;
 public class S_WeaponSwitch : MonoBehaviour//Add every variable to diagram
 {
     [Header("Weapon Primary")]
-    public bool hasPrimary;
-    public GameObject primaryWeaponHolder;
+    public bool usingPrimaryWeapon;
     public GameObject primaryWeapon;
 
     [Header("Weapon Secondary")]//Secondary cannot be dropped
+    public bool usingSecondaryWeapon;
     public GameObject secondaryWeapon;
 
     [Header("Weapons")]
@@ -22,6 +22,7 @@ public class S_WeaponSwitch : MonoBehaviour//Add every variable to diagram
 
     [Header("Scripts")]
     public S_UiManager uiManagerScript;
+    public S_PickupManager pickupManagerScript;
 
     [Header("Debug")]
     public bool allowDebug;
@@ -47,7 +48,7 @@ public class S_WeaponSwitch : MonoBehaviour//Add every variable to diagram
     }
     public void PickupGun(GameObject weaponGameObject)//Add diagram
     {
-        if (hasPrimary)
+        if (primaryWeapon)
         {
             if (allowDebug)
             {
@@ -55,14 +56,14 @@ public class S_WeaponSwitch : MonoBehaviour//Add every variable to diagram
             }
             return;
         }
-        hasPrimary = true;
 
         GameObject parentOfWeapon = weaponGameObject.transform.parent.gameObject;
         primaryWeapon = weaponGameObject;
+        
         weaponGameObject.GetComponent<MeshRenderer>().enabled = false;
-        weaponGameObject.transform.position = primaryWeaponHolder.transform.position;
-        weaponGameObject.transform.rotation = primaryWeaponHolder.transform.rotation;
-        weaponGameObject.transform.parent = primaryWeaponHolder.transform;
+        weaponGameObject.transform.position = pickupManagerScript.gunHolderPrimary.transform.position;
+        weaponGameObject.transform.rotation = pickupManagerScript.gunHolderPrimary.transform.rotation;
+        weaponGameObject.transform.parent = pickupManagerScript.gunHolderPrimary.transform;
 
         Destroy(parentOfWeapon);
         weaponGameObject.GetComponent<S_Weapon>().uiManager = uiManagerScript;
@@ -89,11 +90,14 @@ public class S_WeaponSwitch : MonoBehaviour//Add every variable to diagram
     }
     public void SelectPrimaryGun()//Add diagram
     {
-        if (!hasPrimary)
+        if (!primaryWeapon)
         {
             print("Player has no primary weapon!");
             return;
         }
+        usingPrimaryWeapon = true;
+        usingSecondaryWeapon = false;
+
         for (int i = 0; i < weaponPrefabs.Count; i++)
         {
             if (weaponPrefabs[i].prefabWeapon.name == primaryWeapon.name)
@@ -114,6 +118,8 @@ public class S_WeaponSwitch : MonoBehaviour//Add every variable to diagram
     }
     public void SelectSecondaryGun()//Add diagram
     {
+        usingPrimaryWeapon = false;
+        usingSecondaryWeapon = true;
         for (int i = 0; i < weaponPrefabs.Count; i++)
         {
             if (weaponPrefabs[i].prefabWeapon.name == secondaryWeapon.name)
@@ -134,7 +140,7 @@ public class S_WeaponSwitch : MonoBehaviour//Add every variable to diagram
     }
     public void DropWeapon()
     {
-        if (!hasPrimary)
+        if (!primaryWeapon)
         {
             if (allowDebug)
             {
@@ -148,9 +154,8 @@ public class S_WeaponSwitch : MonoBehaviour//Add every variable to diagram
             {
                 weaponPrefabs[i].weaponUI.SetActive(false);
                 Instantiate(weaponPrefabs[i].prefabPickupableWeapon, weaponDropPosition.position, Quaternion.identity);
-                Destroy(primaryWeaponHolder.transform.GetChild(0).gameObject);
+                Destroy(pickupManagerScript.gunHolderPrimary.transform.GetChild(0).gameObject);
                 primaryWeapon = null;
-                hasPrimary = false;
                 return;
             }
         }
@@ -160,10 +165,15 @@ public class S_WeaponSwitch : MonoBehaviour//Add every variable to diagram
     {
         bool hasSpace = true;
 
-        if(hasPrimary)
+        if(primaryWeapon)
         {
             hasSpace = false;
+            if (allowDebug)
+            {
+                print("There is no space for a primary weapon!");
+            }
         }
+        
         return hasSpace; 
     }
 }
