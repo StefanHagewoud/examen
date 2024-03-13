@@ -275,7 +275,7 @@ public class S_Enemy : MonoBehaviour
         if(boss && health <= maxHealth / 2)
         {
             enemyAgent.isStopped = false;
-            stopRange = 12f;
+            stopRange = 15f;
             rocketLauncher = false;
             attackdelay = 0.5f;
             tommyModel.SetActive(true);
