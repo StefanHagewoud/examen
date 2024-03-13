@@ -1461,15 +1461,14 @@ MonoBehaviour:
   - {fileID: 1285040621}
   - {fileID: 1687419615}
   waves:
-  - timeBetweenSpawns: 10
+  - timeBetweenSpawns: 5
     enemyType:
-    - {fileID: 6183118907095724612, guid: 484406fb3207f4e4f8289672d1d48914, type: 3}
+    - {fileID: 5129352262462980828, guid: 6411793ed087e534cb22bff095414239, type: 3}
     enemiesPerWave: 2
-  - timeBetweenSpawns: 10
+  - timeBetweenSpawns: 5
     enemyType:
-    - {fileID: 6183118907095724612, guid: 484406fb3207f4e4f8289672d1d48914, type: 3}
-    - {fileID: 2112254027201023844, guid: 1d9e7809d8febcc4f88e7f7d538d7105, type: 3}
-    enemiesPerWave: 1
+    - {fileID: 5129352262462980828, guid: 6411793ed087e534cb22bff095414239, type: 3}
+    enemiesPerWave: 2
   waveInterval: 5
   enemiesAlive: 0
   cutScenes: []
@@ -1957,12 +1956,12 @@ PrefabInstance:
     - target: {fileID: 7765058970842873729, guid: d526839c13e3a2e4e873f4dd24d2cf98,
         type: 3}
       propertyPath: health
-      value: 20
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 7765058970842873729, guid: d526839c13e3a2e4e873f4dd24d2cf98,
         type: 3}
       propertyPath: maxHealth
-      value: 20
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 7765058970842873729, guid: d526839c13e3a2e4e873f4dd24d2cf98,
         type: 3}
