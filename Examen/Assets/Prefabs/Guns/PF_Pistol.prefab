@@ -157,7 +157,7 @@ MonoBehaviour:
   bulletPrefab: {fileID: 6071567608932826647, guid: 880d73ba6e80c9a40a37c67b79418d43,
     type: 3}
   maxMagAmmo: 10
-  magAmmo: 0
+  magAmmo: 10
   infAmmo: 1
   reloadTime: 1
   range: 1000

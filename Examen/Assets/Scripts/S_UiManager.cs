@@ -11,6 +11,8 @@ public class S_UiManager : MonoBehaviour
     public Transform armor;
     public TextMeshProUGUI currentAmmoText;
     public TextMeshProUGUI currentMaxAmmoText;
+
+    public S_WeaponSwitch weaponSwitch;
     // Start is called before the first frame update
     void Start()
     {
@@ -25,8 +27,19 @@ public class S_UiManager : MonoBehaviour
 
     public void UpdateWeaponUI() {
         Debug.Log("updating gun UI");
-        S_Weapon currentWeapon = pickupManager.gunHolderSecondary.transform.GetComponentInChildren<S_Weapon>();
-        currentAmmoText.text = currentWeapon.magAmmo.ToString();
-        currentMaxAmmoText.text = currentWeapon.maxMagAmmo.ToString();
+        if(weaponSwitch.usingPrimaryWeapon && weaponSwitch.primaryWeapon)
+        {
+            S_Weapon currentWeapon = pickupManager.gunHolderPrimary.transform.GetComponentInChildren<S_Weapon>();
+
+            currentAmmoText.text = currentWeapon.magAmmo.ToString();
+            currentMaxAmmoText.text = currentWeapon.maxMagAmmo.ToString();
+        }
+        if (weaponSwitch.usingSecondaryWeapon && weaponSwitch.secondaryWeapon)
+        {
+            S_Weapon currentWeapon = pickupManager.gunHolderSecondary.transform.GetComponentInChildren<S_Weapon>();
+
+            currentAmmoText.text = currentWeapon.magAmmo.ToString();
+            currentMaxAmmoText.text = currentWeapon.maxMagAmmo.ToString();
+        }    
     }
 }

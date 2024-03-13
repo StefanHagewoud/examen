@@ -166,15 +166,17 @@ public class S_InputManager : MonoBehaviour
         rightWeaponInput = (int)value.ReadValue<float>();
 
         if (value.performed)
-        {  
-            if(pickupManager.gunHolderSecondary.transform.GetChild(0).gameObject.activeSelf == true) {
-                pickupManager.gunHolderSecondary.transform.GetChild(0).gameObject.SetActive(false);
-                pickupManager.gunHolderSecondary.transform.GetChild(1).gameObject.SetActive(true);
-            } else {
-                pickupManager.gunHolderSecondary.transform.GetChild(1).gameObject.SetActive(false);
-                pickupManager.gunHolderSecondary.transform.GetChild(0).gameObject.SetActive(true);
-            }
-            //weaponSwitch.SelectSecondaryGun();
+        {
+            #region oldCode
+            //if(pickupManager.gunHolderSecondary.transform.GetChild(0).gameObject.activeSelf == true) {
+            //    pickupManager.gunHolderSecondary.transform.GetChild(0).gameObject.SetActive(false);
+            //    pickupManager.gunHolderSecondary.transform.GetChild(1).gameObject.SetActive(true);
+            //} else {
+            //    pickupManager.gunHolderSecondary.transform.GetChild(1).gameObject.SetActive(false);
+            //    pickupManager.gunHolderSecondary.transform.GetChild(0).gameObject.SetActive(true);
+            //}
+            #endregion
+            weaponSwitch.SelectSecondaryGun();
             if (allowDebug)
             {
                 print(value.ReadValue<float>() + "Performed, rightWeaponInput");
@@ -255,13 +257,19 @@ public class S_InputManager : MonoBehaviour
     {
         if (weaponSwitch.usingPrimaryWeapon && weaponSwitch.primaryWeapon)
         {
-
+            S_Weapon currentGunInfo = pickupManager.gunHolderPrimary.GetComponentInChildren<S_Weapon>();
+            if (shootInput == true && Time.time >= nextFireTime)
+            {
+                nextFireTime = Time.time + 1f / currentGunInfo.fireRate;
+                Debug.Log("shoting");
+                currentGunInfo.Shoot();
+                if (!currentGunInfo.automatic)
+                {
+                    shootInput = false;
+                }
+            }
         }
         else if(weaponSwitch.usingSecondaryWeapon && weaponSwitch.secondaryWeapon)
-        {
-
-        }
-        if (pickupManager.gunHolderSecondary)
         {
             S_Weapon currentGunInfo = pickupManager.gunHolderSecondary.GetComponentInChildren<S_Weapon>();
             if (shootInput == true && Time.time >= nextFireTime)
@@ -275,6 +283,20 @@ public class S_InputManager : MonoBehaviour
                 }
             }
         }
+        //if (pickupManager.gunHolderSecondary)
+        //{
+        //    S_Weapon currentGunInfo = pickupManager.gunHolderSecondary.GetComponentInChildren<S_Weapon>();
+        //    if (shootInput == true && Time.time >= nextFireTime)
+        //    {
+        //        nextFireTime = Time.time + 1f / currentGunInfo.fireRate;
+        //        Debug.Log("shoting");
+        //        currentGunInfo.Shoot();
+        //        if (!currentGunInfo.automatic)
+        //        {
+        //            shootInput = false;
+        //        }
+        //    }
+        //}
 
 
         

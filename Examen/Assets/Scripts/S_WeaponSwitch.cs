@@ -1,7 +1,9 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class S_WeaponSwitch : MonoBehaviour//Add every variable to diagram
 {
@@ -45,6 +47,8 @@ public class S_WeaponSwitch : MonoBehaviour//Add every variable to diagram
         public GameObject weaponUI;
         public GameObject weaponUIUnselected;
         public GameObject weaponUISelected;
+        public TextMeshProUGUI crAmmoText;
+        public TextMeshProUGUI maxAmmoText;
     }
     public void PickupGun(GameObject weaponGameObject)//Add diagram
     {
@@ -59,8 +63,12 @@ public class S_WeaponSwitch : MonoBehaviour//Add every variable to diagram
 
         GameObject parentOfWeapon = weaponGameObject.transform.parent.gameObject;
         primaryWeapon = weaponGameObject;
-        
-        weaponGameObject.GetComponent<MeshRenderer>().enabled = false;
+
+        foreach (var mesh in weaponGameObject.GetComponentsInChildren<MeshRenderer>())
+        {
+            mesh.enabled = false;
+        }
+
         weaponGameObject.transform.position = pickupManagerScript.gunHolderPrimary.transform.position;
         weaponGameObject.transform.rotation = pickupManagerScript.gunHolderPrimary.transform.rotation;
         weaponGameObject.transform.parent = pickupManagerScript.gunHolderPrimary.transform;
@@ -96,21 +104,29 @@ public class S_WeaponSwitch : MonoBehaviour//Add every variable to diagram
             return;
         }
         usingPrimaryWeapon = true;
+        primaryWeapon.SetActive(true);
         usingSecondaryWeapon = false;
+        secondaryWeapon.SetActive(false);
 
         for (int i = 0; i < weaponPrefabs.Count; i++)
         {
             if (weaponPrefabs[i].prefabWeapon.name == primaryWeapon.name)
             {
                 weaponPrefabs[i].weaponUISelected.SetActive(true);
+                weaponPrefabs[i].weaponUIUnselected.SetActive(false);
                 weaponPrefabs[i].visualWeapon.SetActive(true);
+                uiManagerScript.currentAmmoText = weaponPrefabs[i].crAmmoText;
+                uiManagerScript.currentMaxAmmoText = weaponPrefabs[i].maxAmmoText;
             }
             else
             {
-                weaponPrefabs[i].weaponUIUnselected.SetActive(false);
+                weaponPrefabs[i].weaponUISelected.SetActive(false);
+                weaponPrefabs[i].weaponUIUnselected.SetActive(true);
                 weaponPrefabs[i].visualWeapon.SetActive(false);
             }
         }
+        uiManagerScript.UpdateWeaponUI();
+
         if (allowDebug)
         {
             print("Selected primary gun");
@@ -119,20 +135,33 @@ public class S_WeaponSwitch : MonoBehaviour//Add every variable to diagram
     public void SelectSecondaryGun()//Add diagram
     {
         usingPrimaryWeapon = false;
+        if (primaryWeapon)
+        {
+            primaryWeapon.SetActive(false);
+        }
+
         usingSecondaryWeapon = true;
+        secondaryWeapon.SetActive(true);
+
         for (int i = 0; i < weaponPrefabs.Count; i++)
         {
             if (weaponPrefabs[i].prefabWeapon.name == secondaryWeapon.name)
             {
                 weaponPrefabs[i].weaponUISelected.SetActive(true);
+                weaponPrefabs[i].weaponUIUnselected.SetActive(false);
                 weaponPrefabs[i].visualWeapon.SetActive(true);
+                uiManagerScript.currentAmmoText = weaponPrefabs[i].crAmmoText;
+                uiManagerScript.currentMaxAmmoText = weaponPrefabs[i].maxAmmoText;
             }
             else
             {
-                weaponPrefabs[i].weaponUIUnselected.SetActive(false);
+                weaponPrefabs[i].weaponUISelected.SetActive(false);
+                weaponPrefabs[i].weaponUIUnselected.SetActive(true);
                 weaponPrefabs[i].visualWeapon.SetActive(false);
             }
         }
+        uiManagerScript.UpdateWeaponUI();
+
         if (allowDebug)
         {
             print("Selected secondary gun");
@@ -150,12 +179,17 @@ public class S_WeaponSwitch : MonoBehaviour//Add every variable to diagram
         }
         for (int i = 0; i < weaponPrefabs.Count; i++)
         {
-            if (weaponPrefabs[i].prefabWeapon.name == primaryWeapon.name)
+            if (weaponPrefabs[i].prefabWeapon.name == primaryWeapon.name)//Makes a pickupable weapon and destroys the weapon on the player
             {
                 weaponPrefabs[i].weaponUI.SetActive(false);
-                Instantiate(weaponPrefabs[i].prefabPickupableWeapon, weaponDropPosition.position, Quaternion.identity);
+
+                GameObject instantiatedGameObject = Instantiate(weaponPrefabs[i].prefabPickupableWeapon, weaponDropPosition.position, Quaternion.identity);
+                instantiatedGameObject.GetComponentInChildren<S_Weapon>().magAmmo = primaryWeapon.GetComponent<S_Weapon>().magAmmo;
+
                 Destroy(pickupManagerScript.gunHolderPrimary.transform.GetChild(0).gameObject);
                 primaryWeapon = null;
+
+                SelectSecondaryGun();
                 return;
             }
         }
@@ -173,7 +207,6 @@ public class S_WeaponSwitch : MonoBehaviour//Add every variable to diagram
                 print("There is no space for a primary weapon!");
             }
         }
-        
         return hasSpace; 
     }
 }
