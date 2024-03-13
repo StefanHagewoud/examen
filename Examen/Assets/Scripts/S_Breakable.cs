@@ -21,40 +21,30 @@ public class S_Breakable : MonoBehaviour
             OnBreak();
         }
     }
-
+   
     public void OnBreak()
     {
-        Collider[] colliders = Physics.OverlapSphere(transform.position, 0.1f);
+        GameObject explosion = Instantiate(explosionEffect, transform.position, transform.rotation);
+        Destroy(explosion, 1f);
 
-        foreach (Collider nearbyObject in colliders)
+        Collider[] hits = Physics.OverlapSphere(transform.position, explosiveRange);
+        foreach (Collider hit in hits)
         {
-            // Apply explosion force to rigidbodies
-            if (nearbyObject.CompareTag("Enemy") || nearbyObject.CompareTag("Player"))
+            Debug.Log(hit.name + " hit by explosion");
+            
+            if (hit.TryGetComponent<Rigidbody>(out Rigidbody hitRB))
             {
-                Collider[] hits = Physics.OverlapSphere(transform.position, explosiveRange);
-                foreach (Collider hit in hits)
-                {
-                    Debug.Log(hit.name + " hit by explosion");
-                    GameObject explosion = Instantiate(explosionEffect, transform.position, transform.rotation);
-                    Destroy(explosion, 1f);
-                    if (hit.TryGetComponent<Rigidbody>(out Rigidbody hitRB))
-                    {
-                        hitRB.AddExplosionForce(150, transform.position, explosiveRange);
-                        // force, position, radius
-                    }
-                    if (hit.GetComponent<S_Player>())
-                    {
-                        Debug.Log(hit.name + "has been hit");
-                        hit.GetComponent<S_Player>().TakeDamage(damage);
-                    }
-                    if (hit.GetComponent<S_Enemy>())
-                    {
-                        Debug.Log(hit.name + "has been hit");
-                        hit.GetComponent<S_Enemy>().TakeDamage(damage * 4);
-                    }
-                }
-                Destroy(gameObject,1f);
+                hitRB.AddExplosionForce(150, transform.position, explosiveRange);
+            }
+            if (hit.GetComponent<S_Player>())
+            {
+                hit.GetComponent<S_Player>().TakeDamage(damage);
+            }
+            if (hit.GetComponent<S_Enemy>())
+            {
+                hit.GetComponent<S_Enemy>().TakeDamage(damage * 4);
             }
         }
+        Destroy(gameObject);
     }
 }

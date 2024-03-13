@@ -715,6 +715,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: est_Playerayer
       objectReference: {fileID: 0}
+    - target: {fileID: 4185574638849654317, guid: 5e7a49de92b224740a82a8ad92d592cc,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4421545009744314841, guid: 5e7a49de92b224740a82a8ad92d592cc,
         type: 3}
       propertyPath: uiManager
@@ -1468,7 +1473,6 @@ MonoBehaviour:
   waveInterval: 5
   enemiesAlive: 0
   cutScenes: []
-  pub: 0
 --- !u!4 &1811135008
 Transform:
   m_ObjectHideFlags: 0
@@ -1940,6 +1944,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: PF_BossEnemy
       objectReference: {fileID: 0}
+    - target: {fileID: 5216505823524584855, guid: d526839c13e3a2e4e873f4dd24d2cf98,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7765058970842873729, guid: d526839c13e3a2e4e873f4dd24d2cf98,
         type: 3}
       propertyPath: attackdelay
@@ -1958,6 +1967,16 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 272933925078594969, guid: 1574b52db13a4984d967db9b89ae1884,
+        type: 3}
+      propertyPath: m_Size.y
+      value: 1.2660034
+      objectReference: {fileID: 0}
+    - target: {fileID: 272933925078594969, guid: 1574b52db13a4984d967db9b89ae1884,
+        type: 3}
+      propertyPath: m_Center.y
+      value: 0.6415849
+      objectReference: {fileID: 0}
     - target: {fileID: 329229798852029869, guid: 1574b52db13a4984d967db9b89ae1884,
         type: 3}
       propertyPath: damage
@@ -1965,18 +1984,8 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 329229798852029869, guid: 1574b52db13a4984d967db9b89ae1884,
         type: 3}
-      propertyPath: health
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 329229798852029869, guid: 1574b52db13a4984d967db9b89ae1884,
-        type: 3}
-      propertyPath: explosive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 329229798852029869, guid: 1574b52db13a4984d967db9b89ae1884,
-        type: 3}
       propertyPath: explosiveRange
-      value: 10
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 3172615824386123352, guid: 1574b52db13a4984d967db9b89ae1884,
         type: 3}

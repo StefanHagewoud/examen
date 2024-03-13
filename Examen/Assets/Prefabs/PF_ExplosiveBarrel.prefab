@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 272933925078594969}
   m_Layer: 0
   m_Name: PF_ExplosiveBarrel
-  m_TagString: Enemy
+  m_TagString: ExplosiveBarrel
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -47,7 +47,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 1
-  explosiveRange: 10
+  explosiveRange: 6
   health: 1
   explosionEffect: {fileID: 7238585278792121816, guid: 32dfcd56c69e77f4e896c2ba8a9efcee,
     type: 3}
@@ -70,8 +70,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.5495585, y: 0.99117935, z: 0.5499816}
-  m_Center: {x: -0.004873812, y: 0.50417286, z: 0.006941557}
+  m_Size: {x: 0.5495585, y: 1.2783501, z: 0.5499816}
+  m_Center: {x: -0.004873812, y: 0.64775825, z: 0.006941557}
 --- !u!1001 &6784865309482248346
 PrefabInstance:
   m_ObjectHideFlags: 0
