@@ -253,6 +253,14 @@ public class S_InputManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (weaponSwitch.usingPrimaryWeapon && weaponSwitch.primaryWeapon)
+        {
+
+        }
+        else if(weaponSwitch.usingSecondaryWeapon && weaponSwitch.secondaryWeapon)
+        {
+
+        }
         if (pickupManager.gunHolderSecondary)
         {
             S_Weapon currentGunInfo = pickupManager.gunHolderSecondary.GetComponentInChildren<S_Weapon>();
