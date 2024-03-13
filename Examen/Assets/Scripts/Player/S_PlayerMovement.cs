@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 [RequireComponent(typeof(BoxCollider))]
 public class S_PlayerMovement : MonoBehaviour
@@ -8,9 +9,9 @@ public class S_PlayerMovement : MonoBehaviour
     [Header("Movement")]
     public Vector2 movementInput;
     public Transform playerTransform;
-    public Transform cameraTransformRotation;
     public float walkMovementMultiplier = 1;
-    public bool allowAnyMovement;
+    public bool allowAnyMovement = true;
+    private Transform cameraTransformRotation;
 
     [Header("Roll")]
     public float rollMovementMultiplier = 1;
@@ -32,13 +33,19 @@ public class S_PlayerMovement : MonoBehaviour
 
     private void Awake()
     {
+        SceneManager.sceneLoaded += OnSceneLoaded;
+
         rollTrigger = GetComponent<BoxCollider>();
         rollTrigger.isTrigger = true;
         rollTrigger.enabled = false;
     }
+    void OnSceneLoaded(Scene scene, LoadSceneMode loadSceneMode)//Also triggers while starting
+    {
+        cameraTransformRotation = GameObject.FindGameObjectWithTag("MainCamera").transform;
+    }
     private void FixedUpdate()
     {
-        if (!allowAnyMovement)
+        if (!allowAnyMovement || !cameraTransformRotation)
         {
             return;
         }
