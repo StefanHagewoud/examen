@@ -106,11 +106,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   scorePerEnemy: 5
-  health: 10
+  health: 5
   maxHealth: 5
-  damage: 0.1
-  range: 100
-  stopRange: 0
+  damage: 0.2
+  range: 1
+  stopRange: 1
   attackdelay: 1
   bulletPrefab: {fileID: 6071567608932826647, guid: 880d73ba6e80c9a40a37c67b79418d43,
     type: 3}
@@ -129,6 +129,7 @@ MonoBehaviour:
   knuppelModel: {fileID: 2662214910399831294}
   explosionEffect: {fileID: 0}
   rocketPrefab: {fileID: 0}
+  difficultyManager: {fileID: 11400000, guid: cd9a61a5364225541949a497495333e6, type: 2}
 --- !u!54 &7416606859697347709
 Rigidbody:
   m_ObjectHideFlags: 0

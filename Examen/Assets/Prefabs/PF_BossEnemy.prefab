@@ -325,8 +325,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   scorePerEnemy: 500
-  health: 100
-  maxHealth: 100
+  health: 60
+  maxHealth: 60
   damage: 1
   range: 100
   stopRange: 40
@@ -351,6 +351,7 @@ MonoBehaviour:
     type: 3}
   rocketPrefab: {fileID: 4572731676303579254, guid: 24c7832ef23aaef499317b99d4deac79,
     type: 3}
+  difficultyManager: {fileID: 11400000, guid: cd9a61a5364225541949a497495333e6, type: 2}
 --- !u!54 &4739357102605159032
 Rigidbody:
   m_ObjectHideFlags: 0

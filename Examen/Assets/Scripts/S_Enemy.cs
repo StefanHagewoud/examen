@@ -6,6 +6,7 @@ using UnityEngine.AI;
 public class S_Enemy : MonoBehaviour
 {
     private float moveSpeed;
+    [Header("Enemy Stats")]
     public int scorePerEnemy;
     public float health;
     [SerializeField]
@@ -15,12 +16,13 @@ public class S_Enemy : MonoBehaviour
     [SerializeField]
     private float range = 100f;
     [SerializeField]
-    private float stopRange;
-    private NavMeshAgent enemyAgent;
-    private Transform target;
-    [SerializeField]
     private float attackdelay = 2f;
     private float attackRate;
+    [SerializeField]
+    private float stopRange;
+
+    private NavMeshAgent enemyAgent;
+    private Transform target;
     [SerializeField]
     private GameObject bulletPrefab;
     [SerializeField]
@@ -55,9 +57,11 @@ public class S_Enemy : MonoBehaviour
     private GameObject rocket;
     private bool firedRocket;
     private bool rocketExploding;
+    public S_ScriptableObjectDifficulty difficultyManager;
 
     void Start()
     {
+        maxHealth = maxHealth * difficultyManager.difficulty.enemyHealthMultiplier;
         health = maxHealth;
         target = GameObject.FindGameObjectWithTag("Player").transform;
         enemyAgent = GetComponent<NavMeshAgent>();

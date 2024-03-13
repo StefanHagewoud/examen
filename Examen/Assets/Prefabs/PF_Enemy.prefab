@@ -349,6 +349,7 @@ MonoBehaviour:
   knuppelModel: {fileID: 7173056164762906136}
   explosionEffect: {fileID: 0}
   rocketPrefab: {fileID: 0}
+  difficultyManager: {fileID: 11400000, guid: cd9a61a5364225541949a497495333e6, type: 2}
 --- !u!54 &157605554157465946
 Rigidbody:
   m_ObjectHideFlags: 0

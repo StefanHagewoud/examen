@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: ScriptableObjectDifficulty
   m_EditorClassIdentifier: 
   difficulty:
-    difficulty: 0
+    difficulty: 2
     enemyHealthMultiplier: 0.75
     playerHealthMultiplier: 0.75
