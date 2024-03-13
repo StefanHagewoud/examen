@@ -32,7 +32,7 @@ public class S_Weapon : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        magAmmo = maxMagAmmo;
+        
     }
 
     // Update is called once per frame
@@ -50,7 +50,7 @@ public class S_Weapon : MonoBehaviour
 
             foreach (Collider nearbyObject in colliders) {
                 // Apply explosion force to rigidbodies
-                if (!nearbyObject.CompareTag("RPG") && !nearbyObject.CompareTag("Player")) {
+                if (!nearbyObject.CompareTag("RPG") && !nearbyObject.CompareTag("Player") && !nearbyObject.CompareTag("PickupManager")) {
                     rocketExploding = true;
                     //GameObject.Instantiate(currentGunData.rocketExplodeAnim, rocket.transform.position, rocket.transform.rotation);
                     Collider[] hits = Physics.OverlapSphere(rocket.transform.position, 10);

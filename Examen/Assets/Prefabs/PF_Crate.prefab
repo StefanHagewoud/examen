@@ -136,11 +136,11 @@ MonoBehaviour:
     type: 3}
   armorPowerupPrefab: {fileID: 788807785609222132, guid: 6c5523a058de27f47bdda131750e9b25,
     type: 3}
-  rpgPowerupPrefab: {fileID: 666129767450184481, guid: fc36ba96c711a0b4281054a58d035dc9,
+  rpgPowerupPrefab: {fileID: 3488015241541578013, guid: 14501770277bdbd429c27684c5b69c41,
     type: 3}
   weaponsPrefab:
-  - {fileID: 2273899818004042560, guid: 8d018877522a7b349bbc1af680c59e35, type: 3}
-  allowDebug: 1
+  - {fileID: 9092360883433845738, guid: 82c70871f1256c146862228fe299309b, type: 3}
+  allowDebug: 0
 --- !u!65 &3017440551986819632
 BoxCollider:
   m_ObjectHideFlags: 0
