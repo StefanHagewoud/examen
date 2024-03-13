@@ -2270,15 +2270,15 @@
     "m_Type": "UnityEditor.ShaderGraph.StickyNoteData",
     "m_ObjectId": "ad739397b2434ba78d3650d10ebda265",
     "m_Title": "Player Position",
-    "m_Content": "De player postion word gebruikt om de locatie van de speler vast teleggen. Zo blijft de x-ray circle op de speler als hij begint met lopen.",
+    "m_Content": "De player postion word gebruikt om de locatie van de speler vast teleggen. Zo blijft de x-ray circle op de speler als hij begint met lopen. Deze Vector2 word ook gebruikt in het script S_X_Ray_Circle.",
     "m_TextSize": 0,
     "m_Theme": 0,
     "m_Position": {
         "serializedVersion": "2",
-        "x": -1798.0,
-        "y": 366.0,
-        "width": 200.0,
-        "height": 96.521728515625
+        "x": -1797.0,
+        "y": 336.0,
+        "width": 218.296142578125,
+        "height": 126.71524047851563
     },
     "m_Group": {
         "m_Id": "a02f73d05c784b878c8973fbf22d8aca"
