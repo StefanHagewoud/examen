@@ -342,13 +342,13 @@ MonoBehaviour:
     type: 3}
   muzzleFlashParticle: {fileID: 2706541682179882216, guid: 89b9be988f679824c8e86104f0153bb1,
     type: 3}
-  explosionEffect: {fileID: 7238585278792121816, guid: 32dfcd56c69e77f4e896c2ba8a9efcee,
-    type: 3}
   animator: {fileID: 3117190025786111199}
   rpgModel: {fileID: 7016714742757964812}
   tommyModel: {fileID: 6705423916839637921}
   revolverModel: {fileID: 6569847666673702529}
   knuppelModel: {fileID: 4977263774415709509}
+  explosionEffect: {fileID: 7238585278792121816, guid: 32dfcd56c69e77f4e896c2ba8a9efcee,
+    type: 3}
   rocketPrefab: {fileID: 4572731676303579254, guid: 24c7832ef23aaef499317b99d4deac79,
     type: 3}
 --- !u!54 &4739357102605159032
@@ -359,7 +359,7 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5216505823524584855}
   serializedVersion: 4
-  m_Mass: 1
+  m_Mass: 100
   m_Drag: 0
   m_AngularDrag: 0.05
   m_CenterOfMass: {x: 0, y: 0, z: 0}

@@ -277,7 +277,7 @@ public class S_Enemy : MonoBehaviour
             enemyAgent.isStopped = false;
             stopRange = 12f;
             rocketLauncher = false;
-            attackRate = 0.5f;
+            attackdelay = 0.5f;
             tommyModel.SetActive(true);
             rpgModel.SetActive(false);
             animator.SetLayerWeight(4, 0);
@@ -346,7 +346,7 @@ public class S_Enemy : MonoBehaviour
     {
         //death animation 
         //death particles
-        Destroy(gameObject, 2f);
+        Destroy(gameObject, 1.5f);
         passive = true;
         animator.SetTrigger("Die");
         if (boss)

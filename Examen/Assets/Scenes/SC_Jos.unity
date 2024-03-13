@@ -1939,6 +1939,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4739357102605159032, guid: d526839c13e3a2e4e873f4dd24d2cf98,
+        type: 3}
+      propertyPath: m_Mass
+      value: 150
+      objectReference: {fileID: 0}
     - target: {fileID: 5216505823524584855, guid: d526839c13e3a2e4e873f4dd24d2cf98,
         type: 3}
       propertyPath: m_Name
@@ -1947,7 +1952,17 @@ PrefabInstance:
     - target: {fileID: 5216505823524584855, guid: d526839c13e3a2e4e873f4dd24d2cf98,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7765058970842873729, guid: d526839c13e3a2e4e873f4dd24d2cf98,
+        type: 3}
+      propertyPath: health
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 7765058970842873729, guid: d526839c13e3a2e4e873f4dd24d2cf98,
+        type: 3}
+      propertyPath: maxHealth
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 7765058970842873729, guid: d526839c13e3a2e4e873f4dd24d2cf98,
         type: 3}
