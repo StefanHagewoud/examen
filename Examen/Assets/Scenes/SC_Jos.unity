@@ -1958,6 +1958,26 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 329229798852029869, guid: 1574b52db13a4984d967db9b89ae1884,
+        type: 3}
+      propertyPath: damage
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 329229798852029869, guid: 1574b52db13a4984d967db9b89ae1884,
+        type: 3}
+      propertyPath: health
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 329229798852029869, guid: 1574b52db13a4984d967db9b89ae1884,
+        type: 3}
+      propertyPath: explosive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 329229798852029869, guid: 1574b52db13a4984d967db9b89ae1884,
+        type: 3}
+      propertyPath: explosiveRange
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 3172615824386123352, guid: 1574b52db13a4984d967db9b89ae1884,
         type: 3}
       propertyPath: m_Name

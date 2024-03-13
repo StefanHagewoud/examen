@@ -10,9 +10,10 @@ GameObject:
   m_Component:
   - component: {fileID: 4792105339164799689}
   - component: {fileID: 329229798852029869}
+  - component: {fileID: 272933925078594969}
   m_Layer: 0
   m_Name: PF_ExplosiveBarrel
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -45,12 +46,32 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3bdb25d92f92a28448923230881843da, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 0
-  explosive: 0
-  explosiveRange: 0
-  health: 0
+  damage: 1
+  explosiveRange: 10
+  health: 1
   explosionEffect: {fileID: 7238585278792121816, guid: 32dfcd56c69e77f4e896c2ba8a9efcee,
     type: 3}
+--- !u!65 &272933925078594969
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3172615824386123352}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.5495585, y: 0.99117935, z: 0.5499816}
+  m_Center: {x: -0.004873812, y: 0.50417286, z: 0.006941557}
 --- !u!1001 &6784865309482248346
 PrefabInstance:
   m_ObjectHideFlags: 0

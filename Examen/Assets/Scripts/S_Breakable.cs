@@ -50,7 +50,7 @@ public class S_Breakable : MonoBehaviour
                     if (hit.GetComponent<S_Enemy>())
                     {
                         Debug.Log(hit.name + "has been hit");
-                        hit.GetComponent<S_Enemy>().TakeDamage(damage);
+                        hit.GetComponent<S_Enemy>().TakeDamage(damage * 4);
                     }
                 }
                 Destroy(gameObject,1f);

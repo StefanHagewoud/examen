@@ -34,12 +34,11 @@ public class S_Enemy : MonoBehaviour
     private GameObject bloodParticle;
     [SerializeField]
     private GameObject muzzleFlashParticle;
-    [SerializeField]
-    private GameObject explosionEffect;
     private float timer;
     [SerializeField]
     private Animator animator;
 
+    [Header("WeaponModels")]
     [SerializeField]
     private GameObject rpgModel;
     [SerializeField]
@@ -50,6 +49,8 @@ public class S_Enemy : MonoBehaviour
     private GameObject knuppelModel;
 
     [Header("Rocket Launcher Settings")]
+    [SerializeField]
+    private GameObject explosionEffect;
     public GameObject rocketPrefab;
     private GameObject rocket;
     private bool firedRocket;
