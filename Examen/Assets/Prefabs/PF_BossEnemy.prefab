@@ -325,8 +325,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   scorePerEnemy: 500
-  health: 500
-  maxHealth: 500
+  health: 100
+  maxHealth: 100
   damage: 1
   range: 100
   stopRange: 40
