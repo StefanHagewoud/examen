@@ -12,6 +12,8 @@ public class S_PlayerMovement : MonoBehaviour
     public float walkMovementMultiplier = 1;
     public bool allowAnyMovement = true;
     private Transform cameraTransformRotation;
+    [SerializeField]
+    private Animator animator;
 
     [Header("Roll")]
     public float rollMovementMultiplier = 1;
@@ -21,6 +23,8 @@ public class S_PlayerMovement : MonoBehaviour
     private bool allowUsingRoll = true;
     public float rollTime = 0.6f;
     public float rechargeRollTime = 3;
+
+    private bool inRollAnimation = false;
 
     private BoxCollider rollTrigger;
 
@@ -82,9 +86,16 @@ public class S_PlayerMovement : MonoBehaviour
                     playerTransform.rotation = Quaternion.RotateTowards(playerTransform.rotation, calculateRotation, aimMovementMultiplier * Time.fixedDeltaTime);
                 }
             }
+            animator.SetFloat("X", newMovementDirection.x);
+            animator.SetFloat("Y", newMovementDirection.z);
         }
         else// player is rolling
         {
+            if (!inRollAnimation)
+            {
+               animator.SetTrigger("Roll");
+               inRollAnimation = true;
+            }
             playerTransform.Translate(new Vector3(rollDirection.x, 0, rollDirection.y) * rollMovementMultiplier * Time.fixedDeltaTime, cameraTransformRotation);
         } 
     }
@@ -110,6 +121,7 @@ public class S_PlayerMovement : MonoBehaviour
 
             yield return new WaitForSeconds(rechargeRollTime - rollTime);
             allowUsingRoll = true;
+            inRollAnimation = false;
         }
         yield return null;
     }

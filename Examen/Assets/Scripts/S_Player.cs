@@ -11,6 +11,8 @@ public class S_Player : MonoBehaviour
     public float maxhealth;
     public float meleeDmg;
     private float meleeRange;
+    [SerializeField]
+    private Animator animator;
 
     public GameObject damageParticle;
     //private S_DifficultyManager difficultyManager
@@ -19,7 +21,8 @@ public class S_Player : MonoBehaviour
         TakeDamage(0);
     }
     public void OnDeath() {
-        Destroy(gameObject);
+        animator.SetTrigger("Die");
+        Destroy(gameObject, 1.25f);
     }
 
     public void TakeDamage(float dmg) {

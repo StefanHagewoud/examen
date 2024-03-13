@@ -99,12 +99,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   movementInput: {x: 0, y: 0}
   playerTransform: {fileID: 2511343718522993390}
-  cameraTransformRotation: {fileID: 0}
   walkMovementMultiplier: 4.5
   allowAnyMovement: 1
+  animator: {fileID: 1538130620918712882}
   rollMovementMultiplier: 8
   rollTime: 0.4
-  rechargeRollTime: 0.5
+  rechargeRollTime: 1
   aimMovementMultiplier: 500
   aimDirection: {x: 0, y: 0}
   allowDebug: 1
@@ -265,6 +265,7 @@ MonoBehaviour:
   health: 3
   maxhealth: 3
   meleeDmg: 0
+  animator: {fileID: 1538130620918712882}
   damageParticle: {fileID: 8607263268592773437, guid: 41ae90b7dcaaa954794982422cf623e9,
     type: 3}
 --- !u!114 &1641453153601055189
@@ -700,9 +701,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e2dcfdaf3494bc3419013ea5fe53a067, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hasPrimary: 0
-  primaryWeaponHolder: {fileID: 7213590132242127671}
+  usingPrimaryWeapon: 0
   primaryWeapon: {fileID: 0}
+  usingSecondaryWeapon: 0
   secondaryWeapon: {fileID: 5897254463255734798}
   primaryWeaponUIUnselected: {fileID: 0}
   weaponPrefabs:
@@ -734,6 +735,7 @@ MonoBehaviour:
     weaponUISelected: {fileID: 0}
   weaponDropPosition: {fileID: 5633911118282077007}
   uiManagerScript: {fileID: 0}
+  pickupManagerScript: {fileID: 0}
   allowDebug: 1
 --- !u!1 &8332951733001547155
 GameObject:
@@ -1015,11 +1017,22 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8359499104300117489, guid: 9135b2e4303c64041bf24853f69ee405,
+        type: 3}
+      propertyPath: m_ApplyRootMotion
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9135b2e4303c64041bf24853f69ee405, type: 3}
+--- !u!95 &1538130620918712882 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 8359499104300117489, guid: 9135b2e4303c64041bf24853f69ee405,
+    type: 3}
+  m_PrefabInstance: {fileID: 7015026586630219715}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &2606101259204879191 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5003739751180207252, guid: 9135b2e4303c64041bf24853f69ee405,
