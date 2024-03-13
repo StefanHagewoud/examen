@@ -12,6 +12,8 @@ public class S_Game_Start : MonoBehaviour
     public float animationTime;
     public GameObject player;
     public GameObject playerInteface;
+    public GameObject cutscene1;
+    public S_PlayerMovement rollingMovement;
 
 
     public void GameStart()
@@ -27,6 +29,8 @@ public class S_Game_Start : MonoBehaviour
         yield return new WaitForSeconds(animationTime);
         player.SetActive(true);
         playerInteface.SetActive(true);
+        cutscene1.SetActive(true);
+        rollingMovement.allowAnyMovement = true;
 
 
         yield return null;
