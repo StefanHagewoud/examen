@@ -1085,6 +1085,12 @@ MonoBehaviour:
     mipBias: 0
     varianceClampScale: 0.9
     contrastAdaptiveSharpening: 0
+--- !u!4 &611367515 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 3741965018438005968, guid: 0d2f9a8666e6c354d91631129abc5f2a,
+    type: 3}
+  m_PrefabInstance: {fileID: 884551039}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &651040945
 GameObject:
   m_ObjectHideFlags: 0
@@ -1115,6 +1121,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 884551042}
+  playerLocation: {fileID: 611367515}
   weaponSwitch: {fileID: 884551041}
   pickupManager: {fileID: 884551040}
 --- !u!4 &651040947
@@ -1498,6 +1505,11 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 5635299928759944612, guid: 0d2f9a8666e6c354d91631129abc5f2a,
+        type: 3}
+      propertyPath: dataSave
+      value: 
+      objectReference: {fileID: 651040946}
     - target: {fileID: 5668921098564705114, guid: 0d2f9a8666e6c354d91631129abc5f2a,
         type: 3}
       propertyPath: playerCamera

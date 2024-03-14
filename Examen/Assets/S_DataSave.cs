@@ -5,6 +5,7 @@ using UnityEngine;
 public class S_DataSave : MonoBehaviour
 {
     public S_Player player;
+    public Transform playerLocation;
     public S_WeaponSwitch weaponSwitch;
     public S_PickupManager pickupManager;
     void Start() {
@@ -17,11 +18,12 @@ public class S_DataSave : MonoBehaviour
 
 
     // Function to save data
-    void SaveData() {
+    public void SaveData() {
         PlayerPrefs.SetInt("Score", player.score);
         PlayerPrefs.SetFloat("PlayerHealth", player.health);
         PlayerPrefs.SetFloat("PlayerArmor", player.armor);
         if (weaponSwitch.primaryWeapon != null) {
+            Debug.Log("saving" + weaponSwitch.primaryWeapon.name);
             PlayerPrefs.SetString("PrimaryWeapon", weaponSwitch.primaryWeapon.name);
             PlayerPrefs.SetInt("PrimaryWeaponAmmo", weaponSwitch.primaryWeapon.GetComponent<S_Weapon>().magAmmo);
         }
@@ -47,7 +49,7 @@ public class S_DataSave : MonoBehaviour
             if (weaponSwitch.weaponPrefabs[i].prefabWeapon != null && PlayerPrefs.GetString("PrimaryWeapon") != "" && weaponSwitch.weaponPrefabs[i].prefabWeapon.name == PlayerPrefs.GetString("PrimaryWeapon")) {
                 Debug.Log("trying to pickup" + weaponSwitch.weaponPrefabs[i].prefabWeapon.name);
                 GameObject spawnedWeapon = Instantiate(weaponSwitch.weaponPrefabs[i].prefabPickupableWeapon);
-                spawnedWeapon.transform.position = player.transform.position;
+                spawnedWeapon.transform.position = playerLocation.position;
                 //weaponSwitch.primaryWeapon.GetComponent<S_Weapon>().magAmmo = PlayerPrefs.GetInt("PrimaryWeaponAmmo");
             }
         }

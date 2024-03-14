@@ -1535,6 +1535,11 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 5635299928759944612, guid: 0d2f9a8666e6c354d91631129abc5f2a,
+        type: 3}
+      propertyPath: dataSave
+      value: 
+      objectReference: {fileID: 1530901738}
     - target: {fileID: 5668921098564705114, guid: 0d2f9a8666e6c354d91631129abc5f2a,
         type: 3}
       propertyPath: playerCamera
@@ -3649,6 +3654,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 748731471}
+  playerLocation: {fileID: 1215826648}
   weaponSwitch: {fileID: 1478394334}
   pickupManager: {fileID: 1028362945}
 --- !u!4 &1530901739

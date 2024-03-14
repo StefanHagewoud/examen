@@ -4322,6 +4322,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 1640850520}
+  playerLocation: {fileID: 1951259634}
   weaponSwitch: {fileID: 1062908311}
   pickupManager: {fileID: 1675099172}
 --- !u!4 &1581645464
@@ -5574,6 +5575,11 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 5635299928759944612, guid: 0d2f9a8666e6c354d91631129abc5f2a,
+        type: 3}
+      propertyPath: dataSave
+      value: 
+      objectReference: {fileID: 1581645463}
     - target: {fileID: 5668921098564705114, guid: 0d2f9a8666e6c354d91631129abc5f2a,
         type: 3}
       propertyPath: playerCamera
@@ -5611,6 +5617,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!4 &1951259634 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 3741965018438005968, guid: 0d2f9a8666e6c354d91631129abc5f2a,
+    type: 3}
+  m_PrefabInstance: {fileID: 1951259631}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &2039909139
 GameObject:
   m_ObjectHideFlags: 0

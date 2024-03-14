@@ -3526,6 +3526,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 8032409087434911279}
+  playerLocation: {fileID: 5632267628868053016}
   weaponSwitch: {fileID: 1783309941467480326}
   pickupManager: {fileID: 3607891698632642145}
 --- !u!4 &1477282481
@@ -5108,6 +5109,11 @@ PrefabInstance:
       propertyPath: dialogeManager
       value: 
       objectReference: {fileID: 1674866609}
+    - target: {fileID: 5635299928759944612, guid: 0d2f9a8666e6c354d91631129abc5f2a,
+        type: 3}
+      propertyPath: dataSave
+      value: 
+      objectReference: {fileID: 1477282480}
     - target: {fileID: 5668921098564705114, guid: 0d2f9a8666e6c354d91631129abc5f2a,
         type: 3}
       propertyPath: playerCamera
@@ -5138,6 +5144,12 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0d2f9a8666e6c354d91631129abc5f2a, type: 3}
+--- !u!4 &5632267628868053016 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 3741965018438005968, guid: 0d2f9a8666e6c354d91631129abc5f2a,
+    type: 3}
+  m_PrefabInstance: {fileID: 5632267628868053015}
+  m_PrefabAsset: {fileID: 0}
 --- !u!114 &5900241698825427393 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 5917752859598882705, guid: 0d2f9a8666e6c354d91631129abc5f2a,

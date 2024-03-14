@@ -518,6 +518,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 2128192593}
+  playerLocation: {fileID: 1919471080}
   weaponSwitch: {fileID: 2128192592}
   pickupManager: {fileID: 2128192591}
 --- !u!4 &181488662
@@ -3047,6 +3048,12 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1758531084}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!4 &1919471080 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 3741965018438005968, guid: 0d2f9a8666e6c354d91631129abc5f2a,
+    type: 3}
+  m_PrefabInstance: {fileID: 2128192589}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &2128192589
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3145,6 +3152,11 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 5635299928759944612, guid: 0d2f9a8666e6c354d91631129abc5f2a,
+        type: 3}
+      propertyPath: dataSave
+      value: 
+      objectReference: {fileID: 181488661}
     - target: {fileID: 5668921098564705114, guid: 0d2f9a8666e6c354d91631129abc5f2a,
         type: 3}
       propertyPath: playerCamera

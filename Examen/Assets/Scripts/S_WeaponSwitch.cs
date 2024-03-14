@@ -32,6 +32,8 @@ public class S_WeaponSwitch : MonoBehaviour//Add every variable to diagram
     [Header("Animator")]
     [SerializeField] private Animator animator;
 
+    [Header("DataSave")]
+    public S_DataSave dataSave;
     private void Start()
     {
         if (!uiManagerScript)
@@ -78,6 +80,7 @@ public class S_WeaponSwitch : MonoBehaviour//Add every variable to diagram
         weaponGameObject.transform.position = pickupManagerScript.gunHolderPrimary.transform.position;
         weaponGameObject.transform.rotation = pickupManagerScript.gunHolderPrimary.transform.rotation;
         weaponGameObject.transform.parent = pickupManagerScript.gunHolderPrimary.transform;
+        dataSave.SaveData();
 
         Destroy(parentOfWeapon);
         weaponGameObject.GetComponent<S_Weapon>().uiManager = uiManagerScript;
@@ -96,7 +99,6 @@ public class S_WeaponSwitch : MonoBehaviour//Add every variable to diagram
             }
         }
         SelectPrimaryGun();
-
         if (allowDebug)
         {
             print("Picked up gun with: " + weaponGameObject.name);

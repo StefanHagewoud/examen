@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class S_Player : MonoBehaviour
 {
@@ -23,6 +24,7 @@ public class S_Player : MonoBehaviour
     public void OnDeath() {
         animator.SetTrigger("Die");
         Destroy(gameObject, 1.25f);
+        SceneManager.LoadScene("SC_Street");
     }
 
     public void TakeDamage(float dmg) {
