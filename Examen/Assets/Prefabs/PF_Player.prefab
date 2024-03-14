@@ -660,6 +660,7 @@ MonoBehaviour:
   automatic: 0
   dmg: 2
   rocketPrefab: {fileID: 0}
+  animator: {fileID: 1013542221854785965}
 --- !u!1 &1893432920369647348
 GameObject:
   m_ObjectHideFlags: 0
@@ -871,11 +872,10 @@ GameObject:
   - component: {fileID: 5273504053755007572}
   - component: {fileID: 9013144477076856597}
   - component: {fileID: 4688412153167960199}
-  - component: {fileID: 255167320462669312}
   - component: {fileID: 3680028324667168710}
   m_Layer: 0
   m_Name: PF_Player
-  m_TagString: Player
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -930,12 +930,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e005dc9a85d8acd4f9fd3e1a21e3f1e6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pickupManager: {fileID: 7492735002384208496}
+  escapeMenu: {fileID: 8266601924215895494}
+  selectReturnButton: {fileID: 4923270798930210947}
   allowDebug: 0
   dialogeManager: {fileID: 0}
   playerMovementScript: {fileID: 5917752859598882705}
   interactManagerScript: {fileID: 364087842797184581}
   weaponSwitch: {fileID: 5635299928759944612}
+  pickupManager: {fileID: 7492735002384208496}
 --- !u!114 &5273504053755007572
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1181,20 +1183,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!114 &255167320462669312
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2190939334977553152}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9db7c273a0589914babd778adb5e39d8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  wallMaterial: {fileID: 2100000, guid: bf042951a196a644f932d726db0fcbf7, type: 2}
-  playerCamera: {fileID: 0}
 --- !u!65 &3680028324667168710
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -6606,6 +6594,7 @@ MonoBehaviour:
     weaponUISelected: {fileID: 7166943758222057674}
     crAmmoText: {fileID: 7760081871020255508}
     maxAmmoText: {fileID: 953099425387171775}
+    layerIndex: 2
   - weaponName: Machine/Tommy gun
     visualWeapon: {fileID: 6037417143771481371}
     prefabWeapon: {fileID: 1708047818243286330, guid: 0b72eec833dfd6c42b7702ca28cc85a5,
@@ -6617,6 +6606,7 @@ MonoBehaviour:
     weaponUISelected: {fileID: 385042839289622269}
     crAmmoText: {fileID: 6190459196891909318}
     maxAmmoText: {fileID: 7486244058657373358}
+    layerIndex: 3
   - weaponName: Rocket launcher
     visualWeapon: {fileID: 5660383846926090959}
     prefabWeapon: {fileID: 4675995929976414041, guid: a29d9abf8c162f34096ec87cbd483ca4,
@@ -6628,10 +6618,12 @@ MonoBehaviour:
     weaponUISelected: {fileID: 2546069584667296437}
     crAmmoText: {fileID: 2045605974109101079}
     maxAmmoText: {fileID: 5048321293957418977}
+    layerIndex: 4
   weaponDropPosition: {fileID: 5280435763271597688}
   uiManagerScript: {fileID: 7693172089535952522}
   pickupManagerScript: {fileID: 7492735002384208496}
   allowDebug: 1
+  animator: {fileID: 1013542221854785965}
 --- !u!1 &5588906013603817019
 GameObject:
   m_ObjectHideFlags: 0
@@ -7690,6 +7682,7 @@ GameObject:
   - component: {fileID: 3741965018438005968}
   - component: {fileID: 8887504362484453805}
   - component: {fileID: 8302608275557284223}
+  - component: {fileID: 5668921098564705114}
   m_Layer: 0
   m_Name: MovingParts
   m_TagString: Player
@@ -7765,6 +7758,20 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 1.0950446, z: 0.41865802}
   m_Center: {x: 0, y: 0.04752203, z: -0.0055381656}
+--- !u!114 &5668921098564705114
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8793421096217042552}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9db7c273a0589914babd778adb5e39d8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  wallMaterial: {fileID: 2100000, guid: bf042951a196a644f932d726db0fcbf7, type: 2}
+  playerCamera: {fileID: 0}
 --- !u!1 &8802798914416701000
 GameObject:
   m_ObjectHideFlags: 0
@@ -8144,6 +8151,18 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 8301069713041580410}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &4923270798930210947 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3990658042760860153, guid: 7d09bd0b35c5a8f4ba675f48691f6bf4,
+    type: 3}
+  m_PrefabInstance: {fileID: 8301069713041580410}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &5048321293957418977 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 3836063666001129115, guid: 7d09bd0b35c5a8f4ba675f48691f6bf4,
@@ -8219,6 +8238,12 @@ MonoBehaviour:
 --- !u!1 &7937571717212494031 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2095503719230323125, guid: 7d09bd0b35c5a8f4ba675f48691f6bf4,
+    type: 3}
+  m_PrefabInstance: {fileID: 8301069713041580410}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &8266601924215895494 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 111336867771323580, guid: 7d09bd0b35c5a8f4ba675f48691f6bf4,
     type: 3}
   m_PrefabInstance: {fileID: 8301069713041580410}
   m_PrefabAsset: {fileID: 0}

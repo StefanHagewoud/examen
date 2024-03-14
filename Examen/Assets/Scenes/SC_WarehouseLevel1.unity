@@ -1651,7 +1651,7 @@ PrefabInstance:
         type: 3}
       propertyPath: highscoreText
       value: 
-      objectReference: {fileID: 1011568561}
+      objectReference: {fileID: 1286307268}
     - target: {fileID: 9133854120419464307, guid: 9c36f40b7b59a014981252bfc425e749,
         type: 3}
       propertyPath: scoreText
@@ -1667,18 +1667,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9c36f40b7b59a014981252bfc425e749, type: 3}
---- !u!114 &1011568561 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 3981160975309126184, guid: 0d2f9a8666e6c354d91631129abc5f2a,
-    type: 3}
-  m_PrefabInstance: {fileID: 1286307267}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &1014560843
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2397,6 +2385,11 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 5668921098564705114, guid: 0d2f9a8666e6c354d91631129abc5f2a,
+        type: 3}
+      propertyPath: playerCamera
+      value: 
+      objectReference: {fileID: 552472008}
     - target: {fileID: 8750665156675889935, guid: 0d2f9a8666e6c354d91631129abc5f2a,
         type: 3}
       propertyPath: m_IsActive
@@ -2407,6 +2400,18 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0d2f9a8666e6c354d91631129abc5f2a, type: 3}
+--- !u!114 &1286307268 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1162525029423946642, guid: 0d2f9a8666e6c354d91631129abc5f2a,
+    type: 3}
+  m_PrefabInstance: {fileID: 1286307267}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1303556751
 PrefabInstance:
   m_ObjectHideFlags: 0

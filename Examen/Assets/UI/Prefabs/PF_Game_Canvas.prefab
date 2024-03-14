@@ -1225,6 +1225,8 @@ MonoBehaviour:
   animationTime: 2
   player: {fileID: 0}
   playerInteface: {fileID: 3672298049571853075}
+  cutscene1: {fileID: 0}
+  rollingMovement: {fileID: 0}
 --- !u!114 &3598033083866929522
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6440,6 +6442,7 @@ GameObject:
   - component: {fileID: 6822383416330911335}
   - component: {fileID: 4269669662850972928}
   - component: {fileID: 8912180233835003360}
+  - component: {fileID: 3621420470626071031}
   m_Layer: 5
   m_Name: ButtonSpelverlaten
   m_TagString: Untagged
@@ -6561,6 +6564,32 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 3621420470626071031}
+        m_TargetAssemblyTypeName: S_ExitGame, Assembly-CSharp
+        m_MethodName: ExitGame
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &3621420470626071031
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3966129452960886583}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b0c18bdc98ee73b4f8f1bedb42bad59f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  exitAnimation: {fileID: 3247730571530739771}
+  waitingTime: 0
 --- !u!1 &3972286178161408244
 GameObject:
   m_ObjectHideFlags: 0
@@ -7256,6 +7285,7 @@ MonoBehaviour:
   armor: {fileID: 4246856174513205319}
   currentAmmoText: {fileID: 1765986874213828718}
   currentMaxAmmoText: {fileID: 9081864945662701253}
+  weaponSwitch: {fileID: 0}
 --- !u!1 &4740940895343405084
 GameObject:
   m_ObjectHideFlags: 0

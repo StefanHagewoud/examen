@@ -431,7 +431,7 @@ PrefabInstance:
         type: 3}
       propertyPath: highscoreText
       value: 
-      objectReference: {fileID: 1531163548}
+      objectReference: {fileID: 2015664115}
     - target: {fileID: 9133854120419464307, guid: 9c36f40b7b59a014981252bfc425e749,
         type: 3}
       propertyPath: scoreText
@@ -1498,6 +1498,11 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 5668921098564705114, guid: 0d2f9a8666e6c354d91631129abc5f2a,
+        type: 3}
+      propertyPath: playerCamera
+      value: 
+      objectReference: {fileID: 552472008}
     - target: {fileID: 8750665156675889935, guid: 0d2f9a8666e6c354d91631129abc5f2a,
         type: 3}
       propertyPath: m_IsActive
@@ -2969,18 +2974,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &1531163548 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 3981160975309126184, guid: 0d2f9a8666e6c354d91631129abc5f2a,
-    type: 3}
-  m_PrefabInstance: {fileID: 884551039}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1542376558
 GameObject:
   m_ObjectHideFlags: 0
@@ -3956,6 +3949,18 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2003475769}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &2015664115 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1162525029423946642, guid: 0d2f9a8666e6c354d91631129abc5f2a,
+    type: 3}
+  m_PrefabInstance: {fileID: 884551039}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &2020581910 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 7765058970842873729, guid: d526839c13e3a2e4e873f4dd24d2cf98,

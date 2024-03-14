@@ -3730,6 +3730,12 @@ PrefabInstance:
       propertyPath: waves.Array.data[1].timeBetweenSpawns
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 3956762453379439515, guid: 21b7dbeecaaf20f4884470ce5bc26647,
+        type: 3}
+      propertyPath: waves.Array.data[1].enemyType.Array.data[1]
+      value: 
+      objectReference: {fileID: 5129352262462980828, guid: 6411793ed087e534cb22bff095414239,
+        type: 3}
     - target: {fileID: 4849097641142664677, guid: 21b7dbeecaaf20f4884470ce5bc26647,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -4058,18 +4064,6 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1314110777}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1329055395 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 3981160975309126184, guid: 0d2f9a8666e6c354d91631129abc5f2a,
-    type: 3}
-  m_PrefabInstance: {fileID: 1951259631}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!4 &1353959728 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5846938314062647331, guid: 21b7dbeecaaf20f4884470ce5bc26647,
@@ -5001,7 +4995,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1817146908
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5450,7 +5444,7 @@ PrefabInstance:
         type: 3}
       propertyPath: highscoreText
       value: 
-      objectReference: {fileID: 1329055395}
+      objectReference: {fileID: 1951259633}
     - target: {fileID: 9133854120419464307, guid: 9c36f40b7b59a014981252bfc425e749,
         type: 3}
       propertyPath: scoreText
@@ -5480,6 +5474,11 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 255167320462669312, guid: 0d2f9a8666e6c354d91631129abc5f2a,
+        type: 3}
+      propertyPath: playerCamera
+      value: 
+      objectReference: {fileID: 552472008}
     - target: {fileID: 1243356285361625051, guid: 0d2f9a8666e6c354d91631129abc5f2a,
         type: 3}
       propertyPath: m_LocalScale.y
@@ -5575,6 +5574,11 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 5668921098564705114, guid: 0d2f9a8666e6c354d91631129abc5f2a,
+        type: 3}
+      propertyPath: playerCamera
+      value: 
+      objectReference: {fileID: 552472008}
     - target: {fileID: 8750665156675889935, guid: 0d2f9a8666e6c354d91631129abc5f2a,
         type: 3}
       propertyPath: m_IsActive
@@ -5595,6 +5599,18 @@ Animator:
     type: 3}
   m_PrefabInstance: {fileID: 1951259631}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1951259633 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1162525029423946642, guid: 0d2f9a8666e6c354d91631129abc5f2a,
+    type: 3}
+  m_PrefabInstance: {fileID: 1951259631}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2039909139
 GameObject:
   m_ObjectHideFlags: 0
