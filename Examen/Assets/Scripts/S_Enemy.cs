@@ -214,7 +214,7 @@ public class S_Enemy : MonoBehaviour
                         attackRate -= Time.deltaTime;
                     }
                    
-                    if (hit.collider.transform.root.tag == "Player")
+                    if (hit.collider.transform.parent != null && hit.collider.transform.parent.tag == "Player")
                     {
                         Debug.DrawRay(transform.position, transform.forward * hit.distance, Color.yellow);
 
@@ -244,7 +244,7 @@ public class S_Enemy : MonoBehaviour
                     {
                         if (hit.collider != null)
                         {
-                            if (hit.collider.transform.root.tag != "Player")
+                            if (hit.collider.transform.parent != null && hit.collider.transform.parent.tag != "Player")
                             {
                                 enemyAgent.isStopped = false;
                                 Debug.DrawRay(transform.position, transform.forward * hit1.distance, Color.red);
