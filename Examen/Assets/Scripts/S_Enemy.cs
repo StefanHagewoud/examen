@@ -350,7 +350,6 @@ public class S_Enemy : MonoBehaviour
     {
         //death animation 
         //death particles
-        Destroy(gameObject, 1.5f);
         passive = true;
         animator.SetTrigger("Die");
         if (boss)
@@ -366,6 +365,7 @@ public class S_Enemy : MonoBehaviour
         if(GameObject.Find("PF_ScoreManager") != null)
         {
             GameObject.Find("PF_ScoreManager").GetComponent<S_ScoreManager>().AddScore(scorePerEnemy);
-        }       
+        }
+        Destroy(gameObject, 1.5f);
     }
 }
