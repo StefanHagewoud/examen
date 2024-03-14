@@ -28,11 +28,13 @@ public class S_Weapon : MonoBehaviour
     private bool firedRocket;
     private bool rocketExploding;
 
+    public Animator animator;
+
 
     // Start is called before the first frame update
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
@@ -84,6 +86,7 @@ public class S_Weapon : MonoBehaviour
                 rocket = Instantiate(rocketPrefab, transform.position, transform.rotation);
                 firedRocket = true;
             } else if (transform.tag == "melee") {
+                animator.SetTrigger("Punch");
                 RaycastHit hitInfo;
                 if (Physics.Raycast(transform.parent.parent.position, transform.forward, out hitInfo, range)) {
                     if (hitInfo.transform.tag == "Enemy") {
@@ -91,6 +94,14 @@ public class S_Weapon : MonoBehaviour
                     }
                 }
             } else {
+                if (automatic)
+                {
+                    animator.SetTrigger("Tommy_Gun_Shoot");
+                }
+                else
+                {
+                    animator.SetTrigger("Revolver_Shoot");
+                }
                 GameObject muscleFlash = Instantiate(transform.GetChild(0).gameObject, transform.GetChild(0).position, transform.rotation);
                 Destroy(muscleFlash, 1f);
                 GameObject bullet = Instantiate(bulletPrefab, transform.GetChild(1).position, transform.parent.rotation);
@@ -103,6 +114,15 @@ public class S_Weapon : MonoBehaviour
         } else {
             Debug.Log("reloading");
             Reload();
+
+            if (automatic)
+            {
+                animator.SetTrigger("Tommy_Gun_Reload");
+            }
+            else
+            {
+                animator.SetTrigger("Revolver_Reload");
+            }
         }
         uiManager.UpdateWeaponUI();
     }

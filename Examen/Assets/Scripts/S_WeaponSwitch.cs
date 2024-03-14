@@ -29,6 +29,9 @@ public class S_WeaponSwitch : MonoBehaviour//Add every variable to diagram
     [Header("Debug")]
     public bool allowDebug;
 
+    [Header("Animator")]
+    [SerializeField] private Animator animator;
+
     private void Start()
     {
         if (!uiManagerScript)
@@ -49,6 +52,7 @@ public class S_WeaponSwitch : MonoBehaviour//Add every variable to diagram
         public GameObject weaponUISelected;
         public TextMeshProUGUI crAmmoText;
         public TextMeshProUGUI maxAmmoText;
+        public int layerIndex;
     }
     public void PickupGun(GameObject weaponGameObject)//Add diagram
     {
@@ -60,6 +64,8 @@ public class S_WeaponSwitch : MonoBehaviour//Add every variable to diagram
             }
             return;
         }
+
+        weaponGameObject.GetComponent<S_Weapon>().animator = animator;
 
         GameObject parentOfWeapon = weaponGameObject.transform.parent.gameObject;
         primaryWeapon = weaponGameObject;
@@ -117,12 +123,16 @@ public class S_WeaponSwitch : MonoBehaviour//Add every variable to diagram
                 weaponPrefabs[i].visualWeapon.SetActive(true);
                 uiManagerScript.currentAmmoText = weaponPrefabs[i].crAmmoText;
                 uiManagerScript.currentMaxAmmoText = weaponPrefabs[i].maxAmmoText;
+
+                animator.SetLayerWeight(weaponPrefabs[i].layerIndex, 1);
             }
             else
             {
                 weaponPrefabs[i].weaponUISelected.SetActive(false);
                 weaponPrefabs[i].weaponUIUnselected.SetActive(true);
                 weaponPrefabs[i].visualWeapon.SetActive(false);
+
+                animator.SetLayerWeight(weaponPrefabs[i].layerIndex, 0);
             }
         }
         uiManagerScript.UpdateWeaponUI();
@@ -152,12 +162,16 @@ public class S_WeaponSwitch : MonoBehaviour//Add every variable to diagram
                 weaponPrefabs[i].visualWeapon.SetActive(true);
                 uiManagerScript.currentAmmoText = weaponPrefabs[i].crAmmoText;
                 uiManagerScript.currentMaxAmmoText = weaponPrefabs[i].maxAmmoText;
+
+                animator.SetLayerWeight(weaponPrefabs[i].layerIndex, 1);
             }
             else
             {
                 weaponPrefabs[i].weaponUISelected.SetActive(false);
                 weaponPrefabs[i].weaponUIUnselected.SetActive(true);
                 weaponPrefabs[i].visualWeapon.SetActive(false);
+
+                animator.SetLayerWeight(weaponPrefabs[i].layerIndex, 0);
             }
         }
         uiManagerScript.UpdateWeaponUI();
