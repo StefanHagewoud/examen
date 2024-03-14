@@ -584,7 +584,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bafb33deb3ef979429c13474919283fb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timesCanActivate: 1
+  timesCanActivate: 2
   disableWhenMaxActivated: 1
   tagsToLookFor:
   - Player
@@ -607,7 +607,31 @@ MonoBehaviour:
   allowExitTrigger: 0
   OnExitTriggered:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1076074040}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+      - m_Target: {fileID: 347956558}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
 --- !u!65 &313154403
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2608,7 +2632,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1076074041
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3435,7 +3459,7 @@ PrefabInstance:
     - target: {fileID: 3956762453379439515, guid: 21b7dbeecaaf20f4884470ce5bc26647,
         type: 3}
       propertyPath: cutScenes.Array.size
-      value: 3
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3956762453379439515, guid: 21b7dbeecaaf20f4884470ce5bc26647,
         type: 3}
@@ -3451,12 +3475,12 @@ PrefabInstance:
         type: 3}
       propertyPath: cutScenes.Array.data[1]
       value: 
-      objectReference: {fileID: 1076074040}
+      objectReference: {fileID: 0}
     - target: {fileID: 3956762453379439515, guid: 21b7dbeecaaf20f4884470ce5bc26647,
         type: 3}
       propertyPath: cutScenes.Array.data[2]
       value: 
-      objectReference: {fileID: 347956558}
+      objectReference: {fileID: 0}
     - target: {fileID: 3956762453379439515, guid: 21b7dbeecaaf20f4884470ce5bc26647,
         type: 3}
       propertyPath: spawnPoints.Array.data[0]
@@ -4051,7 +4075,7 @@ PrefabInstance:
     - target: {fileID: 7765058970842873729, guid: d526839c13e3a2e4e873f4dd24d2cf98,
         type: 3}
       propertyPath: health
-      value: 200
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 7765058970842873729, guid: d526839c13e3a2e4e873f4dd24d2cf98,
         type: 3}
@@ -4061,7 +4085,7 @@ PrefabInstance:
     - target: {fileID: 7765058970842873729, guid: d526839c13e3a2e4e873f4dd24d2cf98,
         type: 3}
       propertyPath: maxHealth
-      value: 200
+      value: 100
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
