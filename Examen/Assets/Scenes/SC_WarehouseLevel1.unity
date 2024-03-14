@@ -2787,6 +2787,12 @@ PrefabInstance:
       propertyPath: waves.Array.data[1].timeBetweenSpawns
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 3956762453379439515, guid: 21b7dbeecaaf20f4884470ce5bc26647,
+        type: 3}
+      propertyPath: waves.Array.data[1].enemyType.Array.data[1]
+      value: 
+      objectReference: {fileID: 5129352262462980828, guid: 6411793ed087e534cb22bff095414239,
+        type: 3}
     - target: {fileID: 4849097641142664677, guid: 21b7dbeecaaf20f4884470ce5bc26647,
         type: 3}
       propertyPath: m_LocalPosition.x

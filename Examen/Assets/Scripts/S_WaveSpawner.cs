@@ -20,6 +20,7 @@ public class S_WaveSpawner : MonoBehaviour
         if(enemiesAlive > 0)
         {
             return;
+
         }
 
         if (countdown <= 0)
