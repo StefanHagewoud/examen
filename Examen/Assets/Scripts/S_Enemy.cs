@@ -111,6 +111,20 @@ public class S_Enemy : MonoBehaviour
 
     void Update()
     {
+        if (boss)
+        {
+            if (health <= 0)
+            {
+              foreach (GameObject sceneObj in Resources.FindObjectsOfTypeAll(typeof(GameObject)) as GameObject[])
+                {
+                    if (sceneObj.name == "Cutscene 6.0")
+                    {
+                        sceneObj.SetActive(true);
+                    }
+                }
+            }
+        }
+
         if (enemyAgent.enabled)
         {
             if (!enemyAgent.isStopped)
@@ -281,7 +295,7 @@ public class S_Enemy : MonoBehaviour
             enemyAgent.isStopped = false;
             stopRange = 15f;
             rocketLauncher = false;
-            attackdelay = 0.5f;
+            attackdelay = 0.8f;
             tommyModel.SetActive(true);
             rpgModel.SetActive(false);
             animator.SetLayerWeight(4, 0);
@@ -350,13 +364,13 @@ public class S_Enemy : MonoBehaviour
     {
         //death animation 
         //death particles
-        passive = true;
+        //passive = true;
         animator.SetTrigger("Die");
-        if (boss)
+        if (boss == true)
         {
-            GameObject cutSceneObj = GameObject.Find("Cutscene 6.0");
-            cutSceneObj.SetActive(true);
+            
         }
+        Destroy(gameObject, 1f);
 
         if (GameObject.Find("PF_WaveSpawner") != null)
         {
@@ -366,6 +380,5 @@ public class S_Enemy : MonoBehaviour
         {
             GameObject.Find("PF_ScoreManager").GetComponent<S_ScoreManager>().AddScore(scorePerEnemy);
         }
-        Destroy(gameObject, 1.5f);
     }
 }

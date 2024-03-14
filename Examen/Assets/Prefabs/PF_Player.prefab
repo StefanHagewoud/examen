@@ -6624,6 +6624,7 @@ MonoBehaviour:
   pickupManagerScript: {fileID: 7492735002384208496}
   allowDebug: 1
   animator: {fileID: 1013542221854785965}
+  dataSave: {fileID: 0}
 --- !u!1 &5588906013603817019
 GameObject:
   m_ObjectHideFlags: 0
@@ -7735,7 +7736,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 112
   m_CollisionDetection: 0
 --- !u!65 &8302608275557284223
 BoxCollider:

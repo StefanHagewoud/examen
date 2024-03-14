@@ -23,7 +23,6 @@ public class S_Player : MonoBehaviour
     }
     public void OnDeath() {
         animator.SetTrigger("Die");
-        Destroy(gameObject, 1.25f);
         SceneManager.LoadScene("SC_Street");
     }
 

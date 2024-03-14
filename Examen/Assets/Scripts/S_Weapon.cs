@@ -59,7 +59,7 @@ public class S_Weapon : MonoBehaviour
                     foreach (Collider hit in hits) {
                         Debug.Log(hit.name + " hit by explosion");
                         if (hit.TryGetComponent<Rigidbody>(out Rigidbody hitRB)) {
-                            hitRB.AddExplosionForce(1000, rocket.transform.position, 10);
+                            hitRB.AddExplosionForce(100, rocket.transform.position, 10);
                             // force, position, radius
                         }
                         if (hit.GetComponent<S_Enemy>()) {

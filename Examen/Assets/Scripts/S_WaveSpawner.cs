@@ -50,7 +50,7 @@ public class S_WaveSpawner : MonoBehaviour
     IEnumerator SpawnWave()
     {
         Wave wave = waves[wavesCount];
-
+        enemiesAlive = waves[wavesCount].enemiesPerWave;
         for (int i = 0; i < wave.enemiesPerWave; i++)
         {
             SpawnEnemy();
@@ -65,7 +65,7 @@ public class S_WaveSpawner : MonoBehaviour
         int spawnNummer = Random.Range(0, spawnPoints.Count);
         int enemyNummer = Random.Range(0, waves[wavesCount].enemyType.Count);
         GameObject spawnedEnemy = Instantiate(waves[wavesCount].enemyType[enemyNummer], spawnPoints[spawnNummer].position, spawnPoints[spawnNummer].rotation);
-        enemiesAlive = waves[wavesCount].enemiesPerWave;
+
     }
 
     [System.Serializable]
