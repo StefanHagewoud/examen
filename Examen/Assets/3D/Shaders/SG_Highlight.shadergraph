@@ -7,9 +7,6 @@
             "m_Id": "77ca28e20227409a9f277b446d0db2fe"
         },
         {
-            "m_Id": "d47956f849a34f18b0e53f6af8fad651"
-        },
-        {
             "m_Id": "e1857aecb6644f8c83a6af6786d16041"
         }
     ],
@@ -393,9 +390,6 @@
     "m_ChildObjectList": [
         {
             "m_Id": "77ca28e20227409a9f277b446d0db2fe"
-        },
-        {
-            "m_Id": "d47956f849a34f18b0e53f6af8fad651"
         },
         {
             "m_Id": "e1857aecb6644f8c83a6af6786d16041"
@@ -1314,7 +1308,7 @@
     "m_Type": "UnityEditor.ShaderGraph.Vector1MaterialSlot",
     "m_ObjectId": "6ddaf97423c748b3b9752074aa873da3",
     "m_Id": 0,
-    "m_DisplayName": "Speed",
+    "m_DisplayName": "speed",
     "m_SlotType": 1,
     "m_Hidden": false,
     "m_ShaderOutputName": "Out",
@@ -1457,10 +1451,10 @@
     "m_Guid": {
         "m_GuidSerialized": "fa3de180-1a97-4f86-9ab8-1a140774693b"
     },
-    "m_Name": "Color",
+    "m_Name": "color",
     "m_DefaultRefNameVersion": 1,
-    "m_RefNameGeneratedByDisplayName": "Color",
-    "m_DefaultReferenceName": "_Color",
+    "m_RefNameGeneratedByDisplayName": "color",
+    "m_DefaultReferenceName": "_color",
     "m_OverrideReferenceName": "",
     "m_GeneratePropertyBlock": true,
     "m_UseCustomSlotLabel": false,
@@ -1959,7 +1953,7 @@
     "m_Type": "UnityEditor.ShaderGraph.Vector4MaterialSlot",
     "m_ObjectId": "c7271ae93d0f4ddd910f0b5562833f9e",
     "m_Id": 0,
-    "m_DisplayName": "Color",
+    "m_DisplayName": "color",
     "m_SlotType": 1,
     "m_Hidden": false,
     "m_ShaderOutputName": "Out",
@@ -2177,34 +2171,6 @@
 }
 
 {
-    "m_SGVersion": 1,
-    "m_Type": "UnityEditor.ShaderGraph.Internal.Vector1ShaderProperty",
-    "m_ObjectId": "d47956f849a34f18b0e53f6af8fad651",
-    "m_Guid": {
-        "m_GuidSerialized": "2334c34e-aecf-4fb3-b2a0-2d3a902df331"
-    },
-    "m_Name": "Thickness",
-    "m_DefaultRefNameVersion": 1,
-    "m_RefNameGeneratedByDisplayName": "Thickness",
-    "m_DefaultReferenceName": "_Thickness",
-    "m_OverrideReferenceName": "",
-    "m_GeneratePropertyBlock": true,
-    "m_UseCustomSlotLabel": false,
-    "m_CustomSlotLabel": "",
-    "m_DismissedVersion": 0,
-    "m_Precision": 0,
-    "overrideHLSLDeclaration": false,
-    "hlslDeclarationOverride": 0,
-    "m_Hidden": false,
-    "m_Value": 0.02500000037252903,
-    "m_FloatType": 0,
-    "m_RangeValues": {
-        "x": 0.0,
-        "y": 1.0
-    }
-}
-
-{
     "m_SGVersion": 0,
     "m_Type": "UnityEditor.ShaderGraph.DynamicValueMaterialSlot",
     "m_ObjectId": "d51f2b6eb1544ce4b42bb99b9d50f42d",
@@ -2357,10 +2323,10 @@
     "m_Guid": {
         "m_GuidSerialized": "0dcd6f08-4509-4f92-ab98-b62973ba6042"
     },
-    "m_Name": "Speed",
+    "m_Name": "speed",
     "m_DefaultRefNameVersion": 1,
-    "m_RefNameGeneratedByDisplayName": "Speed",
-    "m_DefaultReferenceName": "_Speed",
+    "m_RefNameGeneratedByDisplayName": "speed",
+    "m_DefaultReferenceName": "_speed",
     "m_OverrideReferenceName": "",
     "m_GeneratePropertyBlock": true,
     "m_UseCustomSlotLabel": false,
@@ -2527,7 +2493,7 @@
     "m_Type": "UnityEditor.ShaderGraph.Vector4MaterialSlot",
     "m_ObjectId": "f4fc78e0a05146c88c326fdd32573b4c",
     "m_Id": 0,
-    "m_DisplayName": "Color",
+    "m_DisplayName": "color",
     "m_SlotType": 1,
     "m_Hidden": false,
     "m_ShaderOutputName": "Out",
