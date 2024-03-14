@@ -341,7 +341,7 @@ public class S_Enemy : MonoBehaviour
             if (hitCollider.transform.tag == "Player")
             {
                 Debug.Log("MeleeAttack");
-                hitCollider.GetComponent<S_Player>().TakeDamage(damage);
+                hitCollider.GetComponentInParent<S_Player>().TakeDamage(damage);
             }
         }
     }

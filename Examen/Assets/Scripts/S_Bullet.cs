@@ -14,19 +14,19 @@ public class S_Bullet : MonoBehaviour
         if(host.transform.root.tag != other.transform.root.tag && other.tag != "PickupManager")
         {
             Debug.Log("hit: " + other.gameObject.name + "by: " + host.tag);
-            if (other.GetComponent<S_Player>() != null) 
+            if (other.GetComponentInParent<S_Player>() != null) 
             {
-                other.GetComponent<S_Player>().TakeDamage(damage);
+                other.GetComponentInParent<S_Player>().TakeDamage(damage);
                 Destroy(gameObject);
             } 
-            else if (other.GetComponent<S_Enemy>() != null) 
+            else if (other.GetComponentInParent<S_Enemy>() != null) 
             {
-                other.GetComponent<S_Enemy>().TakeDamage(damage);
+                other.GetComponentInParent<S_Enemy>().TakeDamage(damage);
                 Destroy(gameObject);
             } 
-            else if(other.GetComponent<S_Breakable>() != null)
+            else if(other.GetComponentInParent<S_Breakable>() != null)
             {
-                other.GetComponent<S_Breakable>().TakeDamage(damage);
+                other.GetComponentInParent<S_Breakable>().TakeDamage(damage);
                 Destroy(gameObject);
             }
             else
